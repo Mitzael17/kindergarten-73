@@ -1,4 +1,93 @@
 @import "assets/reset"
+@import "assets/fonts"
+@import "themes/index"
 @import "assets/vars"
 @import "assets/functions"
 @import "assets/mixins"
+
+@import "modules/header"
+@import "modules/footer"
+
+
+html
+  font-size: 16px
+  font-family: Mont
+  font-weight: 600
+  color: var(--textColor)
+
+
+body
+  display: flex
+  flex-direction: column
+  font-size: 1rem
+
+
+.container
+  max-width: 1440px
+  padding: 0 25px
+  margin: 0 auto
+
+
+h1
+  @include setFontsForTitle(48)
+
+
+h2
+  @include setFontsForTitle(36, var(--h2Color))
+
+
+h3
+  @include setFontsForTitle(24)
+
+
+h4
+  @include setFontsForTitle(18, var(--textColor), 1.5, -0.4)
+
+
+p
+  font-family: Commissioner
+  font-weight: 500
+  line-height: 1.6
+  letter-spacing: em(-0.2, 16)
+  color: var(--pColor)
+
+
+ol, ul
+  line-height: lh(20, 16)
+  color: var(--liColor)
+  font-family: Commissioner
+  font-weight: 400
+
+  li
+    margin-bottom: em(15, 16)
+    position: relative
+    padding-left: em(48, 16)
+
+    &:last-child
+      margin-bottom: 0
+
+
+ul
+
+  li
+    min-height: em(24, 16)
+
+    &:before
+      content: ''
+      background: url("@img/arrow-right.svg") 0 0 / 100% 100% no-repeat
+      @include absolutePosition()
+      width: em(24, 16)
+      height: em(24, 16)
+
+
+ol
+  counter-reset: numberItem
+
+  li
+    counter-increment: numberItem
+    list-style: none
+
+    &:before
+      content: counter(numberItem)
+      @include absolutePosition(em(8, 16))
+      font-weight: 700

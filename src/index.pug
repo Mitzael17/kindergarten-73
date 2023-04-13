@@ -1,20 +1,14 @@
 extends layouts/template
 
-include components/input
-include components/test/test
-
 block variables
     - var pageTitle = 'test'
 
 
 block content
-    div
-        | dfgdfggfg
-        | fgd
-        div
-            | i am div
-    +input('login', 'write login')
-    +test('Привет')
-    +test('Пока')
-    div ff
-    script(src="scripts/main.min.js" defer)
+    ol
+        li Пункт номерного списка
+        li Пункт номерного списка
+        li Пункт номерного списка
+        li Пункт номерного списка
+        li Пункт номерного списка
+

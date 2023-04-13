@@ -5,8 +5,10 @@ html(lang='en')
     head
         meta(charset='UTF-8')
         title= pageTitle
-        link(rel='stylesheet' href='css/main.min.css')
+        link(rel='stylesheet' href='styles/main.min.css')
     body
         include modules/header
-        block content
+        main
+            .container
+                block content
         include modules/footer

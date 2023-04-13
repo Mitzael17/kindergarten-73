@@ -1,0 +1,15 @@
+@import "functions"
+
+
+@mixin absolutePosition($l: 0, $t: 0)
+  position: absolute
+  left: $l
+  top: $t
+
+
+@mixin setFontsForTitle($size, $color: var(--textColor), $lh: 1.3, $lt: -1)
+  letter-spacing: em($lt, $size)
+  line-height: $lh
+  font-size: em($size, 16)
+  font-weight: 700
+  color: $color
