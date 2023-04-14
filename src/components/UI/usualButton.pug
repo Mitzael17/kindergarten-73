@@ -1,0 +1,15 @@
+mixin usualButton(text, className, onClick, img = true, reverse = false)
+
+    if(img && reverse)
+        button.button.button--usual(class= className, onclick=onClick)
+            svg.icon.reverse
+                use(href="@img/icons/icons.svg#arrow-button")
+            = text
+
+    else if(img && !reverse)
+        button.button.button--usual(class= className, onclick=onClick)= text
+            svg.icon
+                use(href="@img/icons/icons.svg#arrow-button")
+
+    else
+        button.button.button--usual(class= className, onclick=onClick)= text

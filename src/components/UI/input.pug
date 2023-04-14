@@ -1,0 +1,12 @@
+mixin input(placeholder, name, id, type= 'text')
+    div.inputLabel
+        label(for= id).label= placeholder
+        if (type === 'password')
+            a(href='#').weakText Забыл пароль
+    div.input(class= type === 'password' ? 'input--password' : '')
+        input(placeholder= placeholder, name= name, type= type, id= id)
+        if (type === 'password')
+            div.icon
+                span
+                svg
+                    use(href="@img/icons/icons.svg#eye")

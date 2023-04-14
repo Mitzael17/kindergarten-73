@@ -1,0 +1,85 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+.button
+  font-size: em(14, 16)
+  padding: em(15, 14)
+  letter-spacing: em(-0.4, 14)
+  line-height: 1.3
+  border-radius: 4px
+  transition: $defaultTransitionDuration all
+  font-weight: 800
+
+  &.bigButton
+    padding: em(30, 20)
+    font-size: em(20, 16)
+
+  .icon
+    width: em(12, 14)
+    height: em(11, 14)
+    margin-left: em(8, 14)
+    display: inline-block
+    vertical-align: middle
+    fill: #fff
+    transition: $defaultTransitionDuration all
+
+    &.reverse
+      transform: rotate(180deg)
+      margin-right: em(8, 14)
+      margin-left: 0
+
+  &--dashed
+    border: 1px dashed rgba(0, 116, 255, 0.55)
+    color: var(--dashedButtonTextColor)
+    background: #fff
+
+    &:hover
+      color: var(--hoverDashedButtonTextColor)
+
+    &:active
+      border-color: var(--textColor)
+      color: var(--textColor)
+
+  &--grey
+    background: var(--greyButtonBackground)
+    color: var(--textColor)
+    padding: em(11, 14) em(15, 14)
+
+    &:hover
+      background: var(--hoverGreyButtonBackground)
+
+    &:active
+      color: #ffffff
+      background: var(--activeGreyButtonBackground)
+
+  &--usual
+    background: var(--usualButtonBackground)
+    color: #fff
+
+    &:hover
+      background: var(--hoverUsualButtonBackground)
+
+    &:active
+      background: var(--activeUsualButtonBackground)
+
+  &--white
+    color: var(--usualButtonBackground)
+    border: 1px solid var(--usualButtonBackground)
+    background: #fff
+
+    .icon
+      fill: var(--usualButtonBackground)
+
+    &:hover
+      border-color: var(--hoverUsualButtonBackground)
+      color: var(--hoverUsualButtonBackground)
+
+      .icon
+        fill: var(--hoverUsualButtonBackground)
+
+    &:active
+      border-color: var(--activeUsualButtonBackground)
+      color: var(--textColor)
+
+      .icon
+        fill: var(--textColor)

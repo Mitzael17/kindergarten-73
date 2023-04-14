@@ -1,0 +1,46 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+.checkbox
+  font-size: em(14, 16)
+  display: inline-flex
+  cursor: pointer
+  align-items: center
+
+  input
+    display: none
+
+    &:checked + .checkbox__mark
+      background: var(--activeCheckboxColor)
+
+      &:after
+        transform: scale(1)
+
+
+    &:checked + .checkbox__mark + .checkbox__text
+      color: var(--activeRadioColor)
+
+  &__mark
+    display: block
+    width: em(18, 14)
+    height: em(18, 14)
+    position: relative
+    background: var(--checkboxColor)
+    border-radius: 2px
+    transition: .25s background-color
+
+    &:after
+      content: ''
+      background: url("../img/checked-mark.svg") 50% 50% / 64% 56% no-repeat
+      width: 100%
+      height: 100%
+      @include useAbsolutePosition()
+      transform: scale(0)
+      transition: $defaultTransitionDuration transform
+
+  &__text
+    @include useSecondFont(500)
+    letter-spacing: em(-0.2, 14)
+    line-height: 1.6
+    margin-left: em(8, 14)
+

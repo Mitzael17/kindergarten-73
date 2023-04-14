@@ -19,7 +19,7 @@ export function createSpoilers() {
 
         if(content.classList.contains('select-list__items')) {
 
-            const inputs = document.querySelectorAll('input[type="radio"]');
+            const inputs = content.querySelectorAll('input[type="radio"]');
 
             const spanInArea = spoiler.querySelector('.select-list__area').querySelector('span');
 

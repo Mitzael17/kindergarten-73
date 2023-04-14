@@ -1,0 +1,48 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+.radioBox
+  font-size: em(14, 16)
+  display: inline-flex
+  cursor: pointer
+  align-items: center
+
+  input
+    display: none
+
+    &:checked + .radioBox__circle
+      border-color: var(--activeRadioColor)
+
+      &:after
+        transform: translate(-50%, -50%) scale(1)
+
+    &:checked + .radioBox__circle + .radioBox__text
+      color: var(--activeRadioColor)
+
+  &__circle
+    display: block
+    width: em(18, 14)
+    height: em(18, 14)
+    position: relative
+    border-radius: 50%
+    border: 1px solid var(--radioColor)
+    transition: $defaultTransitionDuration border-color
+    box-sizing: border-box
+
+    &:after
+      content: ''
+      border-radius: 50%
+      width: em(12, 14)
+      height: em(12, 14)
+      background: var(--activeRadioColor)
+      @include useAbsolutePosition(50%, 50%)
+      transform: translate(-50%, -50%) scale(0)
+      transition: $defaultTransitionDuration transform
+
+
+  &__text
+    @include useSecondFont(500)
+    letter-spacing: em(-0.2, 14)
+    line-height: 1.6
+    margin-left: em(8, 14)
+

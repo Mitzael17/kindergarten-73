@@ -1,3 +1,5 @@
-import {createSpoilers} from "./modules/spoiler.js";
+import {createSpoilers} from "./modules/createSpoilers.js";
+import {createPasswordFields} from "./modules/createPasswordFields.js";
 
 createSpoilers();
+createPasswordFields();
