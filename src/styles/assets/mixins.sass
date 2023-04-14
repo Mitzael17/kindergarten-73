@@ -13,3 +13,9 @@
   font-size: em($size, 16)
   font-weight: 700
   color: $color
+
+
+@mixin useSecondFont($fw)
+  font-family: Commissioner
+  @if ($fw)
+    font-weight: $fw

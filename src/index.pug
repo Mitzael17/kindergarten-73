@@ -1,14 +1,10 @@
 extends layouts/template
+include components/UI/select
 
 block variables
-    - var pageTitle = 'test'
+    - var pageTitle = 'Главная'
 
 
 block content
-    ol
-        li Пункт номерного списка
-        li Пункт номерного списка
-        li Пункт номерного списка
-        li Пункт номерного списка
-        li Пункт номерного списка
+    +select([{id: 'o1', value: 'Option 1'}, {id: 'o2', value: 'Option 2'}], 'test')
 

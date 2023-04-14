@@ -1,0 +1,80 @@
+@import "../../assets/mixins"
+@import "../../assets/functions"
+
+
+.select-list
+  background: #fff
+  border: 1px solid var(--staticSelectBorderColor)
+  border-radius: 8px
+  @include useSecondFont(500)
+  font-size: em(14, 16)
+  letter-spacing: em(-0.2, 16)
+  line-height: 1.1
+  transition: .3s border-color
+
+  &:hover
+    border-color: var(--hoverSelectBorderColor)
+
+  &.active
+    border-color: var(--activeSelectBorderColor)
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05), 0 0 7.51293px rgba(0, 0, 0, 0.1)
+
+    .select-list__arrow
+      transform: scaleY(-1)
+      svg
+        fill: var(--checkedSelectItemBackground)
+
+  &__area
+    display: flex
+    justify-content: space-between
+    cursor: pointer
+    padding: em(16, 14) em(18, 14) em(16, 14) em(16, 14)
+    align-items: center
+
+
+  &__arrow
+    width: 1em
+    height: .85em
+    margin-left: 1em
+    transition: .5s transform
+
+    svg
+      fill: var(--arrowFill)
+      transition: .5s fill
+
+
+  &__items
+    height: 0
+    overflow: hidden
+
+  &__item
+    position: relative
+
+    input
+      display: none
+
+    label
+      background: #ffffff
+      padding: em(16, 14) em(18, 14) em(16, 14) em(16, 14)
+      cursor: pointer
+      transition: .5s all
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      &:after
+        content: ''
+        background: url("../img/checked-mark.svg") 0 0 / 100% 100% no-repeat
+        width: 1em
+        height: .85em
+        display: block
+        margin-left: 1em
+        opacity: 0
+        transition: .5s opacity
+
+    input:checked + label
+      color: #fff
+      background: var(--checkedSelectItemBackground)
+      &:after
+        opacity: 1
+

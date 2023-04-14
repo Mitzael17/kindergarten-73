@@ -1,12 +1,19 @@
 @import "assets/reset"
 @import "assets/fonts"
+
 @import "themes/index"
+
 @import "assets/vars"
 @import "assets/functions"
 @import "assets/mixins"
 
+// main modules
 @import "modules/header"
 @import "modules/footer"
+
+// UI modules
+@import "modules/UI/spoilers"
+@import "modules/UI/select"
 
 
 html
@@ -45,18 +52,17 @@ h4
 
 
 p
-  font-family: Commissioner
-  font-weight: 500
+  @include useSecondFont(500)
   line-height: 1.6
   letter-spacing: em(-0.2, 16)
   color: var(--pColor)
 
 
-ol, ul
+ol.list, ul.list
   line-height: lh(20, 16)
   color: var(--liColor)
-  font-family: Commissioner
-  font-weight: 400
+  @include useSecondFont(400)
+
 
   li
     margin-bottom: em(15, 16)
@@ -67,20 +73,20 @@ ol, ul
       margin-bottom: 0
 
 
-ul
+ul.list
 
   li
     min-height: em(24, 16)
 
     &:before
       content: ''
-      background: url("@img/arrow-right.svg") 0 0 / 100% 100% no-repeat
+      background: url("../img/arrow-right.svg") 0 0 / 100% 100% no-repeat
       @include absolutePosition()
       width: em(24, 16)
       height: em(24, 16)
 
 
-ol
+ol.list
   counter-reset: numberItem
 
   li

@@ -1,0 +1,17 @@
+//-
+    Items = [
+        {id: 1, value: value}
+    ]
+
+mixin select(items, name)
+    div.select-list(data-spoiler='true')
+        .select-list__area
+            span= items[0].value
+            div.select-list__arrow
+                svg
+                    use(href='@img/icons/icons.svg#arrow-select')
+        ul.select-list__items(data-spoiler-wrapper="true")
+            each item, index in items
+                li.select-list__item
+                    input(type='radio', name=name, id=item.id checked= index === 0, data-display-on-change= item.value)
+                    label(for=item.id)= item.value

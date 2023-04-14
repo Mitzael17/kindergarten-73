@@ -12,6 +12,7 @@ export const pug = () => {
         .pipe(gulpPug({
             pretty: true
         }))
+        .pipe(app.plugins.replace(/@img\//g, 'img/'))
         .pipe(
             app.plugins.if(
                 app.isBuild,
