@@ -1,4 +1,49 @@
+include ../../components/UI/usualButton
+
+
 header
     .container
         .header
-            div
+            div.header__rest
+                a.weakText(href="#") Сведения об образовательной организации
+                div.weakText.theme-switcher
+                    svg.eyeIcon
+                        use(href="@img/icons/icons.svg#eyeWeakVision")
+                    | Версия для слабовидящих
+            .header__content
+                .header__mainBlock
+                    include parts/logo
+                    nav.header__menu
+                        ul
+                            li
+                                a.link(href="/") Главная
+                            li
+                                a.link(href="#") Новости
+                            li
+                                a.link(href="#") Группы
+                            li
+                                a.link(href="#") Родителям
+                            li
+                                a.link(href="#") О нас
+                            li
+                                a.link(href="#") Контакты
+                        .header__burgerWrapper#burger
+                            .header__burgerMenu
+                                .header__burger
+                                    span
+                                div.link Меню
+                            ul.header__burgerList
+                .header__contacts
+                    .header__telContainer
+                        a.header__tel(href='tel:12345678') +7 (3532) 43-20-73
+                        .pairWords.flex-j-fe
+                            .weakText Пн-Пт
+                            .weakText 07:00 – 19:00
+                    .header__socials
+                        a.header__social(href="https://vk.com" target='blank')
+                            img(src="@img/vk.svg")
+                        a.header__social(href="https://ok.ru" target="blank")
+                            img(src="@img/ok.svg")
+                        a.header__social(href="https://telegram.org" target="blank")
+                            img(src="@img/telegram.svg")
+                    +usualButton('Обратная связь')

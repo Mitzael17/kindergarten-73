@@ -1,0 +1,26 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+.logo
+  display: flex
+  align-items: center
+  flex-shrink: 0
+  font-size: 1rem
+
+  @media screen and (max-width: $mobileResponse)
+    font-size: rem(13.5)
+
+  &__img
+    width: rem(48)
+    height: rem(49)
+    margin-right: em(15, 16)
+
+  &__text
+    @include setFonts(14, var(--textColor), 1, -0.4)
+
+  &__title
+    @include setFonts(20, var(--textColor), lh(26, 20), -0.4)
+    margin-bottom: rem(2)
+
+    @media screen and (max-width: $mobileResponse)
+      font-size: em(16, 13.5)
