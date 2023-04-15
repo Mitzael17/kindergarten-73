@@ -38,3 +38,39 @@
   letter-spacing: em(-0.2, 14)
   line-height: 1.1
   @include useSecondFont(500)
+
+
+@mixin createLineBorder($beforeAfter: 'before')
+
+  @if ($beforeAfter == 'both')
+    &:after, &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: calc( -1 * ((100vw - 100%) / 2))
+      background: var(--lineBorderColor)
+      height: 1px
+      width: 100vw
+
+    &:after
+      top: 100%
+
+  @if ($beforeAfter == 'after')
+    &:after
+      content: ''
+      position: absolute
+      left: calc( -1 * ((100vw - 100%) / 2))
+      background: var(--lineBorderColor)
+      height: 1px
+      width: 100vw
+      top: 100%
+
+  @if ($beforeAfter == 'before')
+    &:before
+      content: ''
+      position: absolute
+      left: calc( -1 * ((100vw - 100%) / 2))
+      background: var(--lineBorderColor)
+      height: 1px
+      width: 100vw
+      top: 0

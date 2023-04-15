@@ -1,5 +1,6 @@
 include ../../components/UI/usualButton
 
+- var logoResize = true;
 
 header
     .container
@@ -41,9 +42,9 @@ header
                             .weakText 07:00 – 19:00
                     .header__socials
                         a.header__social(href="https://vk.com" target='blank')
-                            img(src="@img/vk.svg")
+                            img(src="@img/vk.svg" alt='Вконтакте')
                         a.header__social(href="https://ok.ru" target="blank")
-                            img(src="@img/ok.svg")
+                            img(src="@img/ok.svg" alt='Одноклассники')
                         a.header__social(href="https://telegram.org" target="blank")
-                            img(src="@img/telegram.svg")
+                            img(src="@img/telegram.svg" alt='Телеграм')
                     +usualButton('Обратная связь')

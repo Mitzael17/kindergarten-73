@@ -29,22 +29,12 @@ $headerSecondResponse: 600px
     @media screen and (max-width: $headerSecondResponse)
       padding: em(12.5, 16) 0
 
-    &:before, &:after
-      content: ''
-      position: absolute
-      top: 0
-      left: calc( -1 * ((100vw - 100%) / 2))
-      background: var(--headerBorderColor)
-      height: 1px
-      width: 100vw
+    @include createLineBorder('both')
 
-      @media screen and (max-width: $headerFirstResponse)
+    @media screen and (max-width: $headerFirstResponse)
+      &:before, &:after
         left: 0
         width: 100%
-
-
-    &:after
-      top: 100%
 
   &__mainBlock
     display: flex

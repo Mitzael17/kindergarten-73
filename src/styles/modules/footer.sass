@@ -1,3 +1,178 @@
+@import "../assets/mixins"
+@import "../assets/functions"
+@import "../assets/vars"
+
+$footerFirstResponse: 1000px
+$footerContactPaddingsResponse: 700px
+$footerRestBlockResponse: 700px
+$footerSecondResponse: 600px
+
 footer
-  background: red
   margin-top: auto
+
+
+.footer
+  font-size: 1rem
+
+  &__links
+
+    @media screen and (max-width: $footerFirstResponse)
+      text-align: center
+
+  &__content
+    display: flex
+    justify-content: space-between
+    gap: 1em
+    position: relative
+    padding: em(35, 16) 0 em(69, 16)
+    @include createLineBorder('both')
+
+    @media screen and (max-width: $footerFirstResponse)
+      flex-wrap: wrap
+      justify-content: center
+      padding: em(15, 16) 0
+      gap: em(12, 16)
+
+
+  &__block
+    flex: 0 1 em(330, 16)
+    display: flex
+    flex-direction: column
+    gap: em(15, 16)
+
+    @media screen and (max-width: $footerFirstResponse)
+      flex: 0 0 em(234, 16)
+      text-align: center
+      gap: em(5, 16)
+
+    @media screen and (max-width: $footerSecondResponse)
+      flex: 0 0 100%
+
+  &__contacts
+    gap: em(34, 16)
+
+    @media screen and (max-width: $footerFirstResponse)
+      flex: 0 0 100%
+      text-align: left
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      position: relative
+      padding: 0 em(33, 16) em(15, 16)
+      @include createLineBorder('after')
+
+    @media screen and (max-width: $footerContactPaddingsResponse)
+      padding: 0 0 em(15, 16)
+
+    @media screen and (max-width: $footerSecondResponse)
+      flex-wrap: wrap
+      justify-content: center
+      gap: em(15, 16) em(46, 16)
+
+  &__title
+    @include setFonts(20, var(--textColor), lh(26, 20), -0.4, 800)
+
+    .icon
+      display: none
+
+    @media screen and (max-width: $footerSecondResponse)
+
+      &.active
+
+        .icon
+          transform: scaleY(-1)
+
+      .icon
+        display: inline-block
+        transition: $defaultTransitionDuration all
+        margin-left: .5em
+        vertical-align: middle
+        width: em(15, 20)
+        height: em(8, 20)
+        fill: var(--textColor)
+
+
+  &__list
+    display: flex
+    flex-direction: column
+    gap: em(14, 16)
+    transition: .5s height
+
+
+    @media screen and (max-width: $footerFirstResponse)
+      gap: em(2, 16)
+
+    @media screen and (max-width: $footerSecondResponse)
+      overflow: hidden
+      height: 0
+
+    .link
+
+      @media screen and (max-width: $footerFirstResponse)
+        font-size: em(12, 16)
+
+
+
+  &__link
+    @include setFonts(14, var(--footerLinkColor), lh(18, 14), -0.4, 700)
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: em(15, 14)
+
+    @media screen and (max-width: $footerFirstResponse)
+      font-size: em(12, 16)
+
+      &:not(:last-child)
+        margin-bottom: em(5, 12)
+
+
+
+  &__socials
+    display: flex
+    gap: em(24, 16)
+
+    @media screen and (max-width: $footerSecondResponse)
+      width: 100%
+      justify-content: center
+
+  &__social
+    width: em(36, 16)
+    height: em(36, 16)
+    border-radius: 50%
+    overflow: hidden
+
+  &__rest
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-family: Commissioner, sans-serif
+    @include setFonts(12, var(--footerRestBlockColor), 1.8, -0.1, 500)
+    padding: em(21, 12) 0 em(11, 12)
+    gap: em(15, 16)
+
+    @media screen and (max-width: $footerFirstResponse)
+      flex-direction: column
+      padding: em(15, 12) 0 em(21, 12)
+
+  &__restBlock
+    display: flex
+    align-items: center
+
+    @media screen and (max-width: $footerRestBlockResponse)
+      flex-direction: column
+      justify-content: center
+      text-align: center
+
+      &--developer
+        flex-direction: row
+
+  &__restItem:not(:last-child)
+    margin-right: em(31, 12)
+
+    @media screen and (max-width: $footerRestBlockResponse)
+      margin: 0 0 em(3, 12)
+
+  &__developerLogo
+    width: em(64, 12)
+    margin-left: em(19, 12)

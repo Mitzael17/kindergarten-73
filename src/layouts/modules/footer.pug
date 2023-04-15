@@ -1,4 +1,86 @@
+- var logoResize = false
+
 footer
     .container
-        | test
-script(src="scripts/main.min.js" defer)
+        .footer
+            .footer__content
+                .footer__block.footer__contacts
+                    include parts/logo
+                    div.footer__links
+                        a.footer__link(href="#") г. Оренбург, ул. Чкалова, 43/1
+                        a.footer__link(href="tel:12345678") +7 (3532) 43-20-73
+                        a.footer__link(href='mailto:detskiisad73@yandex.ru') detskiisad73@yandex.ru
+                    .footer__socials
+                        a.footer__social(href="https://vk.com" target="blank")
+                            img(src="@img/vk-footer.svg" alt='Вконтакте')
+                        a.footer__social(href="https://telegram.org" target="blank")
+                            img(src="@img/telegram-footer.svg" alt='Телеграм')
+                        a.footer__social(href="https://ok.ru" target="blank")
+                            img(src="@img/ok-footer.svg" alt='Одноклассники')
+                .footer__block
+                    .footer__title
+                        | Главная
+                        svg.icon
+                            use(href="@img/icons/icons.svg#arrow-select")
+                    ul.footer__list
+                        li
+                            a.link(href="#") Сведения об образовательной организации
+                        li
+                            a.link(href="#") Новости
+                        li
+                            a.link(href="#") Группы
+                        li
+                            a.link(href="#") Коллектив
+                        li
+                            a.link(href="#") Контакты
+                        li
+                            a.link(href="#") Политика обработки персональных данных
+                .footer__block
+                    .footer__title
+                        | Родителям
+                        svg.icon
+                            use(href="@img/icons/icons.svg#arrow-select")
+                    ul.footer__list
+                        li
+                            a.link(href="#") Порядок приема в детсад
+                        li
+                            a.link(href="#") Компенсация оплаты за сад
+                        li
+                            a.link(href="#") Время приема заведующего
+                        li
+                            a.link(href="#") Бланки заявлений
+                        li
+                            a.link(href="#") Частые вопросы
+                        li
+                            a.link(href="#") Советы специалистов
+                        li
+                            a.link(href="#") Школы рядом с садиком
+                .footer__block
+                    .footer__title
+                        | O нас
+                        svg.icon
+                            use(href="@img/icons/icons.svg#arrow-select")
+                    ul.footer__list
+                        li
+                            a.link(href="#") История детского сада
+                        li
+                            a.link(href="#") Достижения
+                        li
+                            a.link(href="#") Видеогалерея
+                        li
+                            a.link(href="#") Фотогалерея
+                        li
+                            a.link(href="#") Реквизиты
+                        li
+                            a.link(href="#") Вакансии
+            .footer__rest
+                .footer__restBlock
+                    .footer__restItem © 2023 МДОАУ  "Детский сад №73".  Все права защищены
+                    .footer__restItem
+                        a(href="#") Политика конфиденциальности
+                    .footer__restItem
+                        a(href="#") Карта сайта
+                .footer__restBlock.footer__restBlock--developer
+                    | Сайт разработан в
+                    a(href="#" target="blank").footer__developerLogo
+                        img(src="@img/logo-developer.png" alt='developer logo')

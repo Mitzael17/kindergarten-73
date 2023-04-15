@@ -7,8 +7,13 @@
   flex-shrink: 0
   font-size: 1rem
 
-  @media screen and (max-width: $mobileResponse)
-    font-size: rem(13.5)
+  &.resize
+    @media screen and (max-width: $mobileResponse)
+      font-size: rem(13.5)
+
+      &__title
+        font-size: em(16, 13.5)
+
 
   &__img
     width: rem(48)
@@ -21,6 +26,3 @@
   &__title
     @include setFonts(20, var(--textColor), lh(26, 20), -0.4)
     margin-bottom: rem(2)
-
-    @media screen and (max-width: $mobileResponse)
-      font-size: em(16, 13.5)
