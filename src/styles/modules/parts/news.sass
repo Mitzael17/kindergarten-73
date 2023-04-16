@@ -1,0 +1,42 @@
+@import "../../assets/mixins"
+
+$newsFirstResponse: 1150px
+$newsSecondResponse: 600px
+
+.news
+  display: flex
+  flex-wrap: wrap
+  font-size: 1rem
+  gap: em(24, 16)
+  justify-content: center
+
+  @media screen and (max-width: $newsFirstResponse)
+    flex-direction: column
+    gap: em(23, 16)
+
+  &__item
+    flex: 0 1 calc((100% - em(24, 16) ) / 2)
+    display: flex
+
+    @media screen and (max-width: $newsFirstResponse)
+      flex: 0 0 auto
+
+  &__img
+    margin-right: em(20, 16)
+    flex: 0 0 em(279, 16)
+    height: auto
+
+    @media screen and (max-width: $newsSecondResponse)
+      flex: 0 0 em(181, 16)
+      margin-right: em(13, 16)
+
+    img
+      border-radius: .5em
+
+  &__text
+    @include setFonts(18, var(--textColor), 1.4)
+    margin-bottom: em(13, 18)
+
+    @media screen and (max-width: $newsSecondResponse)
+      font-size: em(12, 16)
+      letter-spacing: em(-1, 12)
