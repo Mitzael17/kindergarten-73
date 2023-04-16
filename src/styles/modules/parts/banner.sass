@@ -13,6 +13,7 @@ $lastPoint: 480px
   justify-content: space-between
   border-radius: 2em
   align-items: center
+  padding: em(64, 16)
   position: relative
   background: url("../img/banner-rectangle.svg") -24% 60% / em(1939, 16) em(937, 16) no-repeat, var(--greyBannerBackground)
   overflow: hidden
@@ -23,25 +24,92 @@ $lastPoint: 480px
   @media screen and (max-width: $firstBannerResponse)
     font-size: 2vw
     background: url("../img/banner-rectangle.svg") -8% 35% / em(1939, 16) em(937, 16) no-repeat, var(--greyBannerBackground)
+    padding: em(25, 16)
+    border-radius: 2em 1em 1em
 
   @media screen and (max-width: $secondBannerResponse)
       font-size: 1rem
       flex-direction: column-reverse
-      padding: 0 em(22, 16) em(22, 16)
+      padding: em(24, 16) em(22, 16)
       background: url("../img/banner-rectangle.svg") -7% 73%/121.19em 58.56em no-repeat, var(--greyBannerBackground)
+
+  &--complex-image
+
+    padding: 0
+    @media screen and (max-width: $secondBannerResponse)
+      padding: 0 em(22, 16) em(24, 16)
+
+    .banner
+      &__info
+        margin: em(45, 16)
+
+        @media screen and (max-width: $firstBannerResponse)
+          margin: em(24, 16)
+
+          @media screen and (max-width: $secondBannerResponse)
+            margin: em(-40, 16) 0 0
+
+
+      &__image
+        height: em(515, 16)
+        flex: 0 1 em(676, 16)
+        display: block
+
+        .img
+          max-width: none
+          max-height: none
+          position: absolute
+          width: auto
+          height: auto
+          min-height: 100%
+          top: 50%
+          right: -4%
+          overflow: hidden
+          transform: translate(0%, -38%)
+
+          img
+            border-radius: 0
+
+          @media screen and (max-width: $firstBannerResponse)
+            transform: translate(8%, -42%)
+
+          @media screen and (max-width: $secondBannerResponse)
+            height: 100%
+            width: 100%
+            top: 0
+            right: 0
+            transform: translate(0,0)
+
+            img
+              width: 100%
+              height: 100%
+              object-fit: cover
+              object-position: bottom center
+
+        @media screen and (max-width: $firstBannerResponse)
+          height: em(300, 16)
+
+        @media screen and (max-width: $secondBannerResponse)
+          flex: 0 0 auto
+          width: 100%
+          max-width: 336px
+          height: em(243, 16)
+          margin: 0
+
+
 
   &__info
     max-width: em(558, 16)
-    margin: em(45, 16)
     display: flex
     flex-direction: column
     gap: em(10, 16)
     position: relative
     z-index: 2
+    margin-right: em(45, 16)
 
     @media screen and (max-width: $firstBannerResponse)
       max-width: em(378, 16)
-      margin: em(24, 16)
+      margin-right: em(24, 16)
       gap: em(5, 16)
 
       .button
@@ -50,8 +118,12 @@ $lastPoint: 480px
     @media screen and (max-width: $secondBannerResponse)
       max-width: none
       position: relative
-      margin: em(-40, 16) 0 0
+      margin: em(21, 16) 0 0
       z-index: 5
+
+      &--centerContentOnMobile
+        text-align: center
+        align-items: center
 
 
     .button
@@ -91,52 +163,55 @@ $lastPoint: 480px
       margin-bottom: .5em
 
   &__image
-    height: em(515, 16)
-    flex: 0 1 em(676, 16)
-    z-index: 2
     position: relative
+    z-index: 2
+    flex: 0 1 em(567, 16)
+    height: auto
 
-    .img
-      max-width: none
-      max-height: none
-      position: absolute
-      width: auto
-      height: auto
-      min-height: 100%
-      top: 50%
-      right: -4%
-      overflow: hidden
-      transform: translate(0%, -38%)
-
-
-
-      @media screen and (max-width: $firstBannerResponse)
-        transform: translate(8%, -42%)
-
-      @media screen and (max-width: $secondBannerResponse)
-        height: 100%
-        width: 100%
-        top: 0
-        right: 0
-        transform: translate(0,0)
-        img
-          width: 100%
-          height: 100%
-          object-fit: cover
-          object-position: bottom center
-
-    @media screen and (max-width: $firstBannerResponse)
-      height: em(300, 16)
-
-
+    img
+      border-radius: em(10, 16)
 
     @media screen and (max-width: $secondBannerResponse)
       flex: 0 0 auto
-      width: 100%
-      max-width: 336px
-      height: em(243, 16)
+      margin: 0 em(51, 16)
+
+.banner--blue
+
+  background: var(--blueBannerBackground)
+  color: #ffffff
+  background: url("../img/banner-rectangle-blue.svg") 28% 21% / em(1939, 16) em(937, 16) no-repeat, var(--blueBannerBackground)
+
+  @media screen and (max-width: $firstBannerResponse)
+    background: url("../img/banner-rectangle-blue.svg") 11% 15% / em(1939, 16) em(937, 16) no-repeat, var(--blueBannerBackground)
+
+  @media screen and (max-width: $secondBannerResponse)
+    background: url("../img/banner-rectangle-blue.svg") 12% 10% / em(1939, 16) em(937, 16) no-repeat, var(--blueBannerBackground)
 
 
+  .banner__subtitle
+    color: var(--blueBannerSubtitleColor)
+
+  .button--white
+    color: #fff
+    border: 1px solid #fff
+    background: transparent
+
+    .icon
+      fill: #fff
+
+    &:hover
+      border-color: var(--blueBannerSubtitleColor)
+      color: var(--blueBannerSubtitleColor)
+
+      .icon
+        fill: var(--blueBannerSubtitleColor)
+
+    &:active
+      border-color: var(--textColor)
+      color: var(--textColor)
+
+      .icon
+        fill: var(--textColor)
 
 
 

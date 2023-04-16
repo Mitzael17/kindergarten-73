@@ -25,6 +25,7 @@
 // Parts
 @import "modules/parts/logo"
 @import "modules/parts/banner"
+@import "modules/parts/videoSign"
 
 
 html
@@ -180,3 +181,12 @@ ol.list
         display: inline-block
         margin: 0 .5em
         vertical-align: middle
+
+
+section
+
+  &:not(:last-child)
+    margin-bottom: rem(60)
+
+    @media screen and (max-width: $tablet)
+      margin-bottom: rem(24)
