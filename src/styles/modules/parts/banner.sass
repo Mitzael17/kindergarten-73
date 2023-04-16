@@ -1,7 +1,7 @@
 @import "../../assets/mixins"
 @import "../../assets/vars"
 
-$responseText: 1200px
+$responseText: 1360px
 $firstBannerResponse: 1000px
 $secondBannerResponse: 600px
 
@@ -18,7 +18,7 @@ $lastPoint: 480px
   overflow: hidden
 
   @media screen and (max-width: $responseText)
-    font-size: 1.3vw
+    font-size: 1.17vw
 
   @media screen and (max-width: $firstBannerResponse)
     font-size: 2vw
@@ -93,59 +93,51 @@ $lastPoint: 480px
   &__image
     height: em(515, 16)
     flex: 0 1 em(676, 16)
-    overflow: hidden
     z-index: 2
     position: relative
-
-    @media screen and (max-width: $firstBannerResponse)
-      height: em(351, 16)
-
-
-
-    @media screen and (max-width: $secondBannerResponse)
-      flex: 0 0 auto
-      width: 100%
-      height: em(471, 16)
-      margin-top: -15vw
-
-    @media screen and (max-width: $lastPoint)
-      margin-top: -56%
-
-  &__imageWrapper
-    padding-top: 76.2%
-    width: 100%
-    position: absolute
-    top: 50%
-    left: 50%
-    pointer-events: none
-    transform: translate(-50%, -50%)
-
-    @media screen and (max-width: $secondBannerResponse)
-      padding-top: 117%
-      top: 109%
-      transform: translate(-50%, -100%)
-
-    @media screen and (max-width: $lastPoint)
-      top: 100%
 
     .img
       max-width: none
       max-height: none
       position: absolute
       width: auto
-      height: 196%
-      top: -24%
-      right: -5%
+      height: auto
+      min-height: 100%
+      top: 50%
+      right: -4%
+      overflow: hidden
+      transform: translate(0%, -38%)
+
+
 
       @media screen and (max-width: $firstBannerResponse)
-        height: 209%
-        top: -38%
-        right: -10%
+        transform: translate(8%, -42%)
 
       @media screen and (max-width: $secondBannerResponse)
-        top: initial
-        bottom: 0
-        right: 8%
         height: 100%
+        width: 100%
+        top: 0
+        right: 0
+        transform: translate(0,0)
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          object-position: bottom center
+
+    @media screen and (max-width: $firstBannerResponse)
+      height: em(300, 16)
+
+
+
+    @media screen and (max-width: $secondBannerResponse)
+      flex: 0 0 auto
+      width: 100%
+      max-width: 336px
+      height: em(243, 16)
+
+
+
+
 
 
