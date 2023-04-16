@@ -1,0 +1,16 @@
+include ../../../components/UI/usualButton
+
+section
+    .container
+        .banner
+            .banner__info
+                .banner__subtitle МДОАУ
+                .banner__title Детский сад №73
+                .banner__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек, открывший истину.
+                +usualButton('Подробнее о нас', 'bigButton', "document.location.href='#'")
+            .banner__image
+                .banner__imageWrapper
+                    picture.img
+                        source(srcset="@img/temporary/banner-1.png" media="(min-width: 481px)")
+                        source(srcset="@img/temporary/banner-1-mobile.png")
+                        img(src="@img/temporary/banner-1.png" alt='image')

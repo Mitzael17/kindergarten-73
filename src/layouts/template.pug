@@ -9,9 +9,8 @@ html(lang='en')
         title= pageTitle
         link(rel='stylesheet' href='styles/main.min.css')
     body
-        include modules/header
+        include modules/main/header
         main
-            .container
-                block content
-        include modules/footer
+            block content
+        include modules/main/footer
         script(src="scripts/main.min.js")

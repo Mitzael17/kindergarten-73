@@ -24,6 +24,7 @@
 
 // Parts
 @import "modules/parts/logo"
+@import "modules/parts/banner"
 
 
 html
@@ -32,7 +33,7 @@ html
   font-weight: 600
   color: var(--textColor)
 
-  @media screen and (max-width: 480px)
+  @media screen and (max-width: $mobile)
     font-size: 3.333vw
 
 
@@ -41,6 +42,12 @@ body
   flex-direction: column
   font-size: 1rem
 
+
+main
+  margin: rem(24) 0 rem(60)
+
+  @media screen and (max-width: $tablet)
+    margin: rem(14) 0 rem(31)
 
 .container
   max-width: 1440px

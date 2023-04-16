@@ -15,51 +15,52 @@ block variables
 
 
 block content
-    div(style='max-width: 432px')
+    .container
+        div(style='max-width: 432px')
 
-        .smallTitle.mt-step Select
-        +select(options, 'select', 'mt-step')
+            .smallTitle.mt-step Select
+            +select(options, 'select', 'mt-step')
 
-        .smallTitle.mt-step Switches (checkboxes)
-        +switch('switch1', 'switch1', 'mt-step')
-        +switch('switch1', 'switch1', 'mt-step')
+            .smallTitle.mt-step Switches (checkboxes)
+            +switch('switch1', 'switch1', 'mt-step')
+            +switch('switch1', 'switch1', 'mt-step')
 
-        .smallTitle.mt-step Radio-buttons
+            .smallTitle.mt-step Radio-buttons
+            div.mt-step
+                +radio('Checked', 'radio1', 'value 1')
+            div.mt-step
+                +radio('Unchecked', 'radio1', 'value 2')
+
+            .smallTitle.mt-step Checkboxes
+            div.mt-step
+                +checkbox('Checked', 'checkbox1', 'value 1')
+            div.mt-step
+                +checkbox('Unchecked', 'checkbox1', 'value 2')
+
+            .smallTitle.mt-step Inputs
+            div.mt-step
+                +input('E-mail', 'input')
+
+            .smallTitle.mt-step Inputs password + icon
+            div.mt-step
+                +input('Пароль', 'input-p', '', 'password')
+
+            .smallTitle.mt-step Button 1
+            div.mt-step
+                +dashedButton('Button', 'w-100')
+
+            .smallTitle.mt-step Button 2
+            div.mt-step
+                +greyButton('Button', 'w-100')
+
+            .smallTitle.mt-step Button 3
+            div.mt-step
+                +usualButton('Button', 'w-100')
+
+            .smallTitle.mt-step Button 4
+            div.mt-step
+                +usualButton('Button', 'w-100 bigButton')
+
+        .smallTitle.mt-step Button 5
         div.mt-step
-            +radio('Checked', 'radio1', 'value 1')
-        div.mt-step
-            +radio('Unchecked', 'radio1', 'value 2')
-
-        .smallTitle.mt-step Checkboxes
-        div.mt-step
-            +checkbox('Checked', 'checkbox1', 'value 1')
-        div.mt-step
-            +checkbox('Unchecked', 'checkbox1', 'value 2')
-
-        .smallTitle.mt-step Inputs
-        div.mt-step
-            +input('E-mail', 'input')
-
-        .smallTitle.mt-step Inputs password + icon
-        div.mt-step
-            +input('Пароль', 'input-p', '', 'password')
-
-        .smallTitle.mt-step Button 1
-        div.mt-step
-            +dashedButton('Button', 'w-100')
-
-        .smallTitle.mt-step Button 2
-        div.mt-step
-            +greyButton('Button', 'w-100')
-
-        .smallTitle.mt-step Button 3
-        div.mt-step
-            +usualButton('Button', 'w-100')
-
-        .smallTitle.mt-step Button 4
-        div.mt-step
-            +usualButton('Button', 'w-100 bigButton')
-
-    .smallTitle.mt-step Button 5
-    div.mt-step
-        +whiteButton('Смотреть все новости', 'w-100')
+            +whiteButton('Смотреть все новости', 'w-100')

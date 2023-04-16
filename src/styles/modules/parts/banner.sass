@@ -1,0 +1,151 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+$responseText: 1200px
+$firstBannerResponse: 1000px
+$secondBannerResponse: 600px
+
+$lastPoint: 480px
+
+.banner
+  font-size: 1rem
+  display: flex
+  justify-content: space-between
+  border-radius: 2em
+  align-items: center
+  position: relative
+  background: url("../img/banner-rectangle.svg") -24% 60% / em(1939, 16) em(937, 16) no-repeat, var(--greyBannerBackground)
+  overflow: hidden
+
+  @media screen and (max-width: $responseText)
+    font-size: 1.3vw
+
+  @media screen and (max-width: $firstBannerResponse)
+    font-size: 2vw
+    background: url("../img/banner-rectangle.svg") -8% 35% / em(1939, 16) em(937, 16) no-repeat, var(--greyBannerBackground)
+
+  @media screen and (max-width: $secondBannerResponse)
+      font-size: 1rem
+      flex-direction: column-reverse
+      padding: 0 em(22, 16) em(22, 16)
+      background: url("../img/banner-rectangle.svg") -7% 73%/121.19em 58.56em no-repeat, var(--greyBannerBackground)
+
+  &__info
+    max-width: em(558, 16)
+    margin: em(45, 16)
+    display: flex
+    flex-direction: column
+    gap: em(10, 16)
+    position: relative
+    z-index: 2
+
+    @media screen and (max-width: $firstBannerResponse)
+      max-width: em(378, 16)
+      margin: em(24, 16)
+      gap: em(5, 16)
+
+      .button
+        padding: em(15, 20)
+
+    @media screen and (max-width: $secondBannerResponse)
+      max-width: none
+      position: relative
+      margin: em(-40, 16) 0 0
+      z-index: 5
+
+
+    .button
+      width: max-content
+
+  &__subtitle
+    color: var(--weakTextColor)
+    font-size: em(36, 16)
+    letter-spacing: em(-1, 36)
+    line-height: 1.3
+    font-weight: 700
+
+    @media screen and (max-width: $firstBannerResponse)
+      font-size: 2em
+      letter-spacing: em(-1, 32)
+
+  &__title
+    font-size: em(64, 16)
+    font-weight: 700
+    line-height: 1.3
+    letter-spacing: em(-1, 64)
+
+    @media screen and (max-width: $firstBannerResponse)
+      font-size: em(40, 16)
+      letter-spacing: (-1, 16)
+
+  &__text
+    font-size: em(20, 16)
+    line-height: 1.6
+    margin-bottom: 1em
+    @include useSecondFont(500)
+    letter-spacing: em(-0.2, 20)
+
+    @media screen and (max-width: $firstBannerResponse)
+      font-size: 1em
+      letter-spacing: em(-0.2, 16)
+      margin-bottom: .5em
+
+  &__image
+    height: em(515, 16)
+    flex: 0 1 em(676, 16)
+    overflow: hidden
+    z-index: 2
+    position: relative
+
+    @media screen and (max-width: $firstBannerResponse)
+      height: em(351, 16)
+
+
+
+    @media screen and (max-width: $secondBannerResponse)
+      flex: 0 0 auto
+      width: 100%
+      height: em(471, 16)
+      margin-top: -15vw
+
+    @media screen and (max-width: $lastPoint)
+      margin-top: -56%
+
+  &__imageWrapper
+    padding-top: 76.2%
+    width: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    pointer-events: none
+    transform: translate(-50%, -50%)
+
+    @media screen and (max-width: $secondBannerResponse)
+      padding-top: 117%
+      top: 109%
+      transform: translate(-50%, -100%)
+
+    @media screen and (max-width: $lastPoint)
+      top: 100%
+
+    .img
+      max-width: none
+      max-height: none
+      position: absolute
+      width: auto
+      height: 196%
+      top: -24%
+      right: -5%
+
+      @media screen and (max-width: $firstBannerResponse)
+        height: 209%
+        top: -38%
+        right: -10%
+
+      @media screen and (max-width: $secondBannerResponse)
+        top: initial
+        bottom: 0
+        right: 8%
+        height: 100%
+
+
