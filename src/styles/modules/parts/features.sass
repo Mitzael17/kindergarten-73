@@ -1,0 +1,67 @@
+@import "../../assets/mixins"
+
+$featuresTextFirstResponse: 1440px
+$featuresFirstResponse: 800px
+$featuresSecondResponse: 700px
+
+.features
+  display: flex
+  gap: em(24, 16)
+  font-size: 1rem
+
+  @media screen and (max-width: $featuresTextFirstResponse)
+    font-size: 1.1vw
+
+  @media screen and (max-width: $featuresFirstResponse)
+    font-size: 2vw
+
+  @media screen and (max-width: $featuresSecondResponse)
+    font-size: 1rem
+    flex-wrap: wrap
+    justify-content: center
+    gap: em(30, 16) em(24, 16)
+
+
+  &__item
+    width: em(330, 16)
+    padding: em(18, 16)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    min-height: em(220, 16)
+    display: flex
+    align-items: flex-end
+    border-radius: .5em
+
+    @media screen and (max-width: $featuresFirstResponse)
+      width: em(169, 16)
+      min-height: em(113, 16)
+      padding: em(10, 16)
+
+    @media screen and (max-width: $featuresSecondResponse)
+      width: auto
+      flex: 1 0 em(200, 16)
+      min-height: em(142, 16)
+      padding: em(12, 16)
+
+  &__text
+    background: rgba(255, 255, 255, 0.75)
+    box-shadow: 0 0 em(60, 24) rgba(0, 0, 0, 0.05), 0 0 em(7.51293, 24) rgba(0, 0, 0, 0.1)
+    border-radius: em(4, 24)
+    font-size: em(24, 16)
+    line-height: lh(31, 24)
+    letter-spacing: em(-0.4, 24)
+    font-weight: 700
+    padding: em(8, 24) em(10, 24)
+    box-sizing: content-box
+
+    @media screen and (max-width: $featuresFirstResponse)
+      font-size: em(12.3615, 16)
+      line-height: lh(16, 12.3615)
+      letter-spacing: em(-0.206, 12.3615)
+      padding: em(4, 12.3615) em(5, 12.3615)
+
+    @media screen and (max-width: $featuresSecondResponse)
+      font-size: em(15.4926, 16)
+      letter-spacing: em(-0.258, 16)
+      padding: em(5, 16) em(8, 16)

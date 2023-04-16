@@ -27,6 +27,7 @@
 @import "modules/parts/banner"
 @import "modules/parts/videoSign"
 @import "modules/parts/smBanner"
+@import "modules/parts/features"
 
 
 html
@@ -65,6 +66,13 @@ h1
 
 h2
   @include setFonts(36, var(--h2Color))
+
+  .icon
+    width: em(40, 36)
+    height: em(40, 36)
+    margin-right: em(10, 36)
+    display: inline-block
+    vertical-align: middle
 
 
 h3
@@ -139,6 +147,9 @@ ol.list
 
 .mt-step
   margin-top: $step
+
+.mb-step
+  margin-bottom: $step
 
 
 .w-100
