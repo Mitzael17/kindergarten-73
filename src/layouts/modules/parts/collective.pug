@@ -1,0 +1,28 @@
+include ../../../components/titles/h2WithIcon
+include ../../../components/UI/whiteButton
+include ../../../components/UI/slideButtons
+
+- var data = ['@img/temporary/collective-1.png', '@img/temporary/collective-2.png', '@img/temporary/collective-3.png', '@img/temporary/collective-4.png', '@img/temporary/collective-1.png', '@img/temporary/collective-2.png', '@img/temporary/collective-3.png', '@img/temporary/collective-4.png'];
+
+section
+    .container
+        +h2WithIcon('@img/degree.svg', 'Опытный коллектив')
+        .collective
+            .collective__slider.swiper
+                .swiper-wrapper
+                    each imgsrc in data
+                        .swiper-slide.collectiveSlide
+                            .collectiveSlide__img
+                                img(src=imgsrc alt='Анна Гордеева')
+                            .collectiveSlide__content
+                                .word-on-new-line.collectiveSlide__fio
+                                    span Анна Гордеева
+                                .collectiveSlide__post Воспитатель
+                                .collectiveSlide__text
+                                    | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и
+                                    span.grey  восхваляющих страдания...
+                                a(href='#').collectiveSlide__link
+                                    span
+                                    | Подробнее
+                +slideButtons()
+        +whiteButton('Смотреть весь коллектив', 'mt-step w-100')

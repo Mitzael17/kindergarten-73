@@ -1,0 +1,57 @@
+@import "../../assets/mixins"
+@import "../../assets/functions"
+@import "../../assets/vars"
+
+$slideButtonsDecrease: 700px
+
+.slide-button-container
+  position: absolute
+  top: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 10
+  height: 100%
+  font-size: 1rem
+  pointer-events: none
+  transition: $defaultTransitionDuration opacity
+
+  @media screen and (max-width: $slideButtonsDecrease)
+    font-size: .5rem
+
+  &.swiper-button-disabled
+    opacity: 0
+
+    .slide-button
+      pointer-events: none
+
+
+  &-next
+    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 71.2%)
+    right: 0
+
+  &-prev
+    background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 71.2%)
+    left: 0
+
+
+.slide-button
+  width: em(80, 16)
+  height: em(80, 16)
+  background: #ffffff
+  border-radius: 50%
+  display: flex
+  align-items: center
+  cursor: pointer
+  justify-content: center
+  pointer-events: initial
+  img
+    width: em(31, 16)
+    height: em(27, 16)
+
+  &-next
+    margin-right: em(67, 16)
+
+  &-prev
+    margin-left: em(67, 16)
+    transform: rotate(180deg)

@@ -1,3 +1,4 @@
+
 export function createPasswordFields() {
 
     const inputContainers = document.querySelectorAll('.input--password')

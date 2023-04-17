@@ -8,6 +8,9 @@
 @import "assets/mixins"
 @import "assets/basic"
 
+//libs
+@import "lib/swiper"
+
 
 // main modules
 @import "modules/header"
@@ -21,6 +24,7 @@
 @import "modules/UI/radioBox"
 @import "modules/UI/input"
 @import "modules/UI/buttons"
+@import "modules/UI/slideButtons"
 
 // Parts
 @import "modules/parts/logo"
@@ -30,7 +34,7 @@
 @import "modules/parts/features"
 @import "modules/parts/news"
 @import "modules/parts/groups"
-
+@import "modules/parts/collective"
 
 html
   font-size: 16px
@@ -212,3 +216,8 @@ section
     @media screen and (max-width: $tablet)
       margin-bottom: rem(24)
 
+.word-on-new-line
+  word-spacing: 100vw
+
+.grey
+  color: var(--weakTextColor)
