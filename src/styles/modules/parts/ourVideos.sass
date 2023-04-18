@@ -1,0 +1,94 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+$videosTextResponse: 1440px
+$videosFirstResponse: 900px
+$videosSecondTextResponse: 800px
+
+.ourVideos
+  display: flex
+  font-size: 1rem
+  flex-wrap: wrap
+  gap: em(24, 16)
+  justify-content: space-between
+
+  @media screen and (max-width: $videosTextResponse)
+    font-size: 1.111vw
+
+  @media screen and (max-width: $videosFirstResponse)
+    font-size: 1rem
+    gap: em(30, 16) em(24, 16)
+
+  @media screen and (max-width: $videosSecondTextResponse)
+    font-size: 2vw
+
+  @media screen and (max-width: $lastPoint)
+    gap: 3.1em 1.5em
+
+  .videoSign
+    font-size: .7em
+
+  &__item
+    display: flex
+    flex-direction: column
+    flex: 0 0 em(320, 16)
+    gap: em(12, 16)
+
+    @media screen and (max-width: $videosFirstResponse)
+      flex: 0 0 calc(50% - em(12, 16))
+
+    .videoSign
+      opacity: 0
+      transition: $defaultTransitionDuration opacity
+
+    &:hover
+      color: var(--textHoverColor)
+
+      .videoSign
+        opacity: 1
+
+      svg
+        fill: var(--textHoverColor)
+
+      .ourVideos__img
+        &:before
+          opacity: .45
+
+
+  &__img
+    width: 100%
+    height: em(185, 16)
+    overflow: hidden
+    position: relative
+
+    @media screen and (max-width: $videosFirstResponse)
+      height: em(204, 16)
+
+    &:before
+      content: ''
+      width: 100%
+      height: 100%
+      @include useAbsolutePosition()
+      opacity: 0
+      transition: $defaultTransitionDuration all
+      background: var(--videoHoverFilter)
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__text
+    @include useSecondFont(500)
+    font-size: em(22, 16)
+    line-height: 1.6
+    letter-spacing: em(-0.27, 16)
+    display: flex
+
+    svg
+      flex: 0 0 em(15, 22)
+      height: em(15, 22)
+      margin-top: em(10, 22)
+      margin-right: em(7, 22)
+      vertical-align: middle
+      transition: $defaultTransitionDuration all

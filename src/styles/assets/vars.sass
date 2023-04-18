@@ -1,11 +1,13 @@
+@use 'sass:math'
 @import "functions"
+
 
 $defaultTransitionDuration: .3s
 
 $stepNumber: 30
 
 $step: rem($stepNumber)
-$halfStep: rem($stepNumber / 2)
+$halfStep: rem(math.div($stepNumber, 2))
 
 $mobileResponse: 600px
 

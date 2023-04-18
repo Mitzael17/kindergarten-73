@@ -36,6 +36,8 @@
 @import "modules/parts/groups"
 @import "modules/parts/collective"
 @import "modules/parts/spoilers"
+@import "modules/parts/ourVideos"
+
 
 html
   font-size: 16px
@@ -184,7 +186,10 @@ ol.list
   transition: $defaultTransitionDuration all
 
 .border-radius
-  border-radius: em(15, 16)
+  border-radius: rem(15)
+
+svg
+  fill: var(--textColor)
 
 
 .w-100

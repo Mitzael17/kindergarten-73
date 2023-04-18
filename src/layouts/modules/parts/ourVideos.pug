@@ -1,0 +1,26 @@
+include ../../../components/titles/h2WithIcon
+include ../../../components/UI/whiteButton
+
+-
+    var data = [
+        {img: '@img/temporary/video-1.png', text: 'Название активного видео'},
+        {img: '@img/temporary/video-2.png', text: 'Длинное длинное длинное название видео'},
+        {img: '@img/temporary/video-3.png', text: 'Название видео'},
+        {img: '@img/temporary/video-4.png', text: 'Длинное длинное длинное название видео'},
+    ];
+
+section
+    .container
+        +h2WithIcon('@img/video.svg', 'Наши видео')
+        .ourVideos
+            each item in data
+                a.ourVideos__item(href='#')
+                    .tinyText 12 июля 2023
+                    .ourVideos__img.border-radius
+                        img.border-radius(src=item.img, alt=item.text)
+                        .videoSign
+                    .ourVideos__text
+                        svg
+                            use(href="@img/icons/icons.svg#video-triangle")
+                        span= item.text
+        +whiteButton('Смотреть все видео', 'w-100 mt-step')
