@@ -38,6 +38,8 @@
 @import "modules/parts/spoilers"
 @import "modules/parts/ourVideos"
 @import "modules/parts/galleryItem"
+@import "modules/parts/achievements"
+@import "modules/parts/flexBox"
 
 
 html
@@ -184,6 +186,12 @@ ol.list
 .pad-half-step
   padding: $halfStep
 
+.d-gap
+  gap: em(30, 16) em(24, 16)
+
+  @media screen and (max-width: $mobile)
+    gap: em(30, 16) em(15, 16)
+
 .arrow-icon
   width: 1em
   height: .85em
@@ -265,3 +273,26 @@ section
 
   span
     color: var(--textColor)
+
+
+.link-block
+  display: block
+  width: em(250, 16)
+  height: em(90, 16)
+  position: relative
+
+  @media screen and (max-width: $tablet)
+    font-size: 2vw
+    width: em(220, 16)
+    height: em(84, 16)
+
+  @media screen and (max-width: 550px)
+    width: em(205, 16)
+    height: em(78, 16)
+    font-size: 1rem
+
+  img
+    width: auto
+    height: auto
+    @include useAbsolutePosition(50%, 50%)
+    transform: translate(-50%, -50%)

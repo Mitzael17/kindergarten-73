@@ -1,0 +1,27 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+$firstAchievementsResponse: 800px
+$secondAchievementsResponse: 600px
+
+.achievementsItem
+  height: em(183, 16)
+  font-size: 1rem
+  width: fit-content
+
+  &:not(:last-child)
+    margin-right: em(24, 16)
+
+  @media screen and (max-width: $firstAchievementsResponse)
+    height: em(179, 16)
+
+  @media screen and (max-width: $secondAchievementsResponse)
+    height: em(139, 16)
+
+    &:not(:last-child)
+     margin-right: em(15, 16)
+
+  img
+    height: 100%
+    width: auto
+

@@ -1,0 +1,14 @@
+include ../../../components/titles/h2WithIcon
+include ../../../components/UI/whiteButton
+
+- var index = 1;
+
+section
+    .container
+        +h2WithIcon('@img/links.svg', 'Полезные ссылки')
+        .flex.flex-wrap.flex-j-c.d-gap
+            while (index <= 10)
+                a.link-block(href="#")
+                    img(src=`@img/temporary/links-${index++}.png`, alt='link')
+
+        +whiteButton('Смотреть все полезные ссылки', 'mt-step w-100')
