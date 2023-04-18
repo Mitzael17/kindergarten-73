@@ -8,7 +8,7 @@ export function createCollectiveSliders() {
 
     sliders.forEach( slider => {
 
-        const swiper = new Swiper(slider, {
+        new Swiper(slider, {
 
             navigation: {
                 nextEl: '.slide-button-container-next',

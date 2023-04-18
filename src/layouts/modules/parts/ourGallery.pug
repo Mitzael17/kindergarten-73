@@ -1,0 +1,22 @@
+include ../../../components/titles/h2WithIcon
+include ../../../components/UI/whiteButton
+include ../../../components/UI/slideButtons
+
+- var data = ['Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Название галереи']
+
+section
+    .container
+        +h2WithIcon('@img/gallery.svg', 'Наша галерея')
+        .defaultSlider.swiper
+            .swiper-wrapper
+                each text in data
+                    .swiper-slide.galleryItem.cartSlide
+                        .weakText 12 июля 2023
+                        .galleryItem__img
+                            img(src="@img/temporary/gallery-1.png")
+                        .tags
+                            | #солнышко  #день-рождения #2023
+                            span +5
+                        .galleryItem__text= text
+            +slideButtons(true)
+        +whiteButton('Смотреть все галереи', 'w-100 mt-step')

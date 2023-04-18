@@ -11,7 +11,6 @@
 //libs
 @import "lib/swiper"
 
-
 // main modules
 @import "modules/header"
 @import "modules/footer"
@@ -27,6 +26,7 @@
 @import "modules/UI/slideButtons"
 
 // Parts
+@import "modules/parts/defaultSlider"
 @import "modules/parts/logo"
 @import "modules/parts/banner"
 @import "modules/parts/videoSign"
@@ -37,6 +37,7 @@
 @import "modules/parts/collective"
 @import "modules/parts/spoilers"
 @import "modules/parts/ourVideos"
+@import "modules/parts/galleryItem"
 
 
 html
@@ -177,8 +178,11 @@ ol.list
   padding: rem(30)
 
   &.to-half-on-mobile
-    @media screen and (max-width: $lastPoint)
+    @media screen and (max-width: $mobile)
       padding: rem(15)
+
+.pad-half-step
+  padding: $halfStep
 
 .arrow-icon
   width: 1em
@@ -252,3 +256,12 @@ section
 .grey-background
   background: var(--greyBackground)
 
+.tags
+  @include useSecondFont(500)
+  font-size: em(10, 16)
+  line-height: 1.8
+  color: var(--tagsColor)
+  letter-spacing: em(-0.205, 10)
+
+  span
+    color: var(--textColor)

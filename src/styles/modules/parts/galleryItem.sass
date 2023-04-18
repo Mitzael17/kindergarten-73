@@ -1,0 +1,30 @@
+@import "../../assets/mixins"
+
+$galleryFirstTextResponse: 1000px
+$galleryMobileResponse: 600px
+
+.galleryItem
+  width: em(259, 16)
+  border: 1px solid var(--galleryBorderColor)
+  border-radius: em(10, 16)
+  padding: em(15, 16)
+
+  @media screen and (max-width: $galleryFirstTextResponse)
+    font-size: 1.65vw
+
+  @media screen and (max-width: $galleryMobileResponse)
+    font-size: 2.6vw
+    &:not(:last-child)
+      margin-right: em(15, 16)
+
+
+  &__img
+    width: em(230, 16)
+    height: em(123, 16)
+    object-fit: cover
+
+    img
+      border-radius: .5em
+
+  &__text
+    @include setFonts(14, #000, 1.3, -0.411504, 800)

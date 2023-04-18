@@ -2,7 +2,9 @@
 @import "../../assets/functions"
 @import "../../assets/vars"
 
-$slideButtonsDecrease: 700px
+$slideButtonsDecrease: 1000px
+$slideButtonsDecrease2: 600px
+
 
 .slide-button-container
   position: absolute
@@ -17,6 +19,9 @@ $slideButtonsDecrease: 700px
   transition: $defaultTransitionDuration opacity
 
   @media screen and (max-width: $slideButtonsDecrease)
+    font-size: .8rem
+
+  @media screen and (max-width: $slideButtonsDecrease2)
     font-size: .5rem
 
   &.swiper-button-disabled
@@ -42,6 +47,7 @@ $slideButtonsDecrease: 700px
   border-radius: 50%
   display: flex
   align-items: center
+  box-shadow: 0 em(8.15707, 16) em(43.5044, 16) rgba(0, 0, 0, 0.07), 0 em(1.82199, 16) em(9.71727, 16) rgba(0, 0, 0, 0.0417275), 0 em(0.542454, 16) em(2.89309, 16) rgba(0, 0, 0, 0.0282725)
   cursor: pointer
   justify-content: center
   pointer-events: initial
@@ -51,7 +57,13 @@ $slideButtonsDecrease: 700px
 
   &-next
     margin-right: em(67, 16)
+    &.closer
+      margin-right: em(45, 16)
+
 
   &-prev
     margin-left: em(67, 16)
     transform: rotate(180deg)
+
+    &.closer
+      margin-left: em(45, 16)
