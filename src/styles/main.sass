@@ -35,6 +35,7 @@
 @import "modules/parts/news"
 @import "modules/parts/groups"
 @import "modules/parts/collective"
+@import "modules/parts/spoilers"
 
 html
   font-size: 16px
@@ -164,6 +165,27 @@ ol.list
 .mb-step
   margin-bottom: $step
 
+.mb-halfStep
+  margin-bottom: $halfStep
+
+.mt-halfStep
+  margin-top: $halfStep
+
+.pad-step
+  padding: rem(30)
+
+  &.to-half-on-mobile
+    @media screen and (max-width: $lastPoint)
+      padding: rem(15)
+
+.arrow-icon
+  width: 1em
+  height: .85em
+  transition: $defaultTransitionDuration all
+
+.border-radius
+  border-radius: em(15, 16)
+
 
 .w-100
   width: 100%
@@ -221,3 +243,7 @@ section
 
 .grey
   color: var(--weakTextColor)
+
+.grey-background
+  background: var(--greyBackground)
+

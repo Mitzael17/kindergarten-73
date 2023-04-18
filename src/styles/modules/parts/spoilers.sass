@@ -1,0 +1,45 @@
+@import "../../assets/mixins"
+
+$spoilersFirstResponse: 800px
+$spoilersSecondResponse: 500px
+
+
+.spoiler
+  font-size: 1rem
+  @include useSecondFont(500)
+  background: #ffffff
+  border-radius: .5em
+
+  &.active
+    .arrow-icon
+      fill: var(--textHoverColor)
+      transform: scaleY(-1)
+
+  &__area
+    line-height: 1.1
+    letter-spacing: em(-0.2, 16)
+    padding: em(13, 16) em(15, 16)
+    align-items: center
+    display: flex
+    cursor: pointer
+    justify-content: space-between
+
+    @media screen and (max-width: $spoilersSecondResponse)
+      padding: em(13.5, 16) em(17, 16)
+
+  &__content
+    overflow: hidden
+    height: 0
+
+  &__text
+    padding: .5em em(30, 14) em(30, 14) em(15, 14)
+    font-size: em(14, 16)
+    letter-spacing: -0.017em
+    line-height: 1.5
+    border-top: 1px solid #E7E7EC
+
+    @media screen and (max-width: $spoilersFirstResponse)
+      padding: em(8, 14) em(7, 14) em(12, 14) em(18, 14)
+
+    @media screen and (max-width: $spoilersSecondResponse)
+      padding: .5em em(18, 14)

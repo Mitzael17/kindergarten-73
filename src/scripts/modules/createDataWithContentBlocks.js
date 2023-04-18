@@ -19,9 +19,18 @@ export function createDataWithContentBlocks() {
 
     })
 
+
+    let prevWidth = window.innerWidth;
+    let isFirstLaunch = true;
+
     handlerResize();
 
     function handlerResize() {
+
+        if(prevWidth === window.innerWidth && !isFirstLaunch) return
+
+        prevWidth = window.innerWidth;
+        isFirstLaunch = false;
 
         items.forEach( item => {
 
