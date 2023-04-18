@@ -178,16 +178,18 @@ $headerSecondResponse: 600px
       transform: translateY(-50%)
 
   &__burgerList
-    @include useAbsolutePosition(50%, 110%)
+    position: absolute
+    right: em(-4, 16)
+    top: 110%
     z-index: 100
     transition: $defaultTransitionDuration all
     transform-origin: center center
-    transform: translateX(-50%) scaleY(0)
+    transform: scaleY(0)
     background: var(--greyBackground)
     border-radius: rem(5)
 
     &.active
-      transform: translateX(-50%) scaleY(1)
+      transform: scaleY(1)
 
     li .link
       padding: rem(10)

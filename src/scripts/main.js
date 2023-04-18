@@ -5,6 +5,10 @@ import {transferContactsInHeader} from "./modules/transferContactsInHeader.js";
 import {createDataWithContentBlocks} from "./modules/createDataWithContentBlocks.js";
 import {createCollectiveSliders} from "./modules/createCollectiveSliders.js";
 import {createDefaultSlider} from "./modules/createDefaultSlider.js";
+import {createThemeSwitcher} from "./modules/createThemeSwitcher.js";
+
+
+createThemeSwitcher();
 
 createSpoilers();
 createFooterSpoilers();
