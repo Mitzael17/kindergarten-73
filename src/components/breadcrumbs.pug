@@ -1,0 +1,15 @@
+mixin breadcrumbs(data, title)
+    .breadcrumbs
+        ul.breadcrumbs__list
+            li.breadcrumbs__item
+                a(href="/")
+                    svg.breadcrumbs__icon
+                        use(href='@img/icons/icons.svg#home')
+                    | Главная
+            each item in data
+                li.breadcrumbs__item
+                    if (item.link)
+                        a(href="/")= item.text
+                    else
+                        = item.text
+        h1= title

@@ -13,5 +13,6 @@ mixin select(items, name, className)
         ul.select-list__items(data-spoiler-wrapper="true")
             each item, index in items
                 li.select-list__item
-                    input(type='radio', name=name, id=item.id checked= index === 0, data-display-on-change= item.value)
-                    label(for=item.id)= item.value
+                    label
+                        input(type='radio', name=name checked= index === 0, data-display-on-change= item.value)
+                        div.select__div= item.value

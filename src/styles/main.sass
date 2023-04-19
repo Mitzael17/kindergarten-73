@@ -14,6 +14,7 @@
 
 // main modules
 @import "modules/header"
+@import "modules/breadcrumbs"
 @import "modules/footer"
 
 // UI modules
@@ -66,6 +67,10 @@ html
       font-size: vw($sizeForWeakEyes, $mobileNumber)
 
 
+.dh-gap
+  gap: em(15, 16)
+
+
 body
   display: flex
   flex-direction: column
@@ -112,7 +117,7 @@ h4
 p
   @include useSecondFont(500)
   line-height: 1.6
-  letter-spacing: em(-0.2, 16)
+  letter-spacing: -.013em
   color: var(--pColor)
 
 
@@ -312,3 +317,24 @@ section
     height: auto
     @include useAbsolutePosition(50%, 50%)
     transform: translate(-50%, -50%)
+
+.defaultForm
+  max-width: em(684, 16)
+  box-sizing: border-box
+
+.message
+  background: var(--messageBackground)
+  padding: em(19, 16) em(18, 16)
+  border-radius: em(4, 16)
+
+  .message-text
+    max-width: em(352, 14)
+    margin-left: em(16, 14)
+
+
+
+.message-text
+  @include useSecondFont(500)
+  line-height: 1.1
+  letter-spacing: em(-0.2, 14)
+  font-size: em(14, 16)

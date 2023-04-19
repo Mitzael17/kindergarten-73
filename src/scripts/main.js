@@ -6,6 +6,7 @@ import {createDataWithContentBlocks} from "./modules/createDataWithContentBlocks
 import {createCollectiveSliders} from "./modules/createCollectiveSliders.js";
 import {createDefaultSlider} from "./modules/createDefaultSlider.js";
 import {createThemeSwitcher} from "./modules/createThemeSwitcher.js";
+import {createMask} from "./modules/createMask.js";
 
 
 createThemeSwitcher();
@@ -22,3 +23,5 @@ createDataWithContentBlocks();
 
 createDefaultSlider();
 createCollectiveSliders();
+
+createMask('.tel')

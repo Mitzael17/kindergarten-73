@@ -8,6 +8,7 @@ include components/UI/dashedButton
 include components/UI/greyButton
 include components/UI/usualButton
 include components/UI/whiteButton
+include components/UI/textarea
 
 block variables
     - var pageTitle = 'UI'
@@ -40,6 +41,10 @@ block content
             .smallTitle.mt-step Inputs
             div.mt-step
                 +input('E-mail', 'input')
+
+            .smallTitle.mt-step Textarea
+            div.mt-step
+                +textarea('Description', 'textarea')
 
             .smallTitle.mt-step Inputs password + icon
             div.mt-step

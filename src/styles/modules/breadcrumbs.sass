@@ -1,0 +1,57 @@
+@import '../assets/mixins'
+@import '../assets/vars'
+
+
+html.theme-visually-impaired
+
+  .breadcrumbs
+
+    @media screen and (max-width: $headerFirstThemeResponse)
+      margin-top: em(15, 16)
+
+.breadcrumbs
+  background: var(--greyBackground)
+  padding: em(24, 16) em(24, 16) em(15, 16)
+
+  @media screen and (max-width: $headerFirstResponse)
+    margin-top: em(15, 16)
+
+  &__list
+    display: flex
+    align-items: center
+    margin-bottom: em(15, 16)
+
+  &__item
+    @include setFonts(12, var(--breadcrumbsColor), 1.2, -1, 600)
+    position: relative
+
+    &:not(:last-child)
+      margin-right: em(11, 12)
+      padding-right: em(11, 12)
+
+      &:after
+        content: '/'
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+
+    a
+      transition: $defaultTransitionDuration color
+
+    a:hover
+      color: var(--textHoverColor)
+
+      svg
+        stroke: var(--textHoverColor)
+
+  svg
+    stroke: var(--textColor)
+    stroke-width: 2
+    transition: $defaultTransitionDuration stroke
+
+  &__icon
+    width: em(18, 12)
+    height: em(18, 12)
+    vertical-align: middle
+    margin-right: em(8, 12)
