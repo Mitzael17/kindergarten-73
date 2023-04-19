@@ -21,15 +21,23 @@ export function createDataWithContentBlocks() {
 
 
     let prevWidth = window.innerWidth;
+    let prevThemeIsWeakEye = document.documentElement.classList.contains('theme-visually-impaired');
     let isFirstLaunch = true;
 
     handlerResize();
 
     function handlerResize() {
 
-        if(prevWidth === window.innerWidth && !isFirstLaunch) return
+        let isThemeChange = prevThemeIsWeakEye !== document.documentElement.classList.contains('theme-visually-impaired');
+
+        if(!isFirstLaunch) {
+
+            if(prevWidth === window.innerWidth && !isThemeChange) return;
+
+        }
 
         prevWidth = window.innerWidth;
+        prevThemeIsWeakEye = document.documentElement.classList.contains('theme-visually-impaired');
         isFirstLaunch = false;
 
         items.forEach( item => {
@@ -52,7 +60,13 @@ export function createDataWithContentBlocks() {
 
             }, 100)
 
-            window.addEventListener('resize', () => clearTimeout(resize), {once: true});
+            window.addEventListener('resize', () => {
+
+                if(isThemeChange) return;
+
+                clearTimeout(resize);
+
+            }, {once: true});
 
         })
 

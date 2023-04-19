@@ -13,3 +13,6 @@
 @function lh($lh, $fz)
   $result : math.div($lh, $fz)
   @return math.div(round($result * 100), 100)
+
+@function vw($px, $resolution)
+  @return math.div($px, math.div($resolution, 100)) + vw

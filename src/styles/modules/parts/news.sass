@@ -1,7 +1,29 @@
 @import "../../assets/mixins"
+@import "../../assets/vars"
+
 
 $newsFirstResponse: 1150px
 $newsSecondResponse: 600px
+
+html.theme-visually-impaired
+  .news
+
+    flex-direction: column
+
+    &__img
+
+      @media screen and (max-width: 800px)
+        max-width: 150px
+
+      @media screen and (max-width: $mobile)
+        max-width: 100px
+
+    &__text
+      @media screen and (max-width: $newsSecondResponse)
+        font-size: em(20, $sizeForWeakEyes)
+
+
+
 
 .news
   display: flex
@@ -25,6 +47,7 @@ $newsSecondResponse: 600px
     margin-right: em(20, 16)
     flex: 0 0 em(279, 16)
     height: auto
+    max-width: 280px
 
     @media screen and (max-width: $newsSecondResponse)
       flex: 0 0 em(181, 16)

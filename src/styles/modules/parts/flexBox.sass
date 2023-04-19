@@ -1,6 +1,35 @@
 @import "../../assets/mixins"
 
 $aboutUsFirstResponse: 1000px
+$aboutUsFirstResponseForTheme: 1300px
+
+@mixin reverseDirectionFlexBox($resolution)
+
+  @media screen and (max-width: $resolution)
+    flex-direction: column
+    gap: em(10, 16)
+    text-align: center
+
+    &__img
+      flex: 0 0 auto
+      width: em(292, 16)
+      min-width: auto
+
+    &__content
+      align-items: center
+      max-width: none
+      gap: em(15, 16)
+
+    &__title
+      font-size: 2em
+
+
+
+html.theme-visually-impaired
+
+  .flexBox
+    @include reverseDirectionFlexBox($aboutUsFirstResponseForTheme)
+
 
 .flexBox
   display: flex
@@ -8,19 +37,9 @@ $aboutUsFirstResponse: 1000px
   justify-content: center
   align-items: center
 
-  @media screen and (max-width: $aboutUsFirstResponse)
-    flex-direction: column
-    gap: em(10, 16)
-    text-align: center
-
   &__img
     flex: 0 1 em(560, 16)
     min-width: em(300, 16)
-
-    @media screen and (max-width: $aboutUsFirstResponse)
-      flex: 0 0 auto
-      width: em(292, 16)
-      min-width: auto
 
     img
       width: 100%
@@ -31,17 +50,12 @@ $aboutUsFirstResponse: 1000px
     gap: em(24, 16)
     max-width: em(589, 16)
 
-    @media screen and (max-width: $aboutUsFirstResponse)
-      align-items: center
-      max-width: none
-      gap: em(15, 16)
-
   &__title
     line-height: 1.5
 
-    @media screen and (max-width: $aboutUsFirstResponse)
-      font-size: 2em
-
   &__button
     width: fit-content
+
+  @include reverseDirectionFlexBox($aboutUsFirstResponse)
+
 

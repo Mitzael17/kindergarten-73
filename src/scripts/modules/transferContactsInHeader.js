@@ -14,7 +14,9 @@ export function transferContactsInHeader(callback) {
 
     function handlerResize() {
 
-        if(isItInHeader && window.innerWidth <= 1000) {
+        const isWeakEyeThemeActive = document.documentElement.classList.contains('theme-visually-impaired');
+
+        if(isItInHeader && ((window.innerWidth <= 1000 && !isWeakEyeThemeActive) || (isWeakEyeThemeActive && window.innerWidth <= 1300) )) {
 
             isItInHeader = false;
             header.append(contacts);
@@ -30,7 +32,7 @@ export function transferContactsInHeader(callback) {
 
         }
 
-        if(!isItInHeader && window.innerWidth > 1000) {
+        if(!isItInHeader && ((window.innerWidth > 1000 && !isWeakEyeThemeActive) || (isWeakEyeThemeActive && window.innerWidth > 1300)) ) {
 
             isItInHeader = true;
             content.append(contacts);

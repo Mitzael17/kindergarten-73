@@ -1,28 +1,71 @@
 @import "../../assets/mixins"
 @import "../../assets/vars"
 
-$videosTextResponse: 1440px
+$videosTextResponseNumber: 1440
+$videosTextResponse: $videosTextResponseNumber + px
 $videosFirstResponse: 900px
-$videosSecondTextResponse: 800px
+$videosSecondTextResponseNumber: 800
+$videosSecondTextResponse: $videosSecondTextResponseNumber + px
+
+@mixin ourVideosProperties($size)
+  gap: em(30, $size) em(24, $size)
+
+  &__item
+    flex: 0 0 em(325, $size)
+    gap: em(12, $size)
+
+    @media screen and (max-width: $videosFirstResponse)
+      flex: 0 0 calc(50% - em(12, $size))
+      max-width: none
+
+
+  &__img
+    height: em(185, $size)
+    min-width: 100%
+
+    @media screen and (max-width: $videosFirstResponse)
+      height: em(204, $size)
+
+  &__text
+    letter-spacing: em(-0.27, $size)
+
+
+
+html.theme-visually-impaired
+
+  .ourVideos
+    @include ourVideosProperties($sizeForWeakEyes)
+
+    &__item
+      flex: 0 0 em(320, $sizeForWeakEyes)
+      max-width: 320px
+
+    @media screen and (max-width: $videosTextResponse)
+      font-size: vw($sizeForWeakEyes, $videosTextResponseNumber)
+
+    @media screen and (max-width: $videosFirstResponse)
+      font-size: 1rem
+
+    @media screen and (max-width: $videosSecondTextResponse)
+      font-size: vw($sizeForWeakEyes, $videosSecondTextResponseNumber)
+
 
 .ourVideos
   display: flex
   font-size: 1rem
   flex-wrap: wrap
-  gap: em(24, 16)
-  justify-content: space-between
+  justify-content: center
 
   @media screen and (max-width: $videosTextResponse)
     font-size: 1.111vw
 
   @media screen and (max-width: $videosFirstResponse)
     font-size: 1rem
-    gap: em(30, 16) em(24, 16)
 
   @media screen and (max-width: $videosSecondTextResponse)
     font-size: 2vw
 
-  @media screen and (max-width: $lastPoint)
+  @media screen and (max-width: $mobile)
     gap: 3.1em 1.5em
 
   .videoSign
@@ -31,11 +74,7 @@ $videosSecondTextResponse: 800px
   &__item
     display: flex
     flex-direction: column
-    flex: 0 0 em(320, 16)
-    gap: em(12, 16)
-
-    @media screen and (max-width: $videosFirstResponse)
-      flex: 0 0 calc(50% - em(12, 16))
+    max-width: 325px
 
     .videoSign
       opacity: 0
@@ -57,12 +96,11 @@ $videosSecondTextResponse: 800px
 
   &__img
     width: 100%
-    height: em(185, 16)
     overflow: hidden
     position: relative
+    max-width: 310px
+    height: 185px
 
-    @media screen and (max-width: $videosFirstResponse)
-      height: em(204, 16)
 
     &:before
       content: ''
@@ -80,10 +118,10 @@ $videosSecondTextResponse: 800px
 
   &__text
     @include useSecondFont(500)
-    font-size: em(22, 16)
     line-height: 1.6
-    letter-spacing: em(-0.27, 16)
     display: flex
+    font-size: em(22, 16)
+
 
     svg
       flex: 0 0 em(15, 22)
@@ -92,3 +130,5 @@ $videosSecondTextResponse: 800px
       margin-right: em(7, 22)
       vertical-align: middle
       transition: $defaultTransitionDuration all
+
+  @include ourVideosProperties(16)

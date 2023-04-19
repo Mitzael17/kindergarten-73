@@ -1,11 +1,36 @@
 @import "../../assets/mixins"
+@import "../../assets/vars"
 
 $contentSize: 324
-$collectiveTextResponse: 1440px
+$collectiveTextResponseNumber: 1440
+$collectiveTextResponse: $collectiveTextResponseNumber + px
 $collectiveFirstResponse: 800px
 $collectiveSecondResponse: 600px
 
 $contentOnMobileSize: 176
+
+
+html.theme-visually-impaired
+
+  .collective__slider
+
+    @media screen and (max-width: $collectiveTextResponse)
+      font-size: vw($sizeForWeakEyes, $collectiveTextResponseNumber)
+
+    @media screen and (max-width: $collectiveSecondResponse)
+      font-size: 1rem
+
+  .collectiveSlide
+
+    &__text
+      font-weight: 600
+
+      @media screen and (max-width: $collectiveSecondResponse)
+        min-width: 10em
+        width: 10em
+
+
+
 
 .collective__slider
   transition: .5s all
@@ -28,6 +53,7 @@ $contentOnMobileSize: 176
   max-width: em(626 - $contentSize, 16)
   background: var(--greyBackground)
   transition: .5s all
+  height: auto
 
   @media screen and (max-width: $collectiveSecondResponse)
     max-width: em(340 - $contentOnMobileSize, 16)
@@ -54,13 +80,13 @@ $contentOnMobileSize: 176
 
   &__img
     flex: 0 0 em(302, 16)
-    height: em(422, 16)
+    //height: em(422, 16)
     border-radius: .5em
     overflow: hidden
 
     @media screen and (max-width: $collectiveSecondResponse)
       flex: 0 0 em(164, 16)
-      height: em(229, 16)
+      //height: em(229, 16)
 
     img
       width: 100%
@@ -119,11 +145,6 @@ $contentOnMobileSize: 176
     line-height: 1.6
     @include useSecondFont(400)
     letter-spacing: em(-0.2, 16)
-    max-height: em(180, 14)
-    overflow: hidden
-
-    @media screen and (max-width: $collectiveSecondResponse)
-      max-height: em(100, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
       font-size: .5em

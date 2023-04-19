@@ -1,14 +1,54 @@
 @import "../../assets/mixins"
+@import "../../assets/vars"
 
-$featuresTextFirstResponse: 1440px
-$featuresFirstResponse: 800px
+$featuresTextFirstResponseNumber: 1440
+$featuresTextFirstResponse: $featuresTextFirstResponseNumber + px
+$featuresFirstResponseNumber: 800
+$featuresFirstResponse: $featuresFirstResponseNumber + px
 $featuresSecondResponse: 690px
+
+@mixin itemProperties($size)
+  min-height: em(220, $size)
+  padding: em(18, $size)
+
+  @media screen and (max-width: $featuresFirstResponse)
+    min-height: em(113, $size)
+    padding: em(10, $size)
+
+  @media screen and (max-width: $featuresSecondResponse)
+    width: auto
+    flex: 0 0 calc(50% - 24px)
+    min-height: em(142, $size)
+    padding: em(12, $size)
+
+
+html.theme-visually-impaired
+  .features
+
+    &__item
+      @include itemProperties($sizeForWeakEyes)
+
+    @media screen and (max-width: $featuresTextFirstResponse)
+      font-size: vw($sizeForWeakEyes, $featuresTextFirstResponseNumber)
+
+    @media screen and (max-width: $featuresFirstResponse)
+      font-size: vw($sizeForWeakEyes, $featuresFirstResponseNumber)
+
+    @media screen and (max-width: $featuresSecondResponse)
+      font-size: 1rem
+
+    @media screen and (max-width: $mobile)
+      font-size: .9rem
+
+
+
 
 .features
   display: flex
-  gap: em(24, 16)
+  gap: 30px 24px
   font-size: 1rem
-  justify-content: space-between
+  justify-content: center
+  flex-wrap: wrap
 
   @media screen and (max-width: $featuresTextFirstResponse)
     font-size: 1.1vw
@@ -20,30 +60,20 @@ $featuresSecondResponse: 690px
     font-size: 1rem
     flex-wrap: wrap
     justify-content: center
-    gap: em(30, 16) em(24, 16)
+
+  @media screen and (max-width: $mobile)
+    gap: rem(30) rem(24)
 
 
   &__item
-    width: em(330, 16)
-    padding: em(18, 16)
+    flex: 0 0 calc(25% - 24px)
     background-repeat: no-repeat
     background-position: center
     background-size: cover
-    min-height: em(220, 16)
     display: flex
     align-items: flex-end
     border-radius: .5em
-
-    @media screen and (max-width: $featuresFirstResponse)
-      width: em(169, 16)
-      min-height: em(113, 16)
-      padding: em(10, 16)
-
-    @media screen and (max-width: $featuresSecondResponse)
-      width: auto
-      flex: 1 0 em(200, 16)
-      min-height: em(142, 16)
-      padding: em(12, 16)
+    @include itemProperties(16)
 
   &__text
     background: rgba(255, 255, 255, 0.75)
@@ -66,3 +96,4 @@ $featuresSecondResponse: 690px
       font-size: em(15.4926, 16)
       letter-spacing: em(-0.258, 16)
       padding: em(5, 16) em(8, 16)
+

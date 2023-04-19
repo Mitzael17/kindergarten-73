@@ -49,14 +49,21 @@ html
   font-weight: 600
   color: var(--textColor)
 
+  &.theme-visually-impaired
+    .d-gap
+      gap: em(30, $sizeForWeakEyes) em(24, $sizeForWeakEyes)
+
+      @media screen and (max-width: $mobile)
+        gap: em(30, $sizeForWeakEyes) em(15, $sizeForWeakEyes)
+
   @media screen and (max-width: $mobile)
     font-size: 3.333vw
 
   &.theme-visually-impaired
-    font-size: 18px
+    font-size: $sizeForWeakEyes + px
 
     @media screen and (max-width: $mobile)
-      font-size: 3.75vw
+      font-size: vw($sizeForWeakEyes, $mobileNumber)
 
 
 body
@@ -287,6 +294,8 @@ section
   width: em(250, 16)
   height: em(90, 16)
   position: relative
+  max-width: 250px
+  max-height: 90px
 
   @media screen and (max-width: $tablet)
     font-size: 2vw

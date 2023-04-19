@@ -7,6 +7,7 @@ export function createThemeSwitcher() {
     switcher.addEventListener('click', () => {
 
         document.documentElement.classList.toggle('theme-visually-impaired');
+
         setTimeout( () => {
 
             window.dispatchEvent(new Event('resize'));

@@ -7,6 +7,19 @@ $footerContactPaddingsResponse: 700px
 $footerRestBlockResponse: 700px
 $footerSecondResponse: 600px
 
+$footerReverseContactBlocksForTheme: 850px
+
+html.theme-visually-impaired
+
+  .footer
+
+    &__contacts
+
+      @media screen and (max-width: $footerReverseContactBlocksForTheme)
+        flex-direction: column
+        gap: em(15, 16)
+
+
 footer
   margin-top: auto
 
@@ -142,6 +155,10 @@ footer
     border-radius: 50%
     overflow: hidden
 
+    img
+      width: 100%
+      height: 100%
+
   &__rest
     display: flex
     justify-content: space-between
@@ -150,6 +167,7 @@ footer
     @include setFonts(12, var(--footerRestBlockColor), 1.8, -0.1, 500)
     padding: em(21, 12) 0 em(11, 12)
     gap: em(15, 16)
+    flex-wrap: wrap
 
     @media screen and (max-width: $footerFirstResponse)
       flex-direction: column
@@ -158,6 +176,8 @@ footer
   &__restBlock
     display: flex
     align-items: center
+    justify-content: center
+    flex-wrap: wrap
 
     @media screen and (max-width: $footerRestBlockResponse)
       flex-direction: column

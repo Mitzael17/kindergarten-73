@@ -1,9 +1,47 @@
 @import "../../assets/mixins"
+@import "../../assets/vars"
 
-$smallBannerTextResponse: 1350px
-$smallBannerFirstResponse: 1000px
-$smallBannerTextSecondResponse: 800px
-$smallBannerSecondResponse: 600px
+$smallBannerTextResponseNumber: 1350
+$smallBannerTextResponse: $smallBannerTextResponseNumber + px
+$smallBannerFirstResponseNumber: 1000
+$smallBannerFirstResponse: $smallBannerFirstResponseNumber + px
+$smallBannerTextSecondResponseNumber: 800
+$smallBannerTextSecondResponse: $smallBannerTextSecondResponseNumber + px
+$smallBannerSecondResponseNumber: 600
+$smallBannerSecondResponse: $smallBannerSecondResponseNumber + px
+
+html.theme-visually-impaired
+  .smBanner
+
+    gap: em(78, $sizeForWeakEyes)
+    padding: em(37, $sizeForWeakEyes) em(50, $sizeForWeakEyes) em(34, $sizeForWeakEyes) em(37, $sizeForWeakEyes)
+
+    @media screen and (max-width: $smallBannerTextResponse)
+      font-size: vw($sizeForWeakEyes, $smallBannerTextResponseNumber)
+
+      &__img
+        flex: 0 0 25.25em
+
+    @media screen and (max-width: $smallBannerFirstResponse)
+      font-size: vw($sizeForWeakEyes, $smallBannerFirstResponseNumber)
+
+      .button
+        font-size: 1em
+
+      &__img
+        flex: 0 1 18.5em
+        min-width: 15em
+
+    @media screen and (max-width: $smallBannerTextSecondResponse)
+      font-size: vw($sizeForWeakEyes, $smallBannerFirstResponseNumber)
+
+    @media screen and (max-width: $smallBannerSecondResponse)
+      font-size: 1rem
+      gap: em(25, $sizeForWeakEyes)
+
+      &__img
+        flex: 0 0 8em
+        min-width: auto
 
 
 .smBanner
@@ -61,6 +99,10 @@ $smallBannerSecondResponse: 600px
   &__img
     flex: 0 0 em(500, 16)
     height: auto
+    max-width: 500px
+    display: flex
+    align-items: center
+    justify-content: center
 
     img
       border-radius: em(30, 16)

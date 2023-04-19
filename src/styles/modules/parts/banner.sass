@@ -1,11 +1,39 @@
 @import "../../assets/mixins"
 @import "../../assets/vars"
 
-$responseText: 1360px
-$firstBannerResponse: 1000px
-$secondBannerResponse: 600px
+$responseTextNumber: 1360
+$responseText: $responseTextNumber + px
+$firstBannerResponseNumber: 1000
+$firstBannerResponse: $firstBannerResponseNumber + px
+$secondBannerResponseNumber: 600
+$secondBannerResponse: $secondBannerResponseNumber + px
 
 $lastPoint: 480px
+
+html.theme-visually-impaired
+  .banner
+    padding: em(34, $sizeForWeakEyes)
+
+    &__image
+
+      @media screen and (max-width: $firstBannerResponse)
+        min-width: 15em
+
+    &--complex-image
+      padding: 0
+
+      .banner__info
+        margin: em(34, $sizeForWeakEyes)
+
+    @media screen and (max-width: $responseText)
+      font-size: vw($sizeForWeakEyes, $responseTextNumber)
+
+    @media screen and (max-width: $firstBannerResponse)
+      font-size: vw($sizeForWeakEyes, $firstBannerResponseNumber)
+
+    @media screen and (max-width: $secondBannerResponse)
+      font-size: 1rem
+
 
 .banner
   font-size: 1rem
@@ -167,6 +195,18 @@ $lastPoint: 480px
     z-index: 2
     flex: 0 1 em(567, 16)
     height: auto
+    min-width: em(400, 16)
+    display: flex
+    align-items: center
+    justify-content: center
+
+    @media screen and (max-width: $firstBannerResponse)
+      min-width: em(200, 16)
+
+    .videoSign
+      font-size: 1em
+      @media screen and (max-width: $firstBannerResponse)
+        font-size: .5em
 
     img
       border-radius: em(10, 16)
