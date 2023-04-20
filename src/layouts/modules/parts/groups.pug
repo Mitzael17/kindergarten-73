@@ -1,16 +1,9 @@
 include ../../../components/titles/h2WithIcon
+include ../../../components/groups
 
 - var index = 0;
 
 section
     .container
         +h2WithIcon('@img/group.svg', 'Наши группы')
-        .groups
-            while index < 8
-                - index++
-                a.groups__item(href='#')
-                    .groups__img
-                        img(src="@img/temporary/groups-1.png")
-                    .groups__info
-                        .groups__title Группа №1
-                        .groups__subtitle Солнышко
+        +groups(8)

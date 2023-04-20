@@ -1,0 +1,11 @@
+mixin groups(limit= 8)
+    - var index= 0
+    .groups
+        while index < limit
+            - index++
+            a.groups__item(href='#')
+                .groups__img
+                    img(src="@img/temporary/groups-1.png")
+                .groups__info
+                    .groups__title Группа №1
+                    .groups__subtitle Солнышко
