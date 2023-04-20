@@ -10,7 +10,7 @@ mixin breadcrumbs(data, title)
                 each item in data
                     li.breadcrumbs__item
                         if (item.link)
-                            a(href="/")= item.text
+                            a(href= item.link)= item.text
                         else
                             = item.text
             h1= title

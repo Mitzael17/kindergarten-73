@@ -1,0 +1,9 @@
+include ../UI/slideButtons
+
+mixin achievements(index= 1)
+    .achievements.defaultSlider.swiper
+        .swiper-wrapper
+            while (index <= 8)
+                .swiper-slide.achievementsItem
+                    img(src=`@img/temporary/achievements-${index++ % 4 + 1}.png`, alt='image')
+        +slideButtons(true)

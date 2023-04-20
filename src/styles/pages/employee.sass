@@ -1,0 +1,46 @@
+@import '../assets/mixins'
+
+$employeeFirstResponse: 1100px
+$employeeSecondResponse: 800px
+
+
+.employee
+
+  @media screen and (max-width: $employeeFirstResponse)
+    flex-direction: column
+
+  .achievementsItem
+    max-height: 146px
+    height: em(146, 16)
+
+  .slide-button
+    font-size: .7em
+
+  &__profile
+    flex: 0 0 em(385, 16)
+    max-width: 385px
+    gap: em(35, 16) em(24, 16)
+    align-items: center
+
+    @media screen and (max-width: $employeeFirstResponse)
+      flex-direction: row
+      flex: 0 0 auto
+      max-width: none
+
+    @media screen and (max-width: $employeeSecondResponse)
+      flex-direction: column
+
+  &__img
+    width: 100%
+    height: auto
+    max-width: 385px
+
+
+    img
+      width: 100%
+      border-radius: em(15, 16)
+
+  .contactBlock
+
+    @media screen and (max-width: $employeeFirstResponse)
+      text-align: center

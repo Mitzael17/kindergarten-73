@@ -1,16 +1,10 @@
 include ../../../components/titles/h2WithIcon
 include ../../../components/UI/whiteButton
 include ../../../components/UI/slideButtons
-
-- var index = 1;
+include ../../../components/sliders/achievements
 
 section
     .container
         +h2WithIcon('@img/achievements.svg', 'Наши достижения')
-        .achievements.defaultSlider.swiper
-            .swiper-wrapper
-                while (index <= 8)
-                    .swiper-slide.achievementsItem
-                        img(src=`@img/temporary/achievements-${index++ % 4 + 1}.png`, alt='image')
-            +slideButtons(true)
+        +achievements()
         +whiteButton('Смотреть все достижения', 'w-100 mt-step')
