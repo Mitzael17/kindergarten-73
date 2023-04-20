@@ -1,0 +1,9 @@
+@import '../assets/mixins'
+@import '../assets/vars'
+
+.pageLayout
+  display: flex
+  gap: em(24, 16)
+
+  @media screen and (max-width: $sidebarResponse)
+    flex-direction: column

@@ -7,6 +7,7 @@ import {createCollectiveSliders} from "./modules/createCollectiveSliders.js";
 import {createDefaultSlider} from "./modules/createDefaultSlider.js";
 import {createThemeSwitcher} from "./modules/createThemeSwitcher.js";
 import {createMask} from "./modules/createMask.js";
+import {createSliderForSidebar} from "./modules/createSliderForSidebar.js";
 
 
 createThemeSwitcher();
@@ -25,3 +26,5 @@ createDefaultSlider();
 createCollectiveSliders();
 
 createMask('.tel')
+
+createSliderForSidebar()

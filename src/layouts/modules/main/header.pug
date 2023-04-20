@@ -5,9 +5,9 @@ include ../../../components/UI/usualButton
 header
     .container
         .header
-            div.header__rest
-                a.weakText(href="#") Сведения об образовательной организации
-                div.weakText.theme-switcher#theme-switcher
+            .header__rest
+                a.weakText(href="information.html") Сведения об образовательной организации
+                .weakText.theme-switcher#theme-switcher
                     svg.eyeIcon
                         use(href="@img/icons/icons.svg#eyeWeakVision")
                     | Версия для слабовидящих
@@ -47,5 +47,5 @@ header
                             img(src="@img/ok.svg" alt='Одноклассники')
                         a.header__social(href="https://telegram.org" target="blank")
                             img(src="@img/telegram.svg" alt='Телеграм')
-                    +usualButton('Обратная связь')
+                    +usualButton('Обратная связь', '', 'document.location.href="feedback.html"')
     block breadcrumbs

@@ -1,0 +1,54 @@
+@import '../assets/functions'
+@import '../assets/mixins'
+@import '../assets/vars'
+
+.sidebar
+  flex: 0 0 fit-content
+  position: relative
+  max-width: 330px
+
+  @media screen and (max-width: $sidebarResponse)
+    flex: 0 0 auto
+    max-width: none
+
+  &__links
+    position: sticky
+    top: 5px
+    width: 100%
+
+    .swiper-wrapper
+
+      @media screen and (min-width: $sidebarResponseNumber + 1 + px)
+        flex-direction: column
+        transform: translate(0) !important
+
+    @media screen and (max-width: $sidebarResponse)
+      position: static
+
+  &__item
+    @include useSecondFont(500)
+    font-size: em(15, 16)
+    letter-spacing: em(-0.2, 16)
+    line-height: 1.35
+    color: var(--sidebarItemColor)
+
+    @media screen and (max-width: $sidebarResponse)
+      width: max-content
+
+    &:not(:last-child)
+      margin-bottom: em(5, 15)
+
+    &:hover
+      color: var(--textHoverColor)
+
+    &.active
+      color: #ffffff
+
+      .sidebar__itemContent
+        background: var(--sidebarActiveItemBackground)
+
+  &__itemContent
+    padding: 1em
+    display: inline-block
+    border-radius: em(10, 16)
+    transition: $defaultTransitionDuration all

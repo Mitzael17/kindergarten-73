@@ -1,0 +1,7 @@
+mixin aside(data, activeIndex= 0)
+    aside.sidebar
+        nav.sidebar__links.swiper
+            .swiper-wrapper
+                each item, index in data
+                    div.sidebar__item.swiper-slide(class= activeIndex === index ? 'active': '')
+                        a.sidebar__itemContent(href= item.link)= item.text
