@@ -1,0 +1,36 @@
+@import "../../assets/mixins"
+
+.contactBlock
+  background: #FFFFFF
+  box-shadow: 0 em(54, 16) em(80, 16) rgba(0, 0, 0, 0.07), 0 em(6.76164, 16) em(10.0172, 16) rgba(0, 0, 0, 0.035)
+  border: em(12, 16) solid #ffffff
+  border-radius: em(12, 16)
+
+  &__container
+    background: linear-gradient(180deg, #EFF1F8 0%, rgba(239, 241, 248, 0) 100%)
+    padding: em(20, 16) em(30, 16) em(26, 16) em(24, 16)
+    border-radius: em(12, 16)
+
+
+  &__title
+    font-size: em(18, 16)
+    font-weight: 700
+    line-height: 1.5
+    letter-spacing: em(-0.4, 18)
+
+  &__icon
+    width: 1em
+    height: 1em
+    display: inline-block
+    vertical-align: middle
+    margin-right: em(8, 18)
+
+  &__list:not(:last-child)
+    margin-bottom: em(14, 16)
+
+  &__item
+    font-size: em(14, 16)
+    margin-top: 1em
+    line-height: 1.6
+    @include useSecondFont(400)
+    letter-spacing: em(-0.2, 14)

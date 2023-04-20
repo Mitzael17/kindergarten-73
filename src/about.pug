@@ -5,7 +5,7 @@ include components/UI/input
 include components/UI/usualButton
 include components/UI/textarea
 include components/breadcrumbs
-include components/aside
+include components/asides/asideForAbout
 
 block variables
     - var pageTitle = 'О нас'
@@ -18,7 +18,7 @@ block content
     section
         .container
             .pageLayout
-                +aside([{text: 'О нас', link: '#'}, {text: 'Наш коллектив', link: '#'}, {text: 'Наши галереи', link: '#'}, {text: 'Наши видео', link: '#'}, {text: 'Наши достижения', link: '#'}, {text: 'Наши реквизиты', link: '#'}], 0)
+                +asideForAbout(0)
                 article
                     h2.smallFont О нас
                     div.mt-step

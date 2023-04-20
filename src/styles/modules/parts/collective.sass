@@ -10,6 +10,11 @@ $collectiveSecondResponse: 600px
 $contentOnMobileSize: 176
 
 
+$collectiveNoSliderReverse: 1000px
+$collectiveNoSliderTextResponseNumber: 1350
+$collectiveNoSliderTextResponse: $collectiveNoSliderTextResponseNumber + px
+$collectiveNoSliderContentReverse: 800px
+
 html.theme-visually-impaired
 
   .collective__slider
@@ -21,6 +26,16 @@ html.theme-visually-impaired
       font-size: 1rem
 
   .collectiveSlide
+
+    &.noSlide
+      font-size: 1rem
+      width: 100%
+
+      @media screen and (max-width: $collectiveNoSliderTextResponse)
+        font-size: vw($sizeForWeakEyes, $sidebarResponseNumber)
+
+      @media screen and (max-width: $collectiveNoSliderReverse)
+        font-size: 1rem
 
     &__text
       font-weight: 600
@@ -46,23 +61,26 @@ html.theme-visually-impaired
   .swiper-wrapper
     padding-right: em($contentSize, 16)
 
+
 .collectiveSlide
   border-radius: .5em
   overflow: hidden
   display: flex
-  max-width: em(626 - $contentSize, 16)
   background: var(--greyBackground)
   transition: .5s all
   height: auto
 
-  @media screen and (max-width: $collectiveSecondResponse)
-    max-width: em(340 - $contentOnMobileSize, 16)
+  &.swiper-slide
+    max-width: em(626 - $contentSize, 16)
 
-  &.move
+    @media screen and (max-width: $collectiveSecondResponse)
+      max-width: em(340 - $contentOnMobileSize, 16)
+
+  &.move.swiper-slide
     transform: translatex(-100%)
 
-  &.active,
-  &:hover
+  &.active.swiper-slide,
+  &.swiper-slide:hover
     max-width: em(602, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
@@ -72,7 +90,7 @@ html.theme-visually-impaired
       transform: translatex(-50%)
 
 
-  &:not(:last-child)
+  &.swiper-slide:not(:last-child)
     margin-right: em(22, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
@@ -188,3 +206,66 @@ html.theme-visually-impaired
         left: 50%
         top: 50%
         transform: translate(-50%, -50%) rotate(-90deg)
+
+
+.collectiveSlide
+
+  &.noSlide
+    font-size: 1rem
+    width: 100%
+
+    @media screen and (max-width: $collectiveNoSliderTextResponse)
+      font-size: vw(16, $collectiveNoSliderTextResponseNumber)
+
+    @media screen and (max-width: $collectiveNoSliderReverse)
+      flex-direction: column
+      font-size: 1rem
+
+    .contactBlock
+      flex: 0 0 em(296, 16)
+      max-width: 296px
+
+    .collectiveSlide__img
+      flex: 0 0 em(385, 16)
+      max-width: 385px
+      height: em(385, 16)
+      min-height: 100%
+
+      @media screen and (max-width: $collectiveNoSliderReverse)
+        flex: 0 0 auto
+        min-height: auto
+        margin: 0 auto
+
+    .collectiveSlide__fio
+      font-size: em(36, 16)
+
+    .collectiveSlide__link
+      font-size: 1em
+
+    .collectiveSlide__content
+      min-width: auto
+      width: auto
+      padding: em(22, 16) em(35, 16) em(34, 16) em(26, 16)
+      flex-direction: row
+      align-items: center
+      gap: em(30, 16) em(54, 16)
+
+      @media screen and (max-width: $collectiveNoSliderContentReverse)
+        flex-direction: column
+        align-items: flex-start
+
+    .collectiveSlide__text
+      font-size: 1em
+      letter-spacing: em(-0.2, 16)
+      color: var(--pColor)
+      font-weight: 500
+      max-width: 764px
+
+    .collectiveSlide__subContent
+      flex-direction: column
+      display: flex
+      justify-content: center
+      gap: em(15, 16)
+
+    .collectiveSlide__post
+      font-size: em(22, 16)

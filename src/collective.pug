@@ -1,0 +1,52 @@
+extends layouts/template
+
+include components/UI/switch
+include components/UI/input
+include components/UI/usualButton
+include components/UI/textarea
+include components/breadcrumbs
+include components/asides/asideForAbout
+include components/contactBlock
+
+block variables
+    - var pageTitle = 'Коллектив'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Наш коллектив'}], 'Наш коллектив')
+
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForAbout(1)
+                div.w-100.d-gap.flex.flex-column
+                    each imgsrc, index in ['@img/temporary/collective-5.png', '@img/temporary/collective-6.png', '@img/temporary/collective-6.png', '@img/temporary/collective-6.png']
+                        .collectiveSlide.noSlide
+                            .collectiveSlide__img
+                                img(src=imgsrc alt='Анна Гордеева')
+                            .collectiveSlide__content
+                                .collectiveSlide__subContent
+                                    h2.collectiveSlide__fio
+                                        span
+                                            if(index !== 0)
+                                                | Анна Гордеева
+                                            else
+                                                | Иван Иванов
+                                    .collectiveSlide__post
+                                        if(index !== 0)
+                                            | Воспитатель
+                                        else
+                                            | Заведующий
+                                    .collectiveSlide__text
+                                        if(index !== 0)
+                                            | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек, открывший истину, которого я бы назвал зодчим счастливой жизни.
+                                        else
+                                            | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек,
+                                            span.grey  открывший истину, которого я бы назвал зодчим ...
+                                    a(href='#').collectiveSlide__link
+                                        span
+                                        | Подробнее
+                                if(index === 0)
+                                    +contactBlock('h-fit-content')
+                    include layouts/modules/parts/pagination

@@ -1,0 +1,56 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+.pagination
+  display: flex
+  gap: em(15, 16)
+
+  &__item
+    padding: em(4, 14)
+    font-size: em(14, 16)
+    line-height: lh(20, 14)
+    color: var(--paginationColor)
+    font-weight: 800
+    height: em(32, 14)
+    min-width: em(32, 14)
+    display: flex
+    align-items: center
+    justify-content: center
+    @include useBorder()
+    border-radius: em(4, 14)
+    transition: $defaultTransitionDuration all
+
+    &:hover,
+    &--current
+      border-color: var(--textHoverColor)
+      color: var(--textHoverColor)
+
+      svg.arrow-icon
+        fill: var(--textHoverColor)
+
+  &__arrow
+
+    .arrow-icon
+      fill: var(--paginationArrowColor)
+
+    &--prev
+
+      .arrow-icon
+        transform: rotate(90deg)
+
+    &--next
+
+      .arrow-icon
+        transform: rotate(-90deg)
+
+    &--disabled
+      background: var(--paginationDisabledColor)
+      opacity: .5
+      pointer-events: none
+
+      &:hover
+        color: var(--paginationColor)
+        border-color: var(--staticBorderColor)
+
+        svg.arrow-icon
+          fill: var(--paginationArrowColor)
