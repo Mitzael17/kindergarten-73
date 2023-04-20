@@ -1,0 +1,22 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/asides/asideForAbout
+include components/ourVideos
+
+block variables
+    - var pageTitle = 'Галереи'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Наши видео'}], 'Наши видео')
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForAbout(3)
+                div.w-100
+                    div.d-gap.gridX3
+                        +ourVideos(3, 'gridX3Item', [{img: '@img/temporary/video-2.png', text: 'Длинное длинное длинное название видео'},{img: '@img/temporary/video-3.png', text: 'Название видео'},{img: '@img/temporary/video-4.png', text: 'Длинное длинное длинное название видео'}])
+                    div.mt-step
+                        include layouts/modules/parts/pagination
