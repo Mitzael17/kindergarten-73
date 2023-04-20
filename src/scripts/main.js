@@ -10,7 +10,8 @@ import {createMask} from "./modules/createMask.js";
 import {createSliderForSidebar} from "./modules/createSliderForSidebar.js";
 
 
-createThemeSwitcher();
+
+//createThemeSwitcher();
 
 createSpoilers();
 createFooterSpoilers();
@@ -28,3 +29,9 @@ createCollectiveSliders();
 createMask('.tel')
 
 createSliderForSidebar()
+
+new isvek.Bvi({
+    target: '.bvi-open',
+    fontSize: 24,
+    theme: 'white'
+});

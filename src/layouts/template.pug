@@ -7,10 +7,12 @@ html(lang='en')
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
         meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
         title= pageTitle
+        link(rel='stylesheet' href='styles/bvi.min.css')
         link(rel='stylesheet' href='styles/main.min.css')
     body
         include modules/main/header
         main
             block content
         include modules/main/footer
+        script(src="scripts/bvi.min.js")
         script(src="scripts/main.min.js")

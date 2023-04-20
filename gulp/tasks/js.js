@@ -11,7 +11,8 @@ export const js = () => {
     .pipe(webpack({
         mode: app.isBuild ? 'production' : 'development',
         entry: {
-            main: "./src/scripts/main.js"
+            main: "./src/scripts/main.js",
+            bvi: "./src/scripts/bvi.js"
         },
         output: {
             filename: "[name].min.js"

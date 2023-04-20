@@ -47,6 +47,7 @@
     "webpack-stream": "latest"
   },
   "dependencies": {
+    "bvi": "^1.0.2",
     "gulp-cssimport": "^7.0.0",
     "swiper": "^9.2.2"
   }

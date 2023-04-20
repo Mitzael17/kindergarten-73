@@ -11,6 +11,7 @@
 
 //libs
 @import "lib/swiper"
+//@import "bvi"
 
 // main modules
 @import "modules/header"
@@ -60,7 +61,7 @@ html
         gap: em(30, $sizeForWeakEyes) em(15, $sizeForWeakEyes)
 
   @media screen and (max-width: $mobile)
-    font-size: 3.333vw
+    font-size: 3.333vw !important
 
   &.theme-visually-impaired
     font-size: $sizeForWeakEyes + px
