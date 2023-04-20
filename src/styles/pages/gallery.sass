@@ -1,0 +1,40 @@
+@import "../assets/mixins"
+@import "../assets/vars"
+
+$firstGridTextResponseNumber: 1100
+$firstGridTextResponse: $firstGridTextResponseNumber + px
+
+$secondGridTextResponseNumber: 600
+$secondGridTextResponse: $secondGridTextResponseNumber + px
+
+html.theme-visually-impaired
+
+  .gridX4Item
+
+    @media screen and (max-width: $firstGridTextResponse)
+      font-size: vw($sizeForWeakEyes, $firstGridTextResponseNumber)
+
+    @media screen and (max-width: 750px)
+      font-size: 1rem
+
+    @media screen and (max-width: $secondGridTextResponse)
+      font-size: vw($sizeForWeakEyes, $secondGridTextResponseNumber)
+
+
+.gridX4
+  @include createGrid(repeat(4, 1fr), ('1200px': repeat(3, 1fr), '750px': repeat(2, 1fr)) )
+
+  .gridX4Item
+    width: 100%
+    font-size: 1rem
+    margin: 0
+
+    @media screen and (max-width: $firstGridTextResponse)
+      font-size: vw(16, $firstGridTextResponseNumber)
+
+    @media screen and (max-width: 750px)
+      font-size: 1rem
+
+    @media screen and (max-width: $secondGridTextResponse)
+      font-size: vw(16, $secondGridTextResponseNumber)
+

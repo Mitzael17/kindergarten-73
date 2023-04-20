@@ -1,0 +1,12 @@
+mixin gallery(qty= 1, isSwiper= true, className= '', data= ['Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Название галереи'])
+    - var index = 0;
+    while (index++ < qty)
+        each text in data
+            .galleryItem.cartSlide(class= (isSwiper ? 'swiper-slide ' : '') + className)
+                .weakText 12 июля 2023
+                .galleryItem__img
+                    img(src="@img/temporary/gallery-1.png")
+                .tags
+                    | #солнышко  #день-рождения #2023
+                    span +5
+                .galleryItem__text= text

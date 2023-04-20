@@ -74,3 +74,17 @@
       height: 1px
       width: 100vw
       top: 0
+
+
+@mixin createGrid($initColumns, $gridArr)
+
+  display: grid
+  grid-template-columns: $initColumns
+
+  @each $media, $columns in $gridArr
+    @media screen and (max-width: $media)
+      grid-template-columns: $columns
+
+
+
+
