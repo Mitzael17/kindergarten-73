@@ -1,23 +1,30 @@
 extends layouts/template
 
+include components/UI/switch
+include components/UI/input
+include components/UI/usualButton
+include components/UI/textarea
 include components/breadcrumbs
-include components/asides/asideForAbout
-include components/titles/h2WithIcon
-include components/gallery
+include components/galleryGrid
 
 block variables
-    - var pageTitle = 'Галереи'
+    - var pageTitle = 'Наши группы'
 
 block breadcrumbs
-    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Наши галереи'}], 'Наши галереи')
+    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Страница галереи'}], 'Страница галереи')
 
 block content
+    - var titleCollective = 'Персонал'
+    - var buttonCollectiveText = 'Смотреть все фото группы'
+    - var noSection = true
+
     section
         .container
-            .pageLayout
-                +asideForAbout(2)
-                div.w-100
-                    div.d-gap.gridX4
-                        +gallery(4, false, 'gridX4Item', ['Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Длинное длинное длинное длинное длинное название галереи', 'Название галереи'])
-                    div.mt-step
-                        include layouts/modules/parts/pagination
+            .weakText 12 июля 2023
+            +galleryGrid('mt-step')
+            .flex.mt-step.dh-gap
+                .weakText Теги
+                .tags #солнышко
+                .tags #день-рождения
+                .tags #2023
+            p.mt-step Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек, открывший истину, которого я бы назвал зодчим счастливой жизни. Действительно, никто не отвергает, не презирает, не избегает наслаждений только из-за того, что это наслаждения, но лишь из-за того, что тех, кто не умеет разумно предаваться наслаждениям, постигают великие страдания. Равно как нет никого, кто возлюбил бы, предпочел и возжаждал бы само страдание только за то, что это страдание, а не потому, что иной раз возникают такие обстоятельства, когда страдания и боль приносят некое и немалое наслаждение. Если воспользоваться простейшим примером, то кто из нас стал бы заниматься какими бы то ни было тягостными физическими упражнениями, если бы это не приносило с собой некоей пользы? И кто мог бы по справедливости упрекнуть стремящегося к наслаждению, которое не несло бы с собой никаких неприятностей, или того, кто избегал бы такого страдания, которое не приносило бы с собой никакого наслаждения?

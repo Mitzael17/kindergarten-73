@@ -9,6 +9,24 @@ export function createVideoPlayer() {
 
         if(!iframe || !preview) return;
 
+        if(!document.hasFocus()) {
+
+            const checkBeforeFocus = setInterval( () => {
+
+                if (document.activeElement.id === iframe.id) {
+
+                    preview.classList.add('hide')
+                    clearInterval(checkBeforeFocus);
+
+                }
+
+            }, 500)
+
+            window.addEventListener('focus', () => clearInterval(checkBeforeFocus), {once:true});
+
+        }
+
+
         window.addEventListener("blur", () => {
             setTimeout(() => {
                 if (document.activeElement.id === iframe.id) {

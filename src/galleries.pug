@@ -1,0 +1,23 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/asides/asideForAbout
+include components/titles/h2WithIcon
+include components/gallery
+
+block variables
+    - var pageTitle = 'Галереи'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Наши галереи'}], 'Наши галереи')
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForAbout(2)
+                div.w-100
+                    div.d-gap.gridX4
+                        +gallery(4, false, 'gridX4Item', ['Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Длинное длинное длинное длинное длинное название галереи', 'Название галереи'])
+                    div.mt-step
+                        include layouts/modules/parts/pagination
