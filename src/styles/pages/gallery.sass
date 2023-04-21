@@ -7,6 +7,12 @@ $firstGridTextResponse: $firstGridTextResponseNumber + px
 $secondGridTextResponseNumber: 600
 $secondGridTextResponse: $secondGridTextResponseNumber + px
 
+$firstGridX5TextResponseNumber: 1400
+$firstGridX5TextResponse: $firstGridX5TextResponseNumber + px
+
+$secondGridX5TextResponseNumber: 1000
+$secondGridX5TextResponse: $secondGridX5TextResponseNumber + px
+
 html.theme-visually-impaired
 
   .gridX4Item
@@ -38,3 +44,23 @@ html.theme-visually-impaired
     @media screen and (max-width: $secondGridTextResponse)
       font-size: vw(16, $secondGridTextResponseNumber)
 
+
+.gridX5
+  @include createGrid(repeat(5, 1fr), ('1200px': repeat(4, 1fr), '750px': repeat(3, 1fr), '500px': repeat(2, 1fr)) )
+
+  .gridX5Item
+    width: 100%
+    font-size: 1rem
+    margin: 0
+
+    @media screen and (max-width: $firstGridX5TextResponse)
+      font-size: vw(16, $firstGridX5TextResponseNumber)
+
+    @media screen and (max-width: 1200px)
+      font-size: vw(16, 1200)
+
+    @media screen and (max-width: 750px)
+      font-size: vw(16, 750)
+
+    @media screen and (max-width: 500px)
+      font-size: 1rem

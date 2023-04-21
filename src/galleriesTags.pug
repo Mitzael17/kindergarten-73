@@ -1,0 +1,22 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/asides/asideForAbout
+include components/titles/h2WithIcon
+include components/gallery
+
+block variables
+    - var pageTitle = 'Галереи по тегу'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Галереи по тегу'}], 'Галереи по тегу #солнышко')
+
+block content
+    section
+        .container
+            .pageLayout
+                div.w-100
+                    div.d-gap.gridX5
+                        +gallery(2, false, 'gridX5Item', ['Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Длинное длинное длинное длинное длинное название галереи', 'Название галереи', 'Название галереи'])
+                    div.mt-step
+                        include layouts/modules/parts/pagination
