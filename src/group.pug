@@ -5,6 +5,7 @@ include components/UI/input
 include components/UI/usualButton
 include components/UI/textarea
 include components/breadcrumbs
+include components/galleryGrid
 
 block variables
     - var pageTitle = 'Наши группы'
@@ -32,3 +33,19 @@ block content
                     img(src="@img/yandexDiskIcon.svg", alt='yandex')
                 .linkFile__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания.
                 +usualButton('Смотреть меню', 'ml-auto')
+            h2.mt-step.smallFont Распорядок дня
+            .schedule.mt-step
+                each data in [{time: '7:00 - 8:10', text: 'Прием детей'}, {time: '8:10 - 8:15', text: 'Утренняя гимнастика'}, {time: '8:15 - 8:55', text: 'Подготовка к завтраку, завтрак'}, {time: '8:55 - 9:00', text: 'Самостоятельная деятельность'}, {time: '9:00 - 9:30', text: 'Образовательная деятельность'}, {time: '...', text: '...'}]
+                    .schedule__time.schedule__item
+                        = data.time
+                    .schedule__text.schedule__item
+                        = data.text
+            h2.mt-step.smallFont Фото группы
+            +galleryGrid('mt-step')
+            h2.smallFont.mt-step Видео группы
+            .video.mt-step.ml-auto.mr-auto
+                .video__preview.big-image
+                    img(src="@img/temporary/video-preview-1.png", alt='video')
+                    .videoSign
+                iframe(width="560" height="315" src="https://www.youtube.com/embed/nZr1oqL0oZk" id="groupVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
+

@@ -23,11 +23,11 @@ if (noSection)
                             .collectiveSlide__text
                                 | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и
                                 span.grey  восхваляющих страдания...
-                            a(href='#').collectiveSlide__link
+                            a(href='employee.html').collectiveSlide__link
                                 span
                                 | Подробнее
             +slideButtons()
-    +whiteButton(buttonCollectiveText ? buttonCollectiveText : 'Смотреть весь коллектив', 'mt-step w-100', 'document.location.href="collective.html"')
+    +whiteButton(buttonCollectiveText ? buttonCollectiveText : 'Смотреть весь коллектив', 'mt-step w-100', 'collective.html')
 else
     section
         .container
@@ -49,8 +49,8 @@ else
                                     .collectiveSlide__text
                                         | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и
                                         span.grey  восхваляющих страдания...
-                                    a(href='#').collectiveSlide__link
+                                    a(href='employee.html').collectiveSlide__link
                                         span
                                         | Подробнее
                     +slideButtons()
-            +whiteButton(buttonCollectiveText ? buttonCollectiveText : 'Смотреть весь коллектив', 'mt-step w-100', 'document.location.href="collective.html"')
+            +whiteButton(buttonCollectiveText ? buttonCollectiveText : 'Смотреть весь коллектив', 'mt-step w-100', 'collective.html')

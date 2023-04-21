@@ -1,0 +1,40 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+.video
+  width: 100%
+  height: auto
+  max-width: 1156px
+  position: relative
+  border-radius: em(30, 16)
+  overflow: hidden
+
+  iframe
+    @include useAbsolutePosition()
+    width: 100%
+    height: 100%
+    z-index: 1
+
+  &__preview
+    cursor: pointer
+    position: relative
+    pointer-events: none
+    z-index: 2
+    transition: $defaultTransitionDuration opacity
+
+    &.hide
+      opacity: 0
+
+
+    &:before
+      content: ''
+      width: 100%
+      height: 100%
+      @include useAbsolutePosition()
+      opacity: .45
+      transition: $defaultTransitionDuration all
+      background: var(--videoHoverFilter)
+
+
+
+

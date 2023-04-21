@@ -1,0 +1,29 @@
+@import "../../assets/mixins"
+
+.schedule
+  display: grid
+  grid-template-columns: em(163, 16) 1fr
+  grid-auto-rows: em(64, 16)
+  align-items: center
+  border: 1px solid var(--greyBackground)
+  border-radius: em(15, 16)
+
+  &__time
+    color: var(--colorScheduleTime)
+    padding-right: em(39, 16)
+
+  &__item
+    @include useSecondFont(500)
+    font-size: em(14, 16)
+    line-height: 1
+    padding-left: em(15, 14)
+    letter-spacing: -0.005em
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    &:not(:last-child),
+    &:not(:nth-last-child(2))
+      border-bottom: 1px solid var(--greyBackground)
+

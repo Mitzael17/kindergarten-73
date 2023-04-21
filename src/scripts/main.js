@@ -9,6 +9,7 @@ import {createThemeSwitcher} from "./modules/createThemeSwitcher.js";
 import {createMask} from "./modules/createMask.js";
 import {createSliderForSidebar} from "./modules/createSliderForSidebar.js";
 import {createAchievementsPageSliders} from "./modules/createAchievementsPageSliders.js";
+import {createVideoPlayer} from "./modules/createVideoPlayer.js";
 
 
 
@@ -38,3 +39,5 @@ new isvek.Bvi({
 });
 
 createAchievementsPageSliders();
+
+createVideoPlayer();

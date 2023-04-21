@@ -48,6 +48,9 @@
 @import "modules/parts/contactBlock"
 @import "modules/parts/pagination"
 @import "modules/parts/linkFile"
+@import "modules/parts/schedule"
+@import "modules/parts/galleryGrid"
+@import "modules/parts/video"
 
 // pages
 @import "pages/employee"
@@ -367,3 +370,20 @@ section
 
 .button-ref
   width: fit-content
+
+
+
+.big-image
+  max-width: 1156px
+  width: 100%
+  height: em(650, 16)
+  border-radius: em(30, 16)
+  overflow: hidden
+
+  @media screen and (max-width: 1200px)
+    font-size: vw(16, 1200)
+
+  img
+    object-fit: cover
+    height: 100%
+    width: 100%

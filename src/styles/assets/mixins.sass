@@ -21,11 +21,12 @@
     font-weight: $fw
 
 
-@mixin useBorder()
+@mixin useBorder($hover: true)
   border: 1px solid var(--staticBorderColor)
 
-  &:hover
-    border-color: var(--hoverBorderColor)
+  @if ($hover)
+    &:hover
+      border-color: var(--hoverBorderColor)
 
 
 @mixin useHighlighting()
