@@ -1,0 +1,57 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/asides/asideForAbout
+include components/UI/slideButtons
+include components/UI/whiteButton
+
+block variables
+    - var pageTitle = 'Достижения'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Наши достижения'}], 'Наши достижения')
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForAbout(4)
+                div.achievementsPage.mr-auto.ml-auto
+                    div.relative.achievementsPath__container
+                        .achievementsPath.swiper
+                            .swiper-wrapper
+                                each year in ['2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015']
+                                    .swiper-slide.achievementsPath__year
+                                        span= year
+                        +slideButtons()
+                    .achievementsItems.swiper.mt-step
+                        .swiper-wrapper
+                            each year in ['2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015']
+                                .swiper-slide.achievementsPageSlider
+                                    .achievementsList
+                                        - var index = 0;
+                                        while (index <= 4)
+                                            - index++
+                                            .achievementsItem.wide.active
+                                                img(src=`@img/temporary/achievements-1.png`, alt='image')
+                                            .achievementsItem.wide.active
+                                                img(src=`@img/temporary/achievements-2.png`, alt='image')
+                                            .achievementsItem.active
+                                                img(src=`@img/temporary/achievements-3.png`, alt='image')
+                                            .achievementsItem.wide.active
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image')
+                                            .achievementsItem.wide.active
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image')
+                                        while (index <= 10)
+                                            - index++
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-1.png`, alt='image')
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-2.png`, alt='image')
+                                            .achievementsItem
+                                                img(src=`@img/temporary/achievements-3.png`, alt='image')
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image')
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image')
+                                    +whiteButton('Загрузить еще', 'arrow-bottom mt-step w-100')

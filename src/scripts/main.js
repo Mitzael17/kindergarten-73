@@ -8,6 +8,7 @@ import {createDefaultSlider} from "./modules/createDefaultSlider.js";
 import {createThemeSwitcher} from "./modules/createThemeSwitcher.js";
 import {createMask} from "./modules/createMask.js";
 import {createSliderForSidebar} from "./modules/createSliderForSidebar.js";
+import {createAchievementsPageSliders} from "./modules/createAchievementsPageSliders.js";
 
 
 
@@ -35,3 +36,5 @@ new isvek.Bvi({
     fontSize: 24,
     theme: 'white'
 });
+
+createAchievementsPageSliders();

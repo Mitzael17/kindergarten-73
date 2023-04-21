@@ -76,9 +76,13 @@
       top: 0
 
 
-@mixin createGrid($initColumns, $gridArr)
+@mixin createGrid($initColumns, $gridArr, $isInline: false)
 
-  display: grid
+  @if($isInline)
+    display: inline-grid
+  @else
+    display: grid
+
   grid-template-columns: $initColumns
 
   @each $media, $columns in $gridArr

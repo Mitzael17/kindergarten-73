@@ -1,5 +1,5 @@
-mixin aside(data, activeIndex= 0)
-    aside.sidebar
+mixin aside(data, activeIndex= 0, className= '')
+    aside.sidebar(class= className)
         nav.sidebar__links.swiper
             .swiper-wrapper
                 each item, index in data

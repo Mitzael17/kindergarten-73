@@ -1,0 +1,115 @@
+$firstTextAchievementsPageResponseNumber: 1440
+$firstTextAchievementsPageResponse: $firstTextAchievementsPageResponseNumber + px
+
+$secondAchievementsPageResponse: 550px
+
+@import "../assets/mixins"
+@import "../assets/vars"
+
+.achievementsList
+  font-size: 16px
+  @include createGrid(repeat(8, minmax(em(130, 16), 130px )), ($sidebarResponse: repeat(6, minmax(em(130, 16), 130px )), $secondAchievementsPageResponse: repeat(4, minmax(em(130, 16), 130px ))), true )
+  grid-auto-flow: dense
+  gap: em(30, 16) em(24, 16)
+  width: 100%
+
+  @media screen and (max-width: $firstTextAchievementsPageResponse)
+    font-size: 1vw
+
+
+  .achievementsItem
+    margin: 0
+    grid-column: span 1
+    width: 100%
+    height: auto
+    display: none
+    transform: scale(0)
+    transition: .5s all
+
+    &.active
+      display: block
+      transform: scale(1)
+
+    &.wide
+      grid-column: span 2
+
+    img
+      width: 100%
+
+
+.achievementsPath
+  height: em(64, 16)
+  align-items: center
+
+  &__container
+
+      .slide-button
+        margin: 0
+        font-size: .8em
+
+  @media screen and (max-width: $secondAchievementsPageResponse)
+    font-size: .7rem
+
+  &__year.swiper-slide
+
+    span
+      padding: em(10, 20)
+      display: inline-block
+      cursor: pointer
+
+    font-size: em(20, 16)
+    letter-spacing: em(-1, 20)
+    width: fit-content
+    border-radius: em(10, 16)
+    margin: auto em(129, 16) auto 0
+    background: #ffffff
+    position: relative
+    height: fit-content
+    @include useBorder()
+
+
+
+    &:before
+      content: ''
+      width: em(130, 16)
+      height: 2px
+      position: absolute
+      right: 100%
+      top: 50%
+      transform: translateY(-50%)
+      background: var(--staticBorderColor)
+
+    &:first-child
+      margin-left: em(129, 16)
+
+    &:last-child
+
+      &:after
+        content: ''
+        width: em(130, 16)
+        height: 2px
+        @include useAbsolutePosition(100%, 50%)
+        transform: translateY(-50%)
+        background: var(--staticBorderColor)
+
+    &.active
+      color: #ffffff
+      background: var(--linkColor)
+      border: none
+
+      &:before
+        background: var(--linkColor)
+
+
+.achievementsPage
+  max-width: 87%
+
+  @media screen and (max-width: 1200px)
+    max-width: 80%
+
+  @media screen and (max-width: $sidebarResponse)
+    max-width: 100%
+
+
+.achievementsPageSlide
+  width: fit-content

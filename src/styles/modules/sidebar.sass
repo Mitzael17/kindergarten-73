@@ -7,9 +7,15 @@
   position: relative
   max-width: 330px
 
+  &.smallSidebar
+    max-width: 160px
+
   @media screen and (max-width: $sidebarResponse)
     flex: 0 0 auto
     max-width: none
+
+    &.smallSidebar
+      max-width: none
 
   &__links
     position: sticky
