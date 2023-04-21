@@ -1,0 +1,20 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/news
+
+block variables
+    - var pageTitle = 'Новости'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Наши новости'}], 'Наши новости')
+
+block content
+    section
+        .container
+            .mt-step.gridX2.d-gap.gridX2--fastReverse
+                +news('gridX2Item')
+                +news('gridX2Item')
+                +news('gridX2Item')
+            div.mt-step
+                include layouts/modules/parts/pagination

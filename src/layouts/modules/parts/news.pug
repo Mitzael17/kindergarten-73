@@ -1,33 +1,11 @@
 include ../../../components/titles/h2WithIcon
 include ../../../components/UI/whiteButton
+include ../../../components/news
 
 
 section
     .container
         +h2WithIcon("@img/news.svg", 'Наши новости')
         .news
-            a.news__item(href="#")
-                .news__img
-                    img(src="@img/temporary/news-1.png")
-                .news__info
-                    .news__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение. Но чтобы вы поняли, откуда возникает это превратное
-                    .tinyText 20 января 2023
-            a.news__item(href="#")
-                .news__img
-                    img(src="@img/temporary/news-2.png")
-                .news__info
-                    .news__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение.
-                    .tinyText 20 января 2023
-            a.news__item(href="#")
-                .news__img
-                    img(src="@img/temporary/news-3.png")
-                .news__info
-                    .news__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение.
-                    .tinyText 20 января 2023
-            a.news__item(href="#")
-                .news__img
-                    img(src="@img/temporary/news-4.png")
-                .news__info
-                    .news__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение. Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение.
-                    .tinyText 20 января 2023
-        +whiteButton('Смотреть все новости', 'mt-step w-100')
+            +news()
+        +whiteButton('Смотреть все новости', 'mt-step w-100', 'news.html')
