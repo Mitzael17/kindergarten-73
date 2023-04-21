@@ -1,0 +1,26 @@
+extends layouts/template
+
+include components/UI/switch
+include components/UI/input
+include components/UI/usualButton
+include components/UI/textarea
+include components/breadcrumbs
+
+block variables
+    - var pageTitle = 'Полезные ссылки'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Полезные ссылки'}], 'Полезные ссылки')
+
+block content
+    section
+        .container
+            .flex.flex-wrap.flex-j-c.d-gap
+                - var r_index = 1;
+                while (r_index++ < 4)
+                    - var index = 1;
+                    while (index <= 10)
+                        a.link-block(href="#")
+                            img(src=`@img/temporary/links-${index++}.png`, alt='link')
+            div.mt-step
+                include layouts/modules/parts/pagination

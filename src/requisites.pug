@@ -1,0 +1,32 @@
+extends layouts/template
+
+include components/UI/switch
+include components/UI/input
+include components/UI/usualButton
+include components/UI/textarea
+include components/breadcrumbs
+include components/asides/asideForAbout
+
+block variables
+    - var pageTitle = 'О нас'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'О нас', link: 'about.html'}, {text: 'Наши реквизиты'}], 'Наши реквизиты')
+
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForAbout(5)
+                div
+                    h2.smallFont Наши реквизиты
+                    div.mt-step
+                        p Муниципальное дошкольное образовательное автономное учреждение «Детский сад № 73»
+                        p г. Оренбург, ул. Чкалова, 43/1
+                        p ИНН 5610126606КПП 561001001
+                        p Финансовое управление администрации г. Оренбурга (МДОАУ "Детский сад № 73", л/с 039.20.165.2, 039.20.165.3, 039.20.165.4, 039.20.165.5)
+                        p ГРКЦ ГУ Банка России по Оренбургской области в г.Оренбурге
+                        p БИК 045354001
+                        p.mt-step р/сч 40701810200003000003
+                        p.mt-step ОКАТО 53401000000
