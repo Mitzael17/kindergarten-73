@@ -6,6 +6,7 @@ include components/UI/usualButton
 include components/UI/textarea
 include components/breadcrumbs
 include components/galleryGrid
+include components/video
 
 block variables
     - var pageTitle = 'Наши группы'
@@ -43,9 +44,4 @@ block content
             h2.mt-step.smallFont Фото группы
             +galleryGrid('mt-step')
             h2.smallFont.mt-step Видео группы
-            .video.mt-step.ml-auto.mr-auto
-                .video__preview.big-image
-                    img(src="@img/temporary/video-preview-1.png", alt='video')
-                    .videoSign
-                iframe(width="560" height="315" src="https://www.youtube.com/embed/nZr1oqL0oZk" id="groupVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen)
-
+            +video()

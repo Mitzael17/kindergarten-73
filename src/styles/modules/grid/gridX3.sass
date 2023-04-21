@@ -1,0 +1,30 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+$firstGridX3TextResponseNumber: 750
+$firstGridX3TextResponse: $firstGridX3TextResponseNumber + px
+
+$GridX3StopTextResponse: 500px
+
+html.theme-visually-impaired
+
+  .gridX3Item
+
+    @media screen and (max-width: $firstGridX3TextResponse)
+      font-size: vw($sizeForWeakEyes, $firstGridX3TextResponseNumber)
+
+    @media screen and (max-width: $GridX3StopTextResponse)
+      font-size: 1rem
+
+.gridX3
+  @include createGrid(repeat(3, 1fr), ('1100px': repeat(2, 1fr), $GridX3StopTextResponse: 1fr))
+
+  .gridX3Item
+    min-width: 100%
+    font-size: 1rem
+
+    @media screen and (max-width: $firstGridX3TextResponse)
+      font-size: vw(16, $firstGridX3TextResponseNumber)
+
+    @media screen and (max-width: $GridX3StopTextResponse)
+      font-size: 1rem
