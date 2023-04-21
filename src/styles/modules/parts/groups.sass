@@ -3,6 +3,13 @@
 
 $groupsFirstResponse: 700px
 
+$groupsBigFirstTextResponseNumber: 1400
+$groupsBigFirstTextResponse: $groupsBigFirstTextResponseNumber + px
+
+
+$groupsBigSecondTextResponseNumber: 1400
+$groupsBigSecondTextResponse: $groupsBigSecondTextResponseNumber + px
+
 .groups
   display: flex
   font-size: 1rem
@@ -23,6 +30,30 @@ $groupsFirstResponse: 700px
     color: var(--groupColor)
     transition: $defaultTransitionDuration all
 
+    &--big
+      text-align: center
+      padding: em(20, 16)
+
+      @media screen and (max-width: $groupsBigFirstTextResponse)
+        font-size: vw(16, $groupsBigFirstTextResponseNumber)
+
+      @media screen and (max-width: $gridX2Response)
+        font-size: vw(16, $gridX2ResponseNumber)
+
+      .groups__title
+        font-size: 2em
+        margin-bottom: em(8, 32)
+
+      .groups__subtitle
+        font-size: em(24, 16)
+
+      .groups__img
+        min-width: em(200, 16)
+        min-height: em(200, 16)
+        width: em(200, 16)
+        height: em(200, 16)
+        margin-right: em(46, 16)
+
     &:hover
       background: var(--groupHoverBackground)
       color: #fff
@@ -42,6 +73,8 @@ $groupsFirstResponse: 700px
     line-height: lh(17, 13)
 
   &__img
+    min-width: em(53, 16)
+    min-height: em(53, 16)
     width: em(53, 16)
     height: em(53, 16)
     margin-right: em(15, 16)

@@ -1,0 +1,12 @@
+@import "../assets/mixins"
+
+.gridX2
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+  .gridX2Item
+    flex: 0 0 calc(50% - em(20, 16))
+
+    @media screen and (max-width: $gridX2Response)
+      flex: 0 0 100%

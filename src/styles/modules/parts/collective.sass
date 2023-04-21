@@ -72,9 +72,11 @@ html.theme-visually-impaired
 
   &.swiper-slide
     max-width: em(626 - $contentSize, 16)
+    width: em(626 - $contentSize, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
       max-width: em(340 - $contentOnMobileSize, 16)
+      width: em(340 - $contentOnMobileSize, 16)
 
   &.move.swiper-slide
     transform: translatex(-100%)
@@ -82,9 +84,11 @@ html.theme-visually-impaired
   &.active.swiper-slide,
   &.swiper-slide:hover
     max-width: em(602, 16)
+    width: em(602, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
       max-width: em(340, 16)
+      width: em(340, 16)
 
     &.move
       transform: translatex(-50%)
