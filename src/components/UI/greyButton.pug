@@ -1,2 +1,6 @@
-mixin greyButton(text, className, onClick)
-    button.button.button--grey(class= className, onclick=onClick)= text
+mixin greyButton(text, className, ref)
+    if (ref)
+        a.button-ref(href= ref)
+            button.button.button--grey(class= className)= text
+    else
+        button.button.button--grey(class= className)= text

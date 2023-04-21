@@ -1,15 +1,36 @@
-mixin whiteButton(text, className, onClick, img = true, reverse = false)
+mixin whiteButton(text, className, ref, img = true, reverse = false)
 
     if(img && reverse)
-        button.button.button--white(class= className, onclick=onClick)
-            svg.icon.reverse
-                use(href="@img/icons/icons.svg#arrow-button")
-            = text
+
+        if (ref)
+            a.button-ref(href= ref)
+                button.button.button--white(class= className)
+                    svg.icon.reverse
+                        use(href="@img/icons/icons.svg#arrow-button")
+                    = text
+        else
+            button.button.button--white(class= className)
+                svg.icon.reverse
+                    use(href="@img/icons/icons.svg#arrow-button")
+                = text
 
     else if(img && !reverse)
-        button.button.button--white(class= className, onclick=onClick)= text
-            svg.icon
-                use(href="@img/icons/icons.svg#arrow-button")
+
+        if (ref)
+            a.button-ref(href= ref)
+                button.button.button--white(class= className)= text
+                    svg.icon
+                        use(href="@img/icons/icons.svg#arrow-button")
+        else
+            button.button.button--white(class= className)= text
+                svg.icon
+                    use(href="@img/icons/icons.svg#arrow-button")
 
     else
-        button.button.button--white(class= className, onclick=onClick)= text
+
+        if (ref)
+            a.button-ref(href= ref)
+                button.button.button--white(class= className)= text
+        else
+            button.button.button--white(class= className)= text
+

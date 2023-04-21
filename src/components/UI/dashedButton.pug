@@ -1,2 +1,6 @@
-mixin dashedButton(text, className, onClick)
-    button.button.button--dashed(class= className, onclick=onClick)= text
+mixin dashedButton(text, className, ref)
+    if (ref)
+        a.button-ref(href= ref)
+            button.button.button--dashed(class= className)= text
+    else
+        button.button.button--dashed(class= className)= text

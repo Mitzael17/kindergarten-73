@@ -1,0 +1,34 @@
+@import "../../assets/mixins"
+@import "../../assets/vars"
+
+$firstLinkFileTextResponseNumber: 1000
+$firstLinkFileTextResponse: $firstLinkFileTextResponseNumber + px
+
+.linkFile
+  display: flex
+  gap: em(15, 16)
+  padding: em(10, 16)
+  background: var(--fileLinkBackground)
+  border-radius: em(15, 16)
+  align-items: center
+
+  @media screen and (max-width: $firstLinkFileTextResponse)
+    font-size: vw(16, $firstLinkFileTextResponseNumber)
+
+  &__icon
+    min-width: em(53, 16)
+    width: em(53, 16)
+    height: em(53, 16)
+    max-width: 53px
+    max-height: 53px
+
+    img
+      width: 100%
+      height: 100%
+
+  &__text
+    @include setFonts(20, var(--groupFileColor), lh(26, 20), 0)
+
+
+  .button
+    min-width: fit-content

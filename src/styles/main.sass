@@ -47,6 +47,7 @@
 @import "modules/parts/flexBox"
 @import "modules/parts/contactBlock"
 @import "modules/parts/pagination"
+@import "modules/parts/linkFile"
 
 // pages
 @import "pages/employee"
@@ -355,3 +356,14 @@ section
   line-height: 1.1
   letter-spacing: em(-0.2, 14)
   font-size: em(14, 16)
+
+
+.underline
+  border-bottom: 2px solid currentColor
+
+  @media screen and (max-width: $mobileResponse)
+    border-bottom: 1px solid currentColor
+
+
+.button-ref
+  width: fit-content

@@ -1,0 +1,34 @@
+extends layouts/template
+
+include components/UI/switch
+include components/UI/input
+include components/UI/usualButton
+include components/UI/textarea
+include components/breadcrumbs
+
+block variables
+    - var pageTitle = 'Наши группы'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Наши группы', link: 'ourGroups.html'}, {text: 'Страница группы'}], 'Группа №1 - Солнышко')
+
+block content
+    - var titleCollective = 'Персонал'
+    - var buttonCollectiveText = 'Смотреть все фото группы'
+    - var noSection = true
+
+    section
+        .container
+            include layouts/modules/parts/collective
+            h2.mt-step.smallFont Меню
+            .linkFile.mt-step
+                .linkFile__icon
+                    img(src="@img/yandexDiskIcon.svg", alt='yandex')
+                .linkFile__text Актуальное меню на
+                    a(href="#").underline яндекс.диске
+                +usualButton('Смотреть меню', 'ml-auto')
+            .linkFile.mt-step
+                .linkFile__icon
+                    img(src="@img/yandexDiskIcon.svg", alt='yandex')
+                .linkFile__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания.
+                +usualButton('Смотреть меню', 'ml-auto')
