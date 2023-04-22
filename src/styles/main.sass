@@ -48,7 +48,7 @@
 @import "modules/parts/contactBlock"
 @import "modules/parts/pagination"
 @import "modules/parts/linkFile"
-@import "modules/parts/schedule"
+@import "modules/parts/table2Col"
 @import "modules/parts/galleryGrid"
 @import "modules/parts/video"
 
@@ -390,3 +390,16 @@ section
     object-fit: cover
     height: 100%
     width: 100%
+
+
+.b-link
+  @include useSecondFont(500)
+  line-height: 1.6
+  text-decoration: underline
+  letter-spacing: -.013em
+  color: var(--bLinkColor)
+
+
+.map
+  max-height: 314px
+  height: em(314, 16)

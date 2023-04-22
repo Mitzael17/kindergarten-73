@@ -1,0 +1,20 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/asides/asideForParents
+include components/questions
+
+block variables
+    - var pageTitle = 'Частые вопросы'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Родителям'}, {text: 'Частые вопросы'}], 'Частые вопросы')
+
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForParents(3)
+                div
+                    +questions()

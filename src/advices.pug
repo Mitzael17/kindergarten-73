@@ -1,0 +1,28 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/asides/asideForParents
+include components/questions
+
+block variables
+    - var pageTitle = 'Советы специалистов'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Родителям'}, {text: 'Советы специалистов'}], 'Советы специалистов')
+
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForParents(4)
+                div
+                    p Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек, открывший истину, которого я бы назвал зодчим счастливой жизни. Действительно.
+                    ul.list.mt-step.mb-step
+                        - var index = 0;
+                        while (index++ < 7)
+                            li
+                                a(href="#").b-link Советы психолога
+                            li
+                                a(href="#").b-link Рекомендации логопеда
+                    include layouts/modules/parts/pagination

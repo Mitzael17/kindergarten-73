@@ -8,6 +8,8 @@ export function createSliderForSidebar() {
 
     if(!sidebarLinks) return;
 
+    const currentLinkIndex = [...sidebarLinks.querySelectorAll('.sidebar__item')]?.findIndex( link => link.classList.contains('active'));
+
     new Swiper(sidebarLinks, {
         slidesPerView: "auto",
         freeMode: true,
@@ -15,7 +17,9 @@ export function createSliderForSidebar() {
             901: {
                 enabled: false
             }
-        }
+        },
+        initialSlide: currentLinkIndex !== -1 ? currentLinkIndex : 0
     })
+
 
 }

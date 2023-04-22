@@ -1,21 +1,10 @@
 include ../../../components/titles/h2WithIcon
 include ../../../components/UI/usualButton
 include ../../../components/UI/whiteButton
-
-- var index = 0;
+include ../../../components/questions
 
 section
     .container
         +h2WithIcon('@img/question.svg', 'Частые вопросы')
-        .border-radius.grey-background.pad-step.to-half-on-mobile
-            while (index < 5)
-                - index++
-                .spoiler(data-spoiler='true').mb-halfStep
-                    .spoiler__area
-                        span Текст вопроса
-                        svg.arrow-icon
-                            use(href="@img/icons/icons.svg#arrow-select")
-                    .spoiler__content(data-spoiler-wrapper="true")
-                        div.spoiler__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек, открывший истину, которого я бы назвал зодчим счастливой жизни. Действительно, никто не отвергает, не презирает, не избегает наслаждений только из-за того, что это наслаждения, но лишь из-за того, что тех, кто не умеет разумно предаваться наслаждениям, постигают великие страдания.
-            +usualButton('Задать свой вопрос', 'w-100')
+        +questions()
         +whiteButton('Смотреть все вопросы', 'w-100 mt-step')

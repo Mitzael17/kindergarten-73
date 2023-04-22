@@ -35,11 +35,11 @@ block content
                 .linkFile__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания.
                 +usualButton('Смотреть меню', 'ml-auto')
             h2.mt-step.smallFont Распорядок дня
-            .schedule.mt-step
+            .table2Col.mt-step
                 each data in [{time: '7:00 - 8:10', text: 'Прием детей'}, {time: '8:10 - 8:15', text: 'Утренняя гимнастика'}, {time: '8:15 - 8:55', text: 'Подготовка к завтраку, завтрак'}, {time: '8:55 - 9:00', text: 'Самостоятельная деятельность'}, {time: '9:00 - 9:30', text: 'Образовательная деятельность'}, {time: '...', text: '...'}]
-                    .schedule__time.schedule__item
+                    .table2Col__item
                         = data.time
-                    .schedule__text.schedule__item
+                    .table2Col__item
                         = data.text
             h2.mt-step.smallFont Фото группы
             +galleryGrid('mt-step')

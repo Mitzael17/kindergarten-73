@@ -1,0 +1,27 @@
+extends layouts/template
+
+include components/breadcrumbs
+include components/asides/asideForParents
+include components/questions
+include components/map
+
+block variables
+    - var pageTitle = 'Школы рядом с МДОАУ «Детский сад № 73»'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Родителям'}, {text: 'Школы рядом с МДОАУ «Детский сад № 73»'}], 'Школы рядом с МДОАУ «Детский сад № 73»')
+
+
+block content
+    section
+        .container
+            .pageLayout
+                +asideForParents(5)
+                div.w-100
+                    h2.smallFont Школы рядом с МДОАУ «Детский сад № 73»
+                    .table2Col.mt-step.table2Col--noBorder
+                        - var index = 0;
+                        while (index++ < 4)
+                            .table2Col__item(class= index === 2 ? 'grey-background' : '') МОАУ «Основная общеобразовательная школа № 73»
+                            .table2Col__item(class= index === 2 ? 'grey-background' : '') г. Оренбург, ул. Советская, 7
+                    +map('mt-step')
