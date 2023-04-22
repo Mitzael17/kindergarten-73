@@ -1,9 +1,9 @@
 include ../UI/slideButtons
 
-mixin achievements(index= 1)
+mixin achievements(index= 1, groupName='achievement-1')
     .achievements.defaultSlider.swiper
         .swiper-wrapper
             while (index <= 8)
                 .swiper-slide.achievementsItem
-                    img(src=`@img/temporary/achievements-${index++ % 4 + 1}.png`, alt='image')
+                    img(src=`@img/temporary/achievements-${index % 4 + 1}.png`, alt='image', data-popup-group=groupName, data-popup-image=`@img/temporary/achievements-${index++ % 4 + 1}.png`)
         +slideButtons(true)

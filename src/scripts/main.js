@@ -10,6 +10,7 @@ import {createMask} from "./modules/createMask.js";
 import {createSliderForSidebar} from "./modules/createSliderForSidebar.js";
 import {createAchievementsPageSliders} from "./modules/createAchievementsPageSliders.js";
 import {createVideoPlayer} from "./modules/createVideoPlayer.js";
+import {createPopUpForImages} from "./modules/createPopUpForImages.js";
 
 
 
@@ -41,3 +42,5 @@ new isvek.Bvi({
 createAchievementsPageSliders();
 
 createVideoPlayer();
+
+createPopUpForImages();

@@ -54,6 +54,7 @@
 @import "modules/parts/contactInfo"
 @import "modules/parts/socials"
 @import "modules/parts/quote"
+@import "modules/parts/popup"
 
 // grids
 @import "modules/grid/gridX2"
@@ -70,6 +71,9 @@ html
   font-family: Mont, sans-serif
   font-weight: 600
   color: var(--textColor)
+
+  &.blocked
+    overflow: hidden
 
   &.theme-visually-impaired
     .d-gap
