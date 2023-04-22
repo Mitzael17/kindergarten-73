@@ -46,7 +46,6 @@ html.theme-visually-impaired
 
 
 
-
 .collective__slider
   transition: .5s all
   position: relative
@@ -172,6 +171,9 @@ html.theme-visually-impaired
       font-size: .5em
       letter-spacing: em(-0.1, 16)
 
+  &__text.collectiveSlide__text--restricted
+    max-width: 417px
+
   &__link
     color: var(--linkColor)
     position: relative
@@ -253,10 +255,13 @@ html.theme-visually-impaired
       flex-direction: row
       align-items: center
       gap: em(30, 16) em(54, 16)
+      flex: 0 1 100%
+      justify-content: space-between
 
       @media screen and (max-width: $collectiveNoSliderContentReverse)
         flex-direction: column
-        align-items: flex-start
+        //align-items: center
+
 
     .collectiveSlide__text
       font-size: 1em
@@ -264,6 +269,10 @@ html.theme-visually-impaired
       color: var(--pColor)
       font-weight: 500
       max-width: 764px
+
+      &--restricted
+        max-width: 417px
+
 
     .collectiveSlide__subContent
       flex-direction: column

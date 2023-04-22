@@ -1,4 +1,5 @@
 include ../../../components/UI/usualButton
+include ../../../components/socials
 
 - var logoResize = true;
 
@@ -27,7 +28,7 @@ header
                             li
                                 a.link(href="about.html") О нас
                             li
-                                a.link(href="#") Контакты
+                                a.link(href="contacts.html") Контакты
                         .header__burgerWrapper#burger
                             .header__burgerMenu
                                 .header__burger
@@ -40,12 +41,6 @@ header
                         .pairWords.flex-j-fe
                             .weakText Пн-Пт
                             .weakText 07:00 – 19:00
-                    .header__socials
-                        a.header__social(href="https://vk.com" target='blank')
-                            img(src="@img/vk.svg" alt='Вконтакте')
-                        a.header__social(href="https://ok.ru" target="blank")
-                            img(src="@img/ok.svg" alt='Одноклассники')
-                        a.header__social(href="https://telegram.org" target="blank")
-                            img(src="@img/telegram.svg" alt='Телеграм')
+                    +socials()
                     +usualButton('Обратная связь', '', 'feedback.html')
     block breadcrumbs

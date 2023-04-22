@@ -1,0 +1,72 @@
+extends layouts/template
+
+include components/UI/usualButton
+include components/breadcrumbs
+include components/socials
+include components/map
+include components/contactBlock
+
+block variables
+    - var pageTitle = 'Контакты'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Контакты'}], 'Контакты')
+
+block content
+    section
+        .container
+            - var index = 0;
+            while (index++ < 2)
+                .contactInfo.contactBlock(class= index ===  2 ? 'mt-step' : '')
+                    .contactInfo__block
+                        .contactBlock__title
+                            img.contactBlock__icon(src="@img/map.svg", alt='map icon')
+                            | Адрес
+                        ul.contactBlock__list
+                            li.contactBlock__item г. Оренбург, ул.Чкалова, 43/1
+
+                    .contactInfo__block
+                        .contactBlock__title
+                            img.contactBlock__icon(src="@img/calendar.svg", alt='calendar icon')
+                            | График приема
+                        ul.contactBlock__list
+                            li.contactBlock__item Вторник: 8:00 - 11:00
+                            li.contactBlock__item Среда 16:00 - 19:00
+
+                    .contactInfo__block
+                        .contactBlock__title
+                            img.contactBlock__icon(src="@img/mail.svg", alt='mail icon')
+                            | Электронная почта
+                        ul.contactBlock__list
+                            li.contactBlock__item detskiisad73@yandex.ru
+
+                    .contactInfo__block
+                        .contactBlock__title
+                            img.contactBlock__icon(src="@img/phone.svg", alt='phone icon')
+                            | Телефоны
+                        ul.contactBlock__list
+                            li.contactBlock__item +7 (3532) 43-20-73 - заведующий
+                            li.contactBlock__item +7 (3532) 43-20-72 - делопроизводитель
+                            li.contactBlock__item +7 (3532) 43-20-72 - вахта
+            +usualButton('Написать сообщение', 'mt-step w-100')
+            div.mt-step.flex.flex-column.flex-a-c
+                h3 Мы в социальных сетях
+                +socials('mt-step')
+            +map('mt-step')
+            - var index = 0;
+            while (index++ < 3)
+                .collectiveSlide.noSlide.mt-step
+                    .collectiveSlide__img
+                        img(src='@img/temporary/collective-5.png' alt='Иван Иванов')
+                    .collectiveSlide__content
+                        .collectiveSlide__subContent
+                            h2.collectiveSlide__fio
+                                span Иван Иванов
+                            .collectiveSlide__post Заведующий
+                            .collectiveSlide__text.collectiveSlide__text--restricted
+                                | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек,
+                                span.grey  открывший истину, которого я бы назвал зодчим ...
+                            a(href='employee.html').collectiveSlide__link
+                                span
+                                | Подробнее
+                        +contactBlock('h-fit-content')

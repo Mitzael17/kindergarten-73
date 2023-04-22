@@ -1,0 +1,33 @@
+@import "../../assets/functions"
+
+
+$contactInfoTextResponseNumber: 1100
+$contactInfoTextResponse: $contactInfoTextResponseNumber + px
+
+$contactInfoFirstResponse: 800px
+$contactInfoSecondResponse: 550px
+
+.contactInfo
+  border: 1px solid var(--galleryBorderColor)
+  box-shadow: none
+  padding: em(15, 16)
+  gap: em(30, 16) em(24, 16)
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+  &__block
+    flex: 0 0 calc(25% - em(24, 16))
+
+    @media screen and (max-width: $contactInfoFirstResponse)
+      flex-basis: calc(50% - em(24, 16))
+
+    @media screen and (max-width: $contactInfoSecondResponse)
+      flex-basis: 100%
+      text-align: center
+
+  @media screen and (max-width: $contactInfoTextResponse)
+    font-size: vw(16, $contactInfoTextResponseNumber)
+
+  @media screen and (max-width: $contactInfoFirstResponse)
+    font-size: 1rem
