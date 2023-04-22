@@ -1,0 +1,45 @@
+extends layouts/template
+
+include components/breadcrumbs
+
+block variables
+    - var pageTitle = 'Карта сайта'
+
+block breadcrumbs
+    +breadcrumbs([{text: 'Карта сайта'}], 'Карта сайта')
+
+block content
+    section
+        .container
+            ul.list.list--hover
+                li
+                    a(href='/') Главная
+                li
+                    a(href='information.html') Сведения об образовательной организации
+                    ul.list
+                        li
+                            a(href="#") Основные сведения
+                        li
+                            a(href="#") Структура и органы управления образовательной организацией
+                        li
+                            a(href="#") Документы
+                        li ...
+                li
+                    a(href="feedback.html") Обратная связь
+                li
+                    a(href="news.html") Новости
+                    ul.list
+                        li
+                            a(href="newsPage.html") Новость 1
+                        li
+                            a(href="newsPage.html") Новость 2
+                li
+                    a(href="ourGroups.html") Группы
+                    ul.list
+                        li
+                            a(href="group.html") Группа 1
+                        li
+                            a(href="group.html") Группа 2
+                        li
+                            a(href="group.html") ...
+                li ...

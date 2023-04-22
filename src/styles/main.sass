@@ -53,6 +53,7 @@
 @import "modules/parts/video"
 @import "modules/parts/contactInfo"
 @import "modules/parts/socials"
+@import "modules/parts/quote"
 
 // grids
 @import "modules/grid/gridX2"
@@ -152,6 +153,8 @@ ol.list, ul.list
   color: var(--liColor)
   @include useSecondFont(400)
 
+  ul.list
+    margin-top: em(15, 16)
 
   li
     margin-bottom: em(15, 16)
@@ -167,6 +170,11 @@ ul.list
   li
     min-height: em(24, 16)
 
+    a
+      transition: $defaultTransitionDuration all
+      &:hover
+        color: var(--textHoverColor)
+
     &:before
       content: ''
       background: url("../img/arrow-right.svg") 0 0 / 100% 100% no-repeat
@@ -177,6 +185,7 @@ ul.list
 
 ol.list
   counter-reset: numberItem
+  padding: 0
 
   li
     counter-increment: numberItem
@@ -405,3 +414,40 @@ section
 .map
   max-height: 314px
   height: em(314, 16)
+
+
+.table-wrapper
+  border-radius: em(15, 16)
+  overflow: hidden
+  border: 1px solid var(--greyBackground)
+  overflow-x: auto
+
+.table
+  border-collapse: collapse
+  min-width: em(900, 16)
+
+  th, td
+    padding: em(25, 16) em(15, 16)
+    @include useSecondFont(500)
+    font-size: em(14, 16)
+    line-height: 1
+    letter-spacing: -0.005em
+    text-align: left
+
+  th
+    background: #EFF1F8
+
+  tr
+    border-bottom: 1px solid var(--greyBackground)
+
+    &:last-child
+      border: none
+
+
+.text404
+
+  @media screen and (max-width: 900px)
+    font-size: vw(16, 900)
+
+.title404
+  @include setFonts(128)

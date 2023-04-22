@@ -1,0 +1,22 @@
+extends layouts/template
+
+include components/UI/usualButton
+
+block variables
+    - var pageTitle = '404'
+
+block content
+    section.mt-step
+        .container
+            div.flex.flex-column.flex-a-c
+                ul.breadcrumbs__list
+                    li.breadcrumbs__item
+                        a(href="/")
+                            svg.breadcrumbs__icon
+                                use(href='@img/icons/icons.svg#home')
+                            | Главная
+                    li.breadcrumbs__item Ошибка 404
+                div.text404.flex.flex-column.flex-a-c
+                    .title404.mt-step Ошибка 404
+                    h1.mt-step Страница не найдена
+                    +usualButton('На главную', 'mt-step', '/', true, true)
