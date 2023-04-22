@@ -2,7 +2,7 @@ mixin gallery(qty= 1, isSwiper= true, className= '', data= ['Длинное дл
     - var index = 0;
     while (index++ < qty)
         each text in data
-            .galleryItem.cartSlide(class= (isSwiper ? 'swiper-slide ' : '') + className)
+            a.galleryItem.cartSlide(class= (isSwiper ? 'swiper-slide ' : '') + className, href="gallery.html")
                 .weakText 12 июля 2023
                 .galleryItem__img
                     img(src="@img/temporary/gallery-1.png")
