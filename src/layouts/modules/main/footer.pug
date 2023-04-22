@@ -11,12 +11,15 @@ footer
                         a.footer__link(href="tel:12345678") +7 (3532) 43-20-73
                         a.footer__link(href='mailto:detskiisad73@yandex.ru') detskiisad73@yandex.ru
                     .footer__socials
-                        a.footer__social(href="https://vk.com" target="blank")
-                            img(src="@img/vk-footer.svg" alt='Вконтакте')
-                        a.footer__social(href="https://telegram.org" target="blank")
-                            img(src="@img/telegram-footer.svg" alt='Телеграм')
-                        a.footer__social(href="https://ok.ru" target="blank")
-                            img(src="@img/ok-footer.svg" alt='Одноклассники')
+                        a.footer__social(href="https://vk.com" target="blank").footer__social--vk
+                            svg
+                                use(href="@img/icons/icons.svg#vk")
+                        a.footer__social(href="https://telegram.org" target="blank").footer__social--telegram
+                            svg
+                                use(href="@img/icons/icons.svg#telegram")
+                        a.footer__social(href="https://ok.ru" target="blank").footer__social--ok
+                            svg
+                                use(href="@img/icons/icons.svg#ok")
                 .footer__block
                     .footer__title
                         | Главная

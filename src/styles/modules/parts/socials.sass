@@ -1,4 +1,5 @@
 @import "../../assets/vars"
+@import "../../assets/mixins"
 
 .socials
   display: flex
@@ -11,6 +12,9 @@
     display: block
     width: em(36, 16)
     height: em(36, 16)
+    border-radius: 50%
+    @include useHighlightingForSocials(transparent)
+    transition: $defaultTransitionDuration all
 
     img
       width: 100%
@@ -19,3 +23,21 @@
     @media screen and (max-width: $headerSecondResponse)
       width: 2em
       height: 2em
+
+  &__item--ok
+
+    &:hover
+      transform: scale(1.1)
+      @include useHighlightingForSocials(var(--okColor))
+
+  &__item--vk
+
+    &:hover
+      transform: scale(1.1)
+      @include useHighlightingForSocials(var(--vkColor))
+
+  &__item--telegram
+
+    &:hover
+      transform: scale(1.1)
+      @include useHighlightingForSocials(var(--telegramColor))

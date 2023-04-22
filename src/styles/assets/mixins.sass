@@ -33,6 +33,9 @@
   border: 1px solid var(--highlightingBorderColor)
   box-shadow: -1px -1px 4px var(--highlightingShadowColor), 2px 2px 4px var(--highlightingShadowColor)
 
+@mixin useHighlightingForSocials($color)
+  box-shadow: 0 0 em(15, 16) 0 $color
+
 
 @mixin useTextSecondFont()
   font-size: em(14, 16)

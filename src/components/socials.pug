@@ -1,8 +1,8 @@
 mixin socials(className)
     .socials(class= className ? className : '')
-        a.socials__item(href="https://vk.com" target='blank')
+        a.socials__item(href="https://vk.com" target='blank').socials__item--vk
             img(src="@img/vk.svg" alt='Вконтакте')
-        a.socials__item(href="https://ok.ru" target="blank")
+        a.socials__item(href="https://ok.ru" target="blank").socials__item--ok
             img(src="@img/ok.svg" alt='Одноклассники')
-        a.socials__item(href="https://telegram.org" target="blank")
+        a.socials__item(href="https://telegram.org" target="blank").socials__item--telegram
             img(src="@img/telegram.svg" alt='Телеграм')
