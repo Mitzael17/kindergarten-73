@@ -4,8 +4,9 @@ mixin gallery(qty= 1, isSwiper= true, className= '', data= ['Длинное дл
         each text in data
             a.galleryItem.cartSlide(class= (isSwiper ? 'swiper-slide ' : '') + className, href="gallery.html")
                 .weakText 12 июля 2023
-                .galleryItem__img
-                    img(src="@img/temporary/gallery-1.png")
+                .galleryItem__img.relative
+                    img(src="@img/temporary/gallery-1.png", alt='gallery', loading='lazy').relative.priority
+                    .swiper-lazy-preloader.animate
                 .tags
                     | #солнышко  #день-рождения #2023
                     span +5

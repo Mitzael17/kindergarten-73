@@ -34,13 +34,15 @@ export function createAchievementsPageSliders() {
         },
         slidesPerView: 'auto',
         freeMode: true,
+        grabCursor: true
 
     });
 
     const achievementsSwiper = new Swiper(achievementsItemsSlider, {
         allowTouchMove: false,
         speed: 1000,
-        autoHeight: true
+        autoHeight: true,
+        spaceBetween: 24
     });
 
     // ----------------

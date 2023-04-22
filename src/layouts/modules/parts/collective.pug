@@ -15,7 +15,8 @@ if (noSection)
                 each imgsrc in data
                     .swiper-slide.collectiveSlide
                         .collectiveSlide__img
-                            img(src=imgsrc alt='Анна Гордеева')
+                            img(src=imgsrc alt='Анна Гордеева', loading='lazy')
+                            div.swiper-lazy-preloader
                         .collectiveSlide__content
                             .word-on-new-line.collectiveSlide__fio
                                 span Анна Гордеева
@@ -41,7 +42,8 @@ else
                         each imgsrc in data
                             .swiper-slide.collectiveSlide
                                 .collectiveSlide__img
-                                    img(src=imgsrc alt='Анна Гордеева')
+                                    img(src=imgsrc alt='Анна Гордеева', loading='lazy')
+                                    .swiper-lazy-preloader
                                 .collectiveSlide__content
                                     .word-on-new-line.collectiveSlide__fio
                                         span Анна Гордеева

@@ -1,5 +1,5 @@
-mixin textarea(placeholder, name, id)
+mixin textarea(placeholder, name, id = false)
     div.inputLabel
-        label(for= id).label= placeholder
+        label(for= (id ? id : false)).label= placeholder
     div.input
-        textarea(placeholder= placeholder, name= name, id= id)
+        textarea(placeholder= placeholder, name= name, id= (id ? id : false))

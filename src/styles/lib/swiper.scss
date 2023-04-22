@@ -675,3 +675,9 @@ swiper-container .swiper-notification {
   backface-visibility: hidden;
   overflow: hidden;
 }
+
+
+.swiper-lazy-preloader.animate {
+  animation: swiper-preloader-spin 1s infinite linear;
+  z-index: 1;
+}

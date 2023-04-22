@@ -5,7 +5,7 @@ mixin groups(limit= 8)
             - index++
             a.groups__item(href='group.html')
                 .groups__img
-                    img(src="@img/temporary/groups-1.png")
+                    img(src="@img/temporary/groups-1.png", alt=`group №${index}` loading='lazy')
                 .groups__info
                     .groups__title Группа №1
                     .groups__subtitle Солнышко

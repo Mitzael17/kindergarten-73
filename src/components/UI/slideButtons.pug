@@ -1,7 +1,7 @@
 mixin slideButtons(closer = false)
     .slide-button-container.slide-button-container-next
         .slide-button-next.slide-button(class= closer ? 'closer' : '')
-            img(src="@img/slide-arrow.svg")
+            img(src="@img/slide-arrow.svg", alt='next')
     .slide-button-container.slide-button-container-prev
         .slide-button-prev.slide-button(class= closer ? 'closer' : '')
-            img(src="@img/slide-arrow.svg")
+            img(src="@img/slide-arrow.svg", alt='previous')

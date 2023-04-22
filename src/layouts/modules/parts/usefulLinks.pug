@@ -8,6 +8,7 @@ section
         +h2WithIcon('@img/links.svg', 'Полезные ссылки')
         .flex.flex-wrap.flex-j-c.d-gap
             while (index <= 10)
-                a.link-block(href="#")
-                    img(src=`@img/temporary/links-${index++}.png`, alt='link')
+                a.link-block(href="#").relative
+                    img(src=`@img/temporary/links-${index++}.png`, alt='link', loading='lazy').relative.priority
+                    .swiper-lazy-preloader.animate
         +whiteButton('Смотреть все полезные ссылки', 'mt-step w-100', 'usefulLinks.html')

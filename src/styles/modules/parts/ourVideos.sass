@@ -11,7 +11,7 @@ $videosSecondTextResponse: $videosSecondTextResponseNumber + px
   gap: em(30, $size) em(24, $size)
 
   &__item
-    flex: 0 0 em(325, $size)
+    flex: 0 0 calc(25% - em(24, $size))
     gap: em(12, $size)
 
     @media screen and (max-width: $videosFirstResponse)
@@ -79,6 +79,7 @@ html.theme-visually-impaired
     .videoSign
       opacity: 0
       transition: $defaultTransitionDuration opacity
+      z-index: 4
 
     &:hover
       color: var(--textHoverColor)
@@ -105,6 +106,7 @@ html.theme-visually-impaired
     &:before
       content: ''
       width: 100%
+      z-index: 3
       height: 100%
       @include useAbsolutePosition()
       opacity: 0

@@ -2,8 +2,9 @@ mixin news(className)
     - var index = 0;
     while (index++ < 4)
         a.news__item.gridItemX2(href="newsPage.html", class= className)
-            .news__img
-                img(src=`@img/temporary/news-${index}.png`)
+            .news__img.relative
+                img(src=`@img/temporary/news-${index}.png`, loading='lazy', alt='news').relative.priority
+                .swiper-lazy-preloader.animate
             .news__info
                 .news__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение. Но чтобы вы поняли, откуда возникает это превратное
                 .tinyText 20 января 2023

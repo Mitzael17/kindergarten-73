@@ -4,6 +4,7 @@ mixin achievements(index= 1, groupName='achievement-1')
     .achievements.defaultSlider.swiper
         .swiper-wrapper
             while (index <= 8)
-                .swiper-slide.achievementsItem
-                    img(src=`@img/temporary/achievements-${index % 4 + 1}.png`, alt='image', data-popup-group=groupName, data-popup-image=`@img/temporary/achievements-${index++ % 4 + 1}.png`)
+                .swiper-slide.achievementsItem.relative
+                    img(src=`@img/temporary/achievements-${index % 4 + 1}.png`, alt='image', data-popup-group=groupName, data-popup-image=`@img/temporary/achievements-${index++ % 4 + 1}.png`, loading='lazy')
+                    .swiper-lazy-preloader.animate
         +slideButtons(true)

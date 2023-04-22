@@ -1,10 +1,10 @@
-mixin input(placeholder, name, id= '', type= 'text', isRequired= false, className= '')
+mixin input(placeholder, name, id= false, type= 'text', isRequired= false, className= '')
     div.inputLabel
-        label(for= id).label= placeholder
+        label(for= (id ? id : false)).label= placeholder
         if (type === 'password')
             a(href='#').weakText Забыл пароль
     div.input(class= type === 'password' ? 'input--password' : '')
-        input(placeholder= placeholder, name= name, type= type, id= id, required= isRequired, class= className)
+        input(placeholder= placeholder, name= name, type= type, id= (id ? id : false), required= isRequired, class= className)
         if (type === 'password')
             div.icon
                 span
