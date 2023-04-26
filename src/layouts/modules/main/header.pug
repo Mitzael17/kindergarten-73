@@ -4,7 +4,7 @@ include ../../../components/socials
 - var logoResize = true;
 
 header
-    .container
+    .container#header-container
         .header
             .header__rest
                 a.weakText(href="information.html") Сведения об образовательной организации
@@ -23,10 +23,42 @@ header
                                 a.link(href="news.html") Новости
                             li
                                 a.link(href="ourGroups.html") Группы
-                            li
-                                a.link(href="order.html") Родителям
-                            li
-                                a.link(href="about.html") О нас
+                            li.header__linkWithSublist
+                                a.link.flex.flex.flex-a-c(href="order.html") Родителям
+                                    div.select-list__arrow
+                                        svg
+                                            use(href='@img/icons/icons.svg#arrow-select')
+                                .header__sublistWrapper
+                                    ul.header__sublist.flex.flex-column.border-radius
+                                        li
+                                            a.link(href="order.html") Порядок приема в детсад
+                                        li
+                                            a.link(href="compensation.html") Компенсация оплаты за сад
+                                        li
+                                            a.link(href="blanks.html") Бланки заявлений
+                                        li
+                                            a.link(href="questions.html") Частые вопросы
+                                        li
+                                            a.link(href="advices.html") Советы специалистов
+                                        li
+                                            a.link(href='schools.html') Школы рядом с садиком
+                            li.header__linkWithSublist.flex.flex.flex-a-c
+                                a.link.flex.flex.flex-a-c(href="about.html") О нас
+                                    div.select-list__arrow
+                                        svg
+                                            use(href='@img/icons/icons.svg#arrow-select')
+                                .header__sublistWrapper
+                                    ul.header__sublist.flex.flex-column.border-radius
+                                        li
+                                            a.link(href="collective.html") Наш коллектив
+                                        li
+                                            a.link(href="galleries.html") Наши галереи
+                                        li
+                                            a.link(href="ourVideos.html") Наши видео
+                                        li
+                                            a.link(href="achievements.html") Наши достижения
+                                        li
+                                            a.link(href="requisites.html") Наши реквизиты
                             li
                                 a.link(href="contacts.html") Контакты
                         .header__burgerWrapper#burger

@@ -11,8 +11,12 @@ import {createAchievementsPageSliders} from "./modules/createAchievementsPageSli
 import {createVideoPlayer} from "./modules/createVideoPlayer.js";
 import {createPopUpForImages} from "./modules/createPopUpForImages.js";
 import {createObserverForBvi} from "./modules/createObserverForBvi.js";
+import {createFixedHeader} from "./modules/createFixedHeader.js";
+import {createClickableArrowInHeader} from "./modules/createClickableArrowInHeader.js";
 
 
+createFixedHeader();
+createClickableArrowInHeader();
 createSpoilers();
 createFooterSpoilers();
 

@@ -283,8 +283,17 @@ svg
   @include setFonts(14, var(--textColor), 1.3, -0.4)
   transition: $defaultTransitionDuration color
 
+  .select-list__arrow
+    width: em(12, 16)
+    height: em(15, 16)
+    margin-left: .5em
+
   &:hover
     color: var(--textHoverColor)
+
+    .select-list__arrow
+      svg
+        fill: var(--textHoverColor)
 
 
 .pairWords
