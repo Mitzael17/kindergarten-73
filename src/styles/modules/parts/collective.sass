@@ -73,9 +73,13 @@ html.theme-visually-impaired
     max-width: em(626 - $contentSize, 16)
     width: em(626 - $contentSize, 16)
 
+    @media screen and (max-width: $collectiveFirstResponse)
+      max-width: em(602, 16)
+      width: em(602, 16)
+
     @media screen and (max-width: $collectiveSecondResponse)
-      max-width: em(340 - $contentOnMobileSize, 16)
-      width: em(340 - $contentOnMobileSize, 16)
+      max-width: em(340, 16)
+      width: em(340, 16)
 
   &.move.swiper-slide
     transform: translatex(-100%)
@@ -101,13 +105,11 @@ html.theme-visually-impaired
 
   &__img
     flex: 0 0 em(302, 16)
-    //height: em(422, 16)
     border-radius: .5em
     overflow: hidden
 
     @media screen and (max-width: $collectiveSecondResponse)
       flex: 0 0 em(164, 16)
-      //height: em(229, 16)
 
     img
       width: 100%
@@ -173,6 +175,21 @@ html.theme-visually-impaired
 
   &__text.collectiveSlide__text--restricted
     max-width: 417px
+
+  &__text--greyArea
+    position: relative
+
+    &:before
+      content: ''
+      width: 100%
+      height: 1em
+      position: absolute
+      left: 0
+      bottom: 0
+      background: var(--greyBackground)
+      opacity: .45
+      pointer-events: none
+
 
   &__link
     color: var(--linkColor)

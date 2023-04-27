@@ -38,16 +38,23 @@ block content
                             img.contactBlock__icon(src="@img/mail.svg", alt='mail icon')
                             | Электронная почта
                         ul.contactBlock__list
-                            li.contactBlock__item detskiisad73@yandex.ru
+                            li.contactBlock__item
+                                a(href="mailto:detskiisad73@yandex.ru") detskiisad73@yandex.ru
 
                     .contactInfo__block
                         .contactBlock__title
                             img.contactBlock__icon(src="@img/phone.svg", alt='phone icon')
                             | Телефоны
                         ul.contactBlock__list
-                            li.contactBlock__item +7 (3532) 43-20-73 - заведующий
-                            li.contactBlock__item +7 (3532) 43-20-72 - делопроизводитель
-                            li.contactBlock__item +7 (3532) 43-20-72 - вахта
+                            li.contactBlock__item
+                                a(href="tel:+73532432073")= "+7 (3532) 43-20-73 "
+                                | - заведующий
+                            li.contactBlock__item
+                                a(href="tel:+73532432072")= "+7 (3532) 43-20-72 "
+                                | - делопроизводитель
+                            li.contactBlock__item
+                                a(href="tel:+73532432072")= "+7 (3532) 43-20-72 "
+                                | - вахта
             +usualButton('Написать сообщение', 'mt-step w-100')
             div.mt-step.flex.flex-column.flex-a-c
                 h3 Мы в социальных сетях
@@ -57,11 +64,13 @@ block content
             while (index++ < 3)
                 .collectiveSlide.noSlide.mt-step
                     .collectiveSlide__img
-                        img(src='@img/temporary/collective-5.png' alt='Иван Иванов')
+                        a(href="employee.html")
+                            img(src='@img/temporary/collective-5.png' alt='Иван Иванов')
                     .collectiveSlide__content
                         .collectiveSlide__subContent
                             h2.collectiveSlide__fio
-                                span Иван Иванов
+                                a(href="employee.html")
+                                    span Иван Иванов
                             .collectiveSlide__post Заведующий
                             .collectiveSlide__text.collectiveSlide__text--restricted
                                 | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания, я раскрою перед вами всю картину и разъясню, что именно говорил этот человек,

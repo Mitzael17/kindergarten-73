@@ -17,23 +17,26 @@ block breadcrumbs
 block content
     - var titleCollective = 'Персонал'
     - var buttonCollectiveText = 'Смотреть все фото группы'
+    - var withoutButton = true;
     - var noSection = true
 
     section
         .container
             include layouts/modules/parts/collective
+            - var customCollectiveData = ['@img/temporary/collective-1.png', '@img/temporary/collective-2.png', '@img/temporary/collective-2.png'];
+            div.mt-step
+                include layouts/modules/parts/collective
             h2.mt-step.smallFont Меню
             .linkFile.mt-step
                 .linkFile__icon
                     img(src="@img/yandexDiskIcon.svg", alt='yandex')
-                .linkFile__text= 'Актуальное меню на '
-                    a(href="#").underline яндекс.диске
-                +usualButton('Смотреть меню', 'ml-auto')
+                .linkFile__text Актуальное меню на яндекс.диске
+                +usualButton('Смотреть меню', 'ml-auto', '#')
             .linkFile.mt-step
                 .linkFile__icon
                     img(src="@img/yandexDiskIcon.svg", alt='yandex')
                 .linkFile__text Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания.
-                +usualButton('Смотреть меню', 'ml-auto')
+                +usualButton('Смотреть меню', 'ml-auto', '#')
             h2.mt-step.smallFont Распорядок дня
             .table2Col.mt-step
                 each data in [{time: '7:00 - 8:10', text: 'Прием детей'}, {time: '8:10 - 8:15', text: 'Утренняя гимнастика'}, {time: '8:15 - 8:55', text: 'Подготовка к завтраку, завтрак'}, {time: '8:55 - 9:00', text: 'Самостоятельная деятельность'}, {time: '9:00 - 9:30', text: 'Образовательная деятельность'}, {time: '...', text: '...'}]

@@ -71,37 +71,7 @@ html.theme-visually-impaired
   .videoSign
     font-size: .7em
 
-  &__item
-    display: flex
-    flex-direction: column
-    max-width: 325px
-
-    .videoSign
-      opacity: 0
-      transition: $defaultTransitionDuration opacity
-      z-index: 4
-
-    &:hover
-      color: var(--textHoverColor)
-
-      .videoSign
-        opacity: 1
-
-      svg
-        fill: var(--textHoverColor)
-
-      .ourVideos__img
-        &:before
-          opacity: .45
-
-
-  &__img
-    width: 100%
-    overflow: hidden
-    position: relative
-    max-width: 310px
-    height: 185px
-
+  .video__preview
 
     &:before
       content: ''
@@ -112,6 +82,37 @@ html.theme-visually-impaired
       opacity: 0
       transition: $defaultTransitionDuration all
       background: var(--videoHoverFilter)
+      pointer-events: none
+
+  &__item
+    display: flex
+    flex-direction: column
+    max-width: 325px
+
+    &:hover
+      color: var(--textHoverColor)
+
+      .videoSign
+        opacity: 1
+
+      svg
+        fill: var(--textHoverColor)
+
+      .video__preview:before
+        opacity: .45
+
+    .videoSign
+      opacity: 0
+      transition: $defaultTransitionDuration opacity
+      z-index: 4
+
+
+  &__img
+    width: 100%
+    overflow: hidden
+    position: relative
+    max-width: 310px
+    height: 185px
 
     img
       width: 100%

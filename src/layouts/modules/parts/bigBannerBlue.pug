@@ -1,4 +1,5 @@
 include ../../../components/UI/whiteButton
+include ../../../components/videoNotForTextPage
 
 section
     .container
@@ -10,5 +11,4 @@ section
                 +whiteButton('Подробнее о нас', 'bigButton', "about.html")
             a.banner__image(href="#" target="blank")
                 div.img
-                    img(src="@img/temporary/banner-2.png" alt='image')
-                    .videoSign
+                    +videoNotForTextPage('@img/temporary/banner-2.png', 'banner-video')

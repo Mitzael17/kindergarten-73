@@ -1,6 +1,5 @@
 mixin dashedButton(text, className, ref)
     if (ref)
-        a.button-ref(href= ref)
-            button.button.button--dashed(class= className)= text
+        a.button.button--dashed(href= ref, class= className)= text
     else
         button.button.button--dashed(class= className)= text

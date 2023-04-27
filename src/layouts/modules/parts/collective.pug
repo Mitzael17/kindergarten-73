@@ -12,23 +12,24 @@ if (noSection)
     .collective
         .collective__slider.swiper
             .swiper-wrapper
-                each imgsrc in data
+                each imgsrc in (customCollectiveData ? customCollectiveData : data)
                     .swiper-slide.collectiveSlide
                         .collectiveSlide__img
-                            img(src=imgsrc alt='Анна Гордеева', loading='lazy')
+                            a(href="employee_2.html")
+                                img(src=imgsrc alt='Анна Гордеева', loading='lazy')
                             div.swiper-lazy-preloader
                         .collectiveSlide__content
                             .word-on-new-line.collectiveSlide__fio
-                                span Анна Гордеева
+                                a(href="employee_2.html")
+                                    span Анна Гордеева
                             .collectiveSlide__post Воспитатель
-                            .collectiveSlide__text
-                                | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и
-                                span.grey  восхваляющих страдания...
-                            a(href='employee.html').collectiveSlide__link
+                            .collectiveSlide__text.collectiveSlide__text--greyArea Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания...
+                            a(href='employee_2.html').collectiveSlide__link
                                 span
                                 | Подробнее
             +slideButtons()
-    +whiteButton(buttonCollectiveText ? buttonCollectiveText : 'Смотреть весь коллектив', 'mt-step w-100', 'collective.html')
+    if(!withoutButton)
+        +whiteButton(buttonCollectiveText ? buttonCollectiveText : 'Смотреть весь коллектив', 'mt-step w-100', 'collective.html')
 else
     section
         .container
@@ -42,16 +43,17 @@ else
                         each imgsrc in data
                             .swiper-slide.collectiveSlide
                                 .collectiveSlide__img
-                                    img(src=imgsrc alt='Анна Гордеева', loading='lazy')
+                                    a(href="employee_2.html")
+                                        img(src=imgsrc alt='Анна Гордеева', loading='lazy')
                                     .swiper-lazy-preloader
                                 .collectiveSlide__content
                                     .word-on-new-line.collectiveSlide__fio
-                                        span Анна Гордеева
+                                        a(href="employee_2.html")
+                                            span Анна Гордеева
                                     .collectiveSlide__post Воспитатель
-                                    .collectiveSlide__text
-                                        | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и
-                                        span.grey  восхваляющих страдания...
-                                    a(href='employee.html').collectiveSlide__link
+                                    .collectiveSlide__text.collectiveSlide__text--greyArea
+                                        | Но чтобы вы поняли, откуда возникает это превратное представление людей, порицающих наслаждение и восхваляющих страдания...
+                                    a(href='employee_2.html').collectiveSlide__link
                                         span
                                         | Подробнее
                     +slideButtons()

@@ -3,8 +3,7 @@ mixin whiteButton(text, className, ref, img = true, reverse = false)
     if(img && reverse)
 
         if (ref)
-            a.button-ref(href= ref)
-                button.button.button--white(class= className)
+            a.button.button--white(href= ref, class= className)
                     svg.icon.reverse
                         use(href="@img/icons/icons.svg#arrow-button")
                     = text
@@ -17,10 +16,9 @@ mixin whiteButton(text, className, ref, img = true, reverse = false)
     else if(img && !reverse)
 
         if (ref)
-            a.button-ref(href= ref)
-                button.button.button--white(class= className)= text
-                    svg.icon
-                        use(href="@img/icons/icons.svg#arrow-button")
+            a.button.button--white(href= ref, class= className)= text
+                svg.icon
+                    use(href="@img/icons/icons.svg#arrow-button")
         else
             button.button.button--white(class= className)= text
                 svg.icon
@@ -29,8 +27,7 @@ mixin whiteButton(text, className, ref, img = true, reverse = false)
     else
 
         if (ref)
-            a.button-ref(href= ref)
-                button.button.button--white(class= className)= text
+            a.button.button--white(href= ref, class= className)= text
         else
             button.button.button--white(class= className)= text
 

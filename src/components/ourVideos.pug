@@ -1,13 +1,13 @@
+include videoNotForTextPage
+
 mixin ourVideos(repeat= 1, className= '', data= [{img: '@img/temporary/video-1.png', text: 'Название активного видео'},{img: '@img/temporary/video-2.png', text: 'Длинное длинное длинное название видео'},{img: '@img/temporary/video-3.png', text: 'Название видео'},{img: '@img/temporary/video-4.png', text: 'Длинное длинное длинное название видео'}])
     - var index = 0;
     while (index++ < repeat)
         each item in data
-            a.ourVideos__item(href='group.html', class= className)
+            .ourVideos__item(class= className)
                 .tinyText 12 июля 2023
                 .ourVideos__img.border-radius.relative
-                    img.border-radius(src=item.img, alt=item.text, loading='lazy').relative.priority
-                    .swiper-lazy-preloader.animate
-                    .videoSign
+                    +videoNotForTextPage(item.img, `ourVideo-${index}-${item.img}`)
                 .ourVideos__text
                     svg
                         use(href="@img/icons/icons.svg#video-triangle")

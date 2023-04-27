@@ -1,4 +1,4 @@
-mixin switch(name, value, className, type= 'checkbox')
+mixin switch(name, value, className, type= 'checkbox', checked= false)
     label.switch(class= className)
-        input(type=type, name=name value=value)
+        input(type=type, name=name value=value, checked=checked)
         span

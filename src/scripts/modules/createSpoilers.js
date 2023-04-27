@@ -4,10 +4,13 @@ export function createSpoilers() {
 
     const spoilers = document.querySelectorAll('[data-spoiler="true"]');
 
-    spoilers.forEach( spoiler => {
+    const spoilersWithFamily = {};
+
+    spoilers.forEach( (spoiler, index) => {
 
         let spoilerActive = spoiler.classList.contains('active');
         const content = spoiler.querySelector('[data-spoiler-wrapper="true"]');
+        const familySpoiler = spoiler.getAttribute('data-family-spoilers');
 
         if(!content) {
 
@@ -16,6 +19,13 @@ export function createSpoilers() {
 
         }
 
+        if(familySpoiler) {
+
+            if(!spoilersWithFamily[familySpoiler]) spoilersWithFamily[familySpoiler] = [];
+
+            spoilersWithFamily[familySpoiler][index] = {spoiler, content, isActive: false};
+
+        }
 
         if(content.classList.contains('select-list__items')) {
 
@@ -40,12 +50,16 @@ export function createSpoilers() {
         }
 
 
-        outClick(spoiler, () => {
+        if(spoiler.getAttribute('data-disable-outclick') !== 'true') {
 
-            spoilerActive = false;
-            hide(spoiler, content)
+            outClick(spoiler, () => {
 
-        });
+                spoilerActive = false;
+                hide(spoiler, content)
+
+            });
+
+        }
 
         content.addEventListener('click', (event) => {
 
@@ -57,11 +71,31 @@ export function createSpoilers() {
 
             if(spoilerActive) {
 
+                if(familySpoiler) {
+
+                    spoilersWithFamily[familySpoiler][index].isActive = false;
+
+                }
+
                 spoilerActive = false;
 
                 hide(spoiler, content);
 
                 return;
+
+            }
+
+            if(familySpoiler) {
+
+                const activeSpoilerIndex = spoilersWithFamily[familySpoiler].findIndex( spoilerData => spoilerData.isActive);
+
+                if(activeSpoilerIndex !== -1) {
+
+                    spoilersWithFamily[familySpoiler][activeSpoilerIndex].spoiler.dispatchEvent(new Event('click'));
+
+                }
+
+                spoilersWithFamily[familySpoiler][index].isActive = true;
 
             }
 

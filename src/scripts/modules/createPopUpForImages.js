@@ -92,7 +92,7 @@ export function createPopUpForImages() {
 
         popupImage.alt = 'loading...';
 
-        popup.addEventListener('click', (event) => handlerClickPopup(event, popup));
+        popup.addEventListener('click', (event) => handlerClickPopup(event, popup, arrowNext, arrowPrev));
 
         popup.append(popupImage, arrowPrev, arrowNext);
         document.body.append(popup);
@@ -102,7 +102,30 @@ export function createPopUpForImages() {
     }
 
 
-    function handlerClickPopup(event, popup) {
+    function handlerClickPopup(event, popup, arrowNext, arrowPrev) {
+
+        if(window.innerWidth <= 500) {
+
+            let stepY = popup.offsetHeight / 100;
+
+            if(event.y > popup.offsetHeight - stepY * 20 || event.y < stepY * 20) {
+
+                popup.classList.remove('active');
+                document.documentElement.classList.remove('blocked');
+                return;
+            }
+
+            if(event.x > popup.offsetWidth / 2) {
+
+                arrowNext.dispatchEvent(new Event('click'));
+                return;
+
+            }
+
+            arrowPrev.dispatchEvent(new Event('click'));
+            return;
+
+        }
 
         if(!event.target.contains(popup)) return;
 

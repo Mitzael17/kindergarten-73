@@ -1,0 +1,10 @@
+include aside
+
+mixin asideForInformation(activeIndex)
+    +aside([{text: 'Основные сведения', link: 'information.html'}, {
+        text: 'Структура и органы управления образовательной организацией',
+        link: 'structure.html'
+    }, {text: 'Документы', link: 'documents.html'}, {text: 'Образование', link: 'education.html'}, {
+        text: 'Образовательные стандарты и требования',
+        link: 'requires.html'
+    }], activeIndex)

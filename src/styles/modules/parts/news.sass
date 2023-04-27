@@ -39,6 +39,11 @@ html.theme-visually-impaired
   &__item
     flex: 0 1 calc((100% - em(24, 16) ) / 2)
     display: flex
+    transition: $defaultTransitionDuration all
+    border-radius: em(15, 16)
+
+    &:hover
+      background: var(--greyBackground)
 
     @media screen and (max-width: $newsFirstResponse)
       flex: 0 0 auto

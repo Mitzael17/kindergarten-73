@@ -12,7 +12,8 @@ mixin contactBlock(className)
                 img.contactBlock__icon(src="@img/phone.svg", alt='phone icon')
                 | Контакты
             ul.contactBlock__list
-                li.contactBlock__item +7 (3532) 43-20-73
+                li.contactBlock__item
+                    a(href="tel:+73532432073") +7 (3532) 43-20-73
 
             .contactBlock__title
                 img.contactBlock__icon(src="@img/map.svg", alt='map icon')

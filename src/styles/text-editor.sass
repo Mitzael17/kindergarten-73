@@ -1,0 +1,119 @@
+@import "assets/mixins"
+@import "assets/vars"
+
+.text-editor
+  ol, ul
+    line-height: lh(20, 16)
+    color: var(--liColor)
+    @include useSecondFont(400)
+  
+    ul
+      margin-top: em(15, 16)
+  
+    li
+      margin-bottom: em(15, 16)
+      position: relative
+      padding-left: em(48, 16)
+  
+      &:last-child
+        margin-bottom: 0
+  
+  
+  ul
+  
+    li
+      min-height: em(24, 16)
+  
+      a
+        transition: $defaultTransitionDuration all
+        &:hover
+          color: var(--textHoverColor)
+  
+      &:before
+        content: ''
+        background: url("../img/arrow-right.svg") 0 0 / 100% 100% no-repeat
+        @include useAbsolutePosition()
+        width: em(24, 16)
+        height: em(24, 16)
+  
+  
+  ol
+    counter-reset: numberItem
+    padding: 0
+  
+    li
+      counter-increment: numberItem
+      list-style: none
+  
+      &:before
+        content: counter(numberItem)
+        @include useAbsolutePosition(em(8, 16))
+        font-weight: 700
+
+  img
+    max-width: 1156px
+    width: 100%
+    height: em(650, 16)
+    border-radius: em(30, 16)
+    overflow: hidden
+    margin: 0 auto
+
+    @media screen and (max-width: 1200px)
+      font-size: vw(16, 1200)
+
+
+  table
+    border-collapse: collapse
+    min-width: em(900, 16)
+    width: 100%
+    border: 1px solid var(--greyBackground)
+    border-radius: em(15, 16)
+
+    th, td
+      padding: em(25, 16) em(15, 16)
+      @include useSecondFont(500)
+      font-size: em(14, 16)
+      line-height: 1
+      letter-spacing: -0.005em
+      text-align: left
+
+    th
+      background: #EFF1F8
+
+    tr
+      border-bottom: 1px solid var(--greyBackground)
+
+      &:last-child
+        border: none
+
+  blockquote
+    display: flex
+    background: var(--greyBackground)
+    padding: rem(15)
+    gap: em(30, 16) em(24, 16)
+    border-radius: em(15, 16)
+    margin: 0
+
+    @media screen and (max-width: 700px)
+      flex-direction: column
+      align-items: center
+      gap: em(10, 16)
+
+    img
+      min-width: em(48, 16)
+      min-height: em(48, 16)
+      max-width: 48px
+      max-height: 48px
+
+      @media screen and (max-width: 700px)
+        min-width: em(75, 16)
+        min-height: em(75, 16)
+        max-width: 75px
+        max-height: 75px
+
+  a
+    @include useSecondFont(500)
+    line-height: 1.6
+    text-decoration: underline
+    letter-spacing: -.013em
+    color: var(--bLinkColor)

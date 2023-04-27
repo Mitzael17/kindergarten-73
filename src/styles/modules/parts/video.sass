@@ -9,6 +9,7 @@
   border-radius: em(30, 16)
   overflow: hidden
 
+
   iframe
     @include useAbsolutePosition()
     width: 100%
@@ -22,18 +23,21 @@
     z-index: 2
     transition: $defaultTransitionDuration opacity
 
+    img
+      vertical-align: middle
+
     &.hide
       opacity: 0
 
-
-    &:before
-      content: ''
-      width: 100%
-      height: 100%
-      @include useAbsolutePosition()
-      opacity: .45
-      transition: $defaultTransitionDuration all
-      background: var(--videoHoverFilter)
+    &.withBlur
+      &:before
+        content: ''
+        width: 100%
+        height: 100%
+        @include useAbsolutePosition()
+        opacity: .45
+        transition: $defaultTransitionDuration all
+        background: var(--videoHoverFilter)
 
 
 

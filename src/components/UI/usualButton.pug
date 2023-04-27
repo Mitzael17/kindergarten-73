@@ -2,11 +2,10 @@ mixin usualButton(text, className, ref, img = true, reverse = false)
 
     if(img && reverse)
         if (ref)
-            a.button-ref(href= ref)
-                button.button.button--usual(class= className)
-                    svg.icon.reverse
-                        use(href="@img/icons/icons.svg#arrow-button")
-                    = text
+            a.button.button--usual(href= ref, class= className)
+                svg.icon.reverse
+                    use(href="@img/icons/icons.svg#arrow-button")
+                = text
         else
             button.button.button--usual(class= className)
                 svg.icon.reverse
@@ -16,8 +15,7 @@ mixin usualButton(text, className, ref, img = true, reverse = false)
     else if(img && !reverse)
 
         if (ref)
-            a.button-ref(href= ref)
-                button.button.button--usual(class= className)= text
+            a.button.button--usual(href= ref, class= className)= text
                     svg.icon
                         use(href="@img/icons/icons.svg#arrow-button")
         else
@@ -28,7 +26,6 @@ mixin usualButton(text, className, ref, img = true, reverse = false)
     else
 
         if (ref)
-            a.button-ref(href= ref)
-                button.button.button--usual(class= className)= text
+            a.button.button--usual(href= ref, class= className)= text
         else
             button.button.button--usual(class= className)= text

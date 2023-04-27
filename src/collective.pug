@@ -24,15 +24,17 @@ block content
                     each imgsrc, index in ['@img/temporary/collective-5.png', '@img/temporary/collective-6.png', '@img/temporary/collective-6.png', '@img/temporary/collective-6.png']
                         .collectiveSlide.noSlide
                             .collectiveSlide__img
-                                img(src=imgsrc alt='Анна Гордеева')
+                                a(href= index === 0 ? 'employee.html' : 'employee_2.html')
+                                    img(src=imgsrc alt='Анна Гордеева')
                             .collectiveSlide__content
                                 .collectiveSlide__subContent
                                     h2.collectiveSlide__fio
-                                        span
-                                            if(index !== 0)
-                                                | Анна Гордеева
-                                            else
-                                                | Иван Иванов
+                                        a(href= index === 0 ? 'employee.html' : 'employee_2.html')
+                                            span
+                                                if(index !== 0)
+                                                    | Анна Гордеева
+                                                else
+                                                    | Иван Иванов
                                     .collectiveSlide__post
                                         if(index !== 0)
                                             | Воспитатель
@@ -49,4 +51,3 @@ block content
                                         | Подробнее
                                 if(index === 0)
                                     +contactBlock('h-fit-content')
-                    include layouts/modules/parts/pagination

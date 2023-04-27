@@ -1,6 +1,5 @@
 mixin greyButton(text, className, ref)
     if (ref)
-        a.button-ref(href= ref)
-            button.button.button--grey(class= className)= text
+        a.button.button--grey(href= ref, class= className)= text
     else
         button.button.button--grey(class= className)= text

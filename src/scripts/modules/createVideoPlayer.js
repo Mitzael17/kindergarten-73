@@ -11,18 +11,19 @@ export function createVideoPlayer() {
 
         if(!document.hasFocus()) {
 
-            const checkBeforeFocus = setInterval( () => {
+            let checkBeforeFocus = startFocusObserver(iframe, preview);
 
-                if (document.activeElement.id === iframe.id) {
+            window.addEventListener('focus', () => clearInterval(checkBeforeFocus));
 
-                    preview.classList.add('hide')
-                    clearInterval(checkBeforeFocus);
+            window.addEventListener('blur', () => {
+
+                if(!preview.classList.contains('hide')) {
+
+                    checkBeforeFocus = startFocusObserver(iframe, preview);
 
                 }
 
-            }, 500)
-
-            window.addEventListener('focus', () => clearInterval(checkBeforeFocus), {once:true});
+            });
 
         }
 
@@ -40,5 +41,21 @@ export function createVideoPlayer() {
 
     })
 
+    function startFocusObserver(iframe, preview) {
+
+        const checkBeforeFocus = setInterval( () => {
+
+            if (document.activeElement.id === iframe.id) {
+
+                preview.classList.add('hide')
+                clearInterval(checkBeforeFocus);
+
+            }
+
+        }, 500)
+
+        return checkBeforeFocus;
+
+    }
 
 }

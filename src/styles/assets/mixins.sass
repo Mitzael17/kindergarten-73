@@ -1,8 +1,16 @@
 @import "functions"
 
+@mixin useShadow()
+  box-shadow: 0 em(8.15707, 16) em(43.5044, 16) rgba(0, 0, 0, 0.07), 0 em(1.82199, 16) em(9.71727, 16) rgba(0, 0, 0, 0.0417275), 0 em(0.542454, 16) em(2.89309, 16) rgba(0, 0, 0, 0.0282725)
+
 
 @mixin useAbsolutePosition($l: 0, $t: 0)
   position: absolute
+  left: $l
+  top: $t
+
+@mixin useFixedPosition($l: 0, $t: 0)
+  position: fixed
   left: $l
   top: $t
 

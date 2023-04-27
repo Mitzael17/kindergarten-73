@@ -26,7 +26,11 @@ block content
                     +textarea('Текст сообщения', 'message')
                 div
                     div.message.flex.flex-a-c
-                        +switch()
-                        .message-text Нажимая кнопку отправить, Вы даете согласие на обработку Ваших персональных данных в соответствии с
+                        +switch('politics', undefined, undefined, undefined, true)
+                        .message-text= "Нажимая кнопку отправить, Вы даете согласие на обработку Ваших персональных данных в соответствии с "
                             a(href='#', target='blank').b-link Политикой
                     +usualButton('Отправить', 'w-100 mt-halfStep')
+        .popupMessage.active
+            h3 Спасибо!
+            p.mt-halfStep.mb-halfStep Ваше сообщение получено и будет рассмотрено в ближайшее время!
+            +usualButton('Ок', 'buttonClosePopupMessage w-100', undefined, false)
