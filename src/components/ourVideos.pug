@@ -6,7 +6,7 @@ mixin ourVideos(repeat= 1, className= '', data= [{img: '@img/temporary/video-1.p
         each item in data
             .ourVideos__item(class= className)
                 .tinyText 12 июля 2023
-                .ourVideos__img.border-radius.relative
+                .ourVideos__img.border-radius.relative.ourVideos__img--autoHeight
                     +videoNotForTextPage(item.img, `ourVideo-${index}-${item.img}`)
                 .ourVideos__text
                     svg

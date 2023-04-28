@@ -80,19 +80,6 @@ html.theme-visually-impaired
   .videoSign
     font-size: .7em
 
-  .video__preview
-
-    &:before
-      content: ''
-      width: 100%
-      z-index: 3
-      height: 100%
-      @include useAbsolutePosition()
-      opacity: 0
-      transition: $defaultTransitionDuration all
-      background: var(--videoHoverFilter)
-      pointer-events: none
-
   &__item
     display: flex
     flex-direction: column
@@ -144,3 +131,20 @@ html.theme-visually-impaired
       transition: $defaultTransitionDuration all
 
   @include ourVideosProperties(16)
+
+
+.video__preview
+
+  &:before
+    content: ''
+    width: 100%
+    z-index: 3
+    height: 100%
+    @include useAbsolutePosition()
+    opacity: 0
+    transition: $defaultTransitionDuration all
+    background: var(--videoHoverFilter)
+    pointer-events: none
+
+.ourVideos__img--autoHeight
+  height: auto

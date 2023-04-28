@@ -8,26 +8,22 @@ export function createVideoPlayer() {
         const iframe = video.querySelector('iframe');
 
         if(!iframe || !preview) return;
+        
+        
+        let checkBeforeFocus = startFocusObserver(iframe, preview);
 
-        if(!document.hasFocus()) {
+        window.addEventListener('focus', () => clearInterval(checkBeforeFocus));
 
-            let checkBeforeFocus = startFocusObserver(iframe, preview);
+        window.addEventListener('blur', () => {
 
-            window.addEventListener('focus', () => clearInterval(checkBeforeFocus));
+            if(!preview.classList.contains('hide')) {
 
-            window.addEventListener('blur', () => {
+                checkBeforeFocus = startFocusObserver(iframe, preview);
 
-                if(!preview.classList.contains('hide')) {
+            }
 
-                    checkBeforeFocus = startFocusObserver(iframe, preview);
-
-                }
-
-            });
-
-        }
-
-
+        });
+        
         window.addEventListener("blur", () => {
             setTimeout(() => {
                 if (document.activeElement.id === iframe.id) {
