@@ -2,7 +2,8 @@ export function createFixedHeader() {
 
     const headerContainer = document.querySelector('header');
     const header = document.querySelector('#header-container');
-
+    const needScrollTopToFixed = 400;
+    
     if(!header) {
 
         console.log('Не найдена шапка сайта!')
@@ -61,7 +62,7 @@ export function createFixedHeader() {
     let prevWidth = window.innerWidth;
     let prevScrollTop = document.documentElement.scrollTop;
 
-    if(prevWidth <= 480 && document.documentElement.scrollTop > 200) {
+    if(prevWidth <= 480 && document.documentElement.scrollTop > needScrollTopToFixed) {
 
         headerStates.isFixed = true;
 
@@ -80,7 +81,7 @@ export function createFixedHeader() {
 
         }
 
-        if(window.innerWidth <= 480 && document.documentElement.scrollTop <= 200 && !headerStates.isFixed) headerStates.isFixed = true;
+        if(window.innerWidth <= 480 && document.documentElement.scrollTop > needScrollTopToFixed && !headerStates.isFixed) headerStates.isFixed = true;
 
     })
 
@@ -90,10 +91,10 @@ export function createFixedHeader() {
 
         const currentScrollTop = document.documentElement.scrollTop;
 
-        if(currentScrollTop > 200 && !headerStates.isFixed) headerStates.isFixed = true;
-        if(currentScrollTop < 200 && headerStates.isFixed) headerStates.isFixed = false;
+        if(currentScrollTop > needScrollTopToFixed && !headerStates.isFixed) headerStates.isFixed = true;
+        if(currentScrollTop < needScrollTopToFixed && headerStates.isFixed) headerStates.isFixed = false;
 
-        if(currentScrollTop < prevScrollTop - 20 && headerStates.isHide) {
+        if(currentScrollTop < prevScrollTop - 10 && headerStates.isHide) {
 
             headerStates.isHide = false;
 
@@ -103,7 +104,7 @@ export function createFixedHeader() {
 
         }
 
-        if(!headerStates.isHide && currentScrollTop > prevScrollTop + 20) {
+        if(!headerStates.isHide && currentScrollTop > prevScrollTop + 10) {
 
             headerStates.isHide = true;
 

@@ -5,10 +5,19 @@
 $newsFirstResponse: 1150px
 $newsSecondResponse: 600px
 
+$newsReverseResponse: 450px
+$newsLastPointNumber: 320
+$newsLastPoint: $lastResponsePointNumber + px
+
 html.theme-visually-impaired
   .news
 
     flex-direction: column
+
+    &__item
+
+      @media screen and (max-width: $newsLastPoint)
+        font-size: vw($sizeForWeakEyes, $newsLastPointNumber)
 
     &__img
 
@@ -48,6 +57,13 @@ html.theme-visually-impaired
     @media screen and (max-width: $newsFirstResponse)
       flex: 0 0 auto
 
+    @media screen and (max-width: $newsReverseResponse)
+      flex-direction: column-reverse
+      font-size: 16px
+
+    @media screen and (max-width: $newsLastPoint)
+      font-size: vw(16, $newsLastPointNumber)
+
   &__img
     margin-right: em(20, 16)
     flex: 0 0 em(279, 16)
@@ -55,8 +71,17 @@ html.theme-visually-impaired
     max-width: 280px
 
     @media screen and (max-width: $newsSecondResponse)
-      flex: 0 0 em(181, 16)
+      flex: 0 0 em(140, 16)
       margin-right: em(13, 16)
+
+    @media screen and (max-width: $newsReverseResponse)
+      order: 1
+      margin: 0 0 em(15, 16) 0
+      flex: 0 0 auto
+      max-width: none
+
+      img
+        width: 100%
 
     img
       border-radius: .5em
@@ -66,5 +91,5 @@ html.theme-visually-impaired
     margin-bottom: em(13, 18)
 
     @media screen and (max-width: $newsSecondResponse)
-      font-size: em(12, 16)
-      letter-spacing: em(-1, 12)
+      font-size: 1em
+      letter-spacing: em(-1, 16)

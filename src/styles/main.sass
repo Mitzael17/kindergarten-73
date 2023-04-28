@@ -83,14 +83,14 @@ html
       @media screen and (max-width: $mobile)
         gap: em(30, $sizeForWeakEyes) em(15, $sizeForWeakEyes)
 
-  @media screen and (max-width: $mobile)
-    font-size: 3.333vw !important
+  @media screen and (max-width: $lastResponsePoint)
+    font-size: vw(16, $lastResponsePointNumber) !important
 
   &.theme-visually-impaired
     font-size: $sizeForWeakEyes + px
 
-    @media screen and (max-width: $mobile)
-      font-size: vw($sizeForWeakEyes, $mobileNumber)
+    @media screen and (max-width: $lastResponsePoint)
+      font-size: vw($sizeForWeakEyes, $lastResponsePointNumber)
 
 
 .dh-gap

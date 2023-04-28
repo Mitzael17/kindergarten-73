@@ -14,8 +14,10 @@ import {createObserverForBvi} from "./modules/createObserverForBvi.js";
 import {createFixedHeader} from "./modules/createFixedHeader.js";
 import {createClickableArrowInHeader} from "./modules/createClickableArrowInHeader.js";
 import {createPopupMessage} from "./modules/createPopupMessage.js";
+import {createLazyLoad} from "./modules/createLazyLoad.js";
 
 
+createLazyLoad();
 createFixedHeader();
 createClickableArrowInHeader();
 createSpoilers();

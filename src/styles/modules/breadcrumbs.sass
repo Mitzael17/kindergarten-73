@@ -10,6 +10,11 @@ html.theme-visually-impaired
 .breadcrumbs
   background: var(--greyBackground)
   padding: em(24, 16) 0 em(15, 16)
+  word-break: break-word
+
+  h1
+    @media screen and (max-width: $headerSecondResponse)
+      font-size: 2.5em
 
   @media screen and (max-width: $headerFirstResponse)
     margin-top: em(15, 16)
@@ -18,6 +23,8 @@ html.theme-visually-impaired
     display: flex
     align-items: center
     margin-bottom: em(15, 16)
+    flex-wrap: wrap
+    gap: .5em 0
 
   &__item
     @include setFonts(12, var(--breadcrumbsColor), 1.2, -1, 600)

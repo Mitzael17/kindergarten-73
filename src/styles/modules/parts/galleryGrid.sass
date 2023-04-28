@@ -1,4 +1,5 @@
 @import "../../assets/mixins"
+@import "../../assets/vars"
 
 .gallery
   display: grid
@@ -6,6 +7,9 @@
   grid-auto-rows: em(170, 16)
   grid-template-columns: repeat(auto-fit, minmax(em(130, 16), 1fr))
   gap: em(24, 16)
+
+  @media screen and (max-width: $mobile)
+    font-size: vw(16, $mobileNumber)
 
   &__item
     object-fit: cover

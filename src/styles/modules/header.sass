@@ -98,6 +98,13 @@ html.theme-visually-impaired
     justify-content: space-between
     padding: .5em 0 em(5, 16)
     align-items: center
+    flex-wrap: wrap
+    text-align: center
+    gap: .5em
+
+    @media screen and (max-width: $mobile)
+      flex-direction: column
+      align-items: center
 
     .weakText
       font-size: em(12, 16)
@@ -144,6 +151,9 @@ html.theme-visually-impaired
       margin: 0 0 0 rem(145)
       gap: rem(10)
 
+    @media screen and (max-width: $mobile)
+      margin: 0 0 0 vw(145, $mobileNumber)
+
   &__contacts
     display: flex
     gap: rem(20)
@@ -153,13 +163,10 @@ html.theme-visually-impaired
     @include firstResponseContactBlocks($headerFirstResponse)
 
     @media screen and (max-width: $headerSecondResponse)
-      font-size: rem(12)
+      font-size: rem(15)
 
       .socials
         display: none
-
-      .button
-        padding: em(5, 12)
 
   &__telContainer
 
@@ -173,6 +180,7 @@ html.theme-visually-impaired
   &__tel
     transition: $defaultTransitionDuration all
     @include setFonts(20, var(--textColor), lh(26, 20), -0.4)
+
     &:hover
       color: var(--textHoverColor)
 
@@ -206,6 +214,9 @@ html.theme-visually-impaired
     cursor: pointer
     position: relative
 
+    @media screen and (max-width: $mobile)
+      font-size: 1.2rem
+
     & > .link
       line-height: 1
 
@@ -232,8 +243,14 @@ html.theme-visually-impaired
         top: 50%
         transform: translateY(-50%) rotate(45deg)
 
+        @media screen and (max-width: $headerSecondResponse)
+          transform: translate(-50%, -50%) rotate(45deg)
+
       &:after
         transform: translateY(-50%) rotate(-45deg)
+
+        @media screen and (max-width: $headerSecondResponse)
+          transform: translate(-50%, -50%) rotate(-45deg)
 
   &__burger
     margin-right: 8px
@@ -255,6 +272,9 @@ html.theme-visually-impaired
       width: em(8.25, 16)
       transform-origin: left center
 
+      @media screen and (max-width: $headerSecondResponse)
+        left: .15em
+
     &:before, &:after
       width: em(13.5, 16)
       content: ''
@@ -262,9 +282,17 @@ html.theme-visually-impaired
     &:before
       top: em(2.25, 16)
 
+      @media screen and (max-width: $headerSecondResponse)
+        left: 50%
+        transform: translateX(-50%)
+
     &:after
       top: 50%
       transform: translateY(-50%)
+
+      @media screen and (max-width: $headerSecondResponse)
+        left: 50%
+        transform: translate(-50%, -50%)
 
   &__burgerList
     position: absolute

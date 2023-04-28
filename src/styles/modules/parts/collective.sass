@@ -2,12 +2,19 @@
 @import "../../assets/vars"
 
 $contentSize: 324
-$collectiveTextResponseNumber: 1440
-$collectiveTextResponse: $collectiveTextResponseNumber + px
-$collectiveFirstResponse: 800px
-$collectiveSecondResponse: 600px
+//$collectiveTextResponseNumber: 1440
+//$collectiveTextResponse: $collectiveTextResponseNumber + px
 
-$contentOnMobileSize: 176
+$collectiveImgResponseNumber: 1000
+$collectiveImgResponse: $collectiveImgResponseNumber + px
+
+$collectiveFirstResponse: 800px
+$collectiveSecondResponse: 1000px
+
+$collectiveSlideLastPointNumber: 500
+$collectiveSlideLastPoint: $collectiveSlideLastPointNumber + px
+
+$contentOnMobileSize: 250
 
 
 $collectiveNoSliderReverse: 1000px
@@ -19,8 +26,8 @@ html.theme-visually-impaired
 
   .collective__slider
 
-    @media screen and (max-width: $collectiveTextResponse)
-      font-size: vw($sizeForWeakEyes, $collectiveTextResponseNumber)
+    //@media screen and (max-width: $collectiveTextResponse)
+    //  font-size: vw($sizeForWeakEyes, $collectiveTextResponseNumber)
 
     @media screen and (max-width: $collectiveSecondResponse)
       font-size: 1rem
@@ -51,11 +58,19 @@ html.theme-visually-impaired
   position: relative
   font-size: 1rem
 
-  @media screen and (max-width: $collectiveTextResponse)
-    font-size: 1.111vw
+  //@media screen and (max-width: $collectiveTextResponse)
+  //  font-size: 1.111vw
 
   @media screen and (max-width: $collectiveSecondResponse)
     font-size: 1rem
+
+  @media screen and (max-width: $collectiveSlideLastPoint)
+
+    .slide-button-next
+      margin-right: 2em
+
+    .slide-button-prev
+      margin-left: 2em
 
   .swiper-wrapper
     padding-right: em($contentSize, 16)
@@ -78,8 +93,11 @@ html.theme-visually-impaired
       width: em(602, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
-      max-width: em(340, 16)
-      width: em(340, 16)
+      max-width: em(400, 16)
+      width: em(400, 16)
+
+    @media screen and (max-width: $collectiveSlideLastPoint)
+      font-size: vw(16, $collectiveSlideLastPointNumber)
 
   &.move.swiper-slide
     transform: translatex(-100%)
@@ -90,8 +108,8 @@ html.theme-visually-impaired
     width: em(602, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
-      max-width: em(340, 16)
-      width: em(340, 16)
+      max-width: em(400, 16)
+      width: em(400, 16)
 
     &.move
       transform: translatex(-50%)
@@ -130,8 +148,8 @@ html.theme-visually-impaired
       gap: em(15, 8.888)
 
     @media screen and (max-width: $collectiveSecondResponse)
-      min-width: em($contentOnMobileSize, 16)
-      width: em($contentOnMobileSize, 16)
+      min-width: em($contentOnMobileSize - 16, 16)
+      width: em($contentOnMobileSize - 16, 16)
       gap: em(10, 16)
       padding: em(17, 16) em(12, 16) em(17, 16) em(17, 16)
 
@@ -140,11 +158,11 @@ html.theme-visually-impaired
   &__fio
     @include setFonts(24, var(--textColor), 1.6, -1)
 
-    @media screen and (max-width: $collectiveFirstResponse)
-      font-size: em(19.5, 8.888)
+    //@media screen and (max-width: $collectiveFirstResponse)
+    //  font-size: em(19.5, 8.888)
 
     @media screen and (max-width: $collectiveSecondResponse)
-      font-size: 1em
+      //font-size: 1em
       letter-spacing: em(-0.5, 16)
 
     span
@@ -156,11 +174,11 @@ html.theme-visually-impaired
     line-height: 1.6
     letter-spacing: em(-0.2, 16)
 
-    @media screen and (max-width: $collectiveFirstResponse)
-      font-size: em(12, 8.888)
+    //@media screen and (max-width: $collectiveFirstResponse)
+    //  font-size: em(12, 8.888)
 
-    @media screen and (max-width: $collectiveSecondResponse)
-      font-size: em(12, 16)
+    //@media screen and (max-width: $collectiveSecondResponse)
+    //  font-size: em(12, 16)
 
 
   &__text
@@ -170,7 +188,7 @@ html.theme-visually-impaired
     letter-spacing: em(-0.2, 16)
 
     @media screen and (max-width: $collectiveSecondResponse)
-      font-size: .5em
+      //font-size: .5em
       letter-spacing: em(-0.1, 16)
 
   &__text.collectiveSlide__text--restricted
@@ -182,7 +200,7 @@ html.theme-visually-impaired
     &:before
       content: ''
       width: 100%
-      height: 1em
+      height: 1.2em
       position: absolute
       left: 0
       bottom: 0
@@ -198,8 +216,8 @@ html.theme-visually-impaired
     line-height: 1.6
     letter-spacing: em(-0.2, 16)
 
-    @media screen and (max-width: $collectiveFirstResponse)
-      font-size: em(12, 8.888)
+    //@media screen and (max-width: $collectiveFirstResponse)
+    //  font-size: em(12, 8.888)
 
     @media screen and (max-width: $collectiveSecondResponse)
       font-size: em(12, 16)

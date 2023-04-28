@@ -38,6 +38,7 @@ html.theme-visually-impaired
     @media screen and (max-width: $smallBannerSecondResponse)
       font-size: 1rem
       gap: em(25, $sizeForWeakEyes)
+      flex: 0 0 auto
 
       &__img
         flex: 0 0 8em
@@ -115,5 +116,8 @@ html.theme-visually-impaired
 
     @media screen and (max-width: $smallBannerSecondResponse)
       margin: 0 em(43, 16)
-      flex: 0 0 em(208, 16)
+      flex: 0 0 auto
+
+    @media screen and (max-width: $increaseBannerImagesResponse)
+      margin: 0
 

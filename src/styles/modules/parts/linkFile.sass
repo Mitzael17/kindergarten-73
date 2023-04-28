@@ -4,6 +4,8 @@
 $firstLinkFileTextResponseNumber: 1000
 $firstLinkFileTextResponse: $firstLinkFileTextResponseNumber + px
 
+$fileSmallTextResponse: 500px
+
 .linkFile
   display: flex
   gap: em(15, 16)
@@ -12,8 +14,14 @@ $firstLinkFileTextResponse: $firstLinkFileTextResponseNumber + px
   border-radius: em(15, 16)
   align-items: center
 
-  @media screen and (max-width: $firstLinkFileTextResponse)
-    font-size: vw(16, $firstLinkFileTextResponseNumber)
+  &--reverseOnMobile
+    @media screen and (max-width: $firstLinkFileTextResponse)
+      flex-direction: column
+      text-align: center
+      align-items: center
+
+      .button
+        margin-left: 0
 
   &__icon
     min-width: em(53, 16)
@@ -36,6 +44,9 @@ $firstLinkFileTextResponse: $firstLinkFileTextResponseNumber + px
 
   &__text
     @include setFonts(20, var(--groupFileColor), lh(26, 20), 0)
+
+    @media screen and (max-width: $fileSmallTextResponse)
+      font-size: 1em
 
 
   .button

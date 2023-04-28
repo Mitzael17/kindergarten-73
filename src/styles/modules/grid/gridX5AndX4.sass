@@ -28,7 +28,7 @@ html.theme-visually-impaired
 
 
 .gridX4
-  @include createGrid(repeat(4, 1fr), ('1200px': repeat(3, 1fr), '750px': repeat(2, 1fr)) )
+  @include createGrid(repeat(4, 1fr), ('1200px': repeat(3, 1fr), '750px': repeat(2, 1fr), '450px': 1fr) )
 
   .gridX4Item
     width: 100%
@@ -44,9 +44,12 @@ html.theme-visually-impaired
     @media screen and (max-width: $secondGridTextResponse)
       font-size: vw(16, $secondGridTextResponseNumber)
 
+    @media screen and (max-width: 450px)
+      font-size: 1rem
+
 
 .gridX5
-  @include createGrid(repeat(5, 1fr), ('1200px': repeat(4, 1fr), '750px': repeat(3, 1fr), '500px': repeat(2, 1fr)) )
+  @include createGrid(repeat(5, 1fr), ('1200px': repeat(4, 1fr), '750px': repeat(3, 1fr), '500px': repeat(2, 1fr), '400px': 1fr),  )
 
   .gridX5Item
     width: 100%

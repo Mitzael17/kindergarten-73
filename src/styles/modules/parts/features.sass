@@ -7,6 +7,8 @@ $featuresFirstResponseNumber: 800
 $featuresFirstResponse: $featuresFirstResponseNumber + px
 $featuresSecondResponse: 690px
 
+$featuresThirdResponse: 450px
+
 @mixin itemProperties($size)
   min-height: em(220, $size)
   padding: em(18, $size)
@@ -64,6 +66,9 @@ html.theme-visually-impaired
   @media screen and (max-width: $mobile)
     gap: rem(30) rem(24)
 
+  @media screen and (max-width: $featuresThirdResponse)
+    flex-direction: column-reverse
+
 
   &__item
     flex: 0 0 calc(25% - 24px)
@@ -74,6 +79,9 @@ html.theme-visually-impaired
     align-items: flex-end
     border-radius: .5em
     @include itemProperties(16)
+
+    @media screen and (max-width: $featuresThirdResponse)
+      flex: 0 0 100%
 
   &__text
     background: rgba(255, 255, 255, 0.75)

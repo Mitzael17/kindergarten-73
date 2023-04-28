@@ -7,6 +7,8 @@ $videosFirstResponse: 900px
 $videosSecondTextResponseNumber: 800
 $videosSecondTextResponse: $videosSecondTextResponseNumber + px
 
+$videosThirdResponse: 450px
+
 @mixin ourVideosProperties($size)
   gap: em(30, $size) em(24, $size)
 
@@ -18,6 +20,9 @@ $videosSecondTextResponse: $videosSecondTextResponseNumber + px
       flex: 0 0 calc(50% - em(12, $size))
       max-width: none
 
+    @media screen and (max-width: $videosThirdResponse)
+      flex: 0 0 100%
+
 
   &__img
     height: em(185, $size)
@@ -25,6 +30,9 @@ $videosSecondTextResponse: $videosSecondTextResponseNumber + px
 
     @media screen and (max-width: $videosFirstResponse)
       height: em(204, $size)
+
+    @media screen and (max-width: $videosThirdResponse)
+      height: auto
 
   &__text
     letter-spacing: em(-0.27, $size)
@@ -65,8 +73,9 @@ html.theme-visually-impaired
   @media screen and (max-width: $videosSecondTextResponse)
     font-size: 2vw
 
-  @media screen and (max-width: $mobile)
+  @media screen and (max-width: $videosThirdResponse)
     gap: 3.1em 1.5em
+    font-size: 1rem
 
   .videoSign
     font-size: .7em
