@@ -93,13 +93,20 @@
     gap: em(30, 16) em(24, 16)
     border-radius: em(15, 16)
     margin: 0
+    @include useSecondFont(500)
+    line-height: 1.6
+    letter-spacing: -.013em
+    color: var(--pColor)
 
     @media screen and (max-width: 700px)
       flex-direction: column
       align-items: center
       gap: em(10, 16)
 
-    img
+    &:before
+      content: ''
+      display: block
+      background: url('../img/quote.svg') 0 0 / 100% 100% no-repeat
       min-width: em(48, 16)
       min-height: em(48, 16)
       max-width: 48px
