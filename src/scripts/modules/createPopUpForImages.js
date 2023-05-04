@@ -106,16 +106,17 @@ export function createPopUpForImages() {
 
         if(window.innerWidth <= 500) {
 
-            let stepY = popup.offsetHeight / 100;
+            const stepY = popup.offsetHeight / 100;
+            const stepX = popup.offsetWidth / 100;
 
-            if(event.y > popup.offsetHeight - stepY * 20 || event.y < stepY * 20) {
+            if((event.y > popup.offsetHeight - stepY * 45 || event.y < stepY * 45) && event.x < stepX * 60 && event.x > stepX * 40) {
 
                 popup.classList.remove('active');
                 document.documentElement.classList.remove('blocked');
                 return;
             }
 
-            if(event.x > popup.offsetWidth / 2) {
+            if(event.x > stepX * 50) {
 
                 arrowNext.dispatchEvent(new Event('click'));
                 return;

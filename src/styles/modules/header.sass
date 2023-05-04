@@ -89,9 +89,9 @@ html.theme-visually-impaired
     padding: 1em
     gap: em(10, 16)
     box-shadow: 0 em(8.15707, 16) em(43.5044, 16) rgba(0, 0, 0, 0.07), 0 em(1.82199, 16) em(9.71727, 16) rgba(0, 0, 0, 0.0417275), 0 em(0.542454, 16) em(2.89309, 16) rgba(0, 0, 0, 0.0282725)
-
-    .link
-      font-size: em(12, 16)
+    //
+    //.link
+    //  font-size: em(14, 16)
 
   &__rest
     display: flex
@@ -152,7 +152,7 @@ html.theme-visually-impaired
       gap: rem(10)
 
     @media screen and (max-width: $mobile)
-      margin: 0 0 0 vw(145, $mobileNumber)
+      margin: 0 0 0 vw(100, $mobileNumber)
 
   &__contacts
     display: flex
@@ -163,7 +163,7 @@ html.theme-visually-impaired
     @include firstResponseContactBlocks($headerFirstResponse)
 
     @media screen and (max-width: $headerSecondResponse)
-      font-size: rem(15)
+      font-size: rem(14)
 
       .socials
         display: none
@@ -184,26 +184,6 @@ html.theme-visually-impaired
     &:hover
       color: var(--textHoverColor)
 
-  &__burgerWrapper
-    position: relative
-
-    & .header__sublistWrapper
-      left: 100%
-      top: 0
-      padding-top: 0
-      transform: translateX(0)
-
-      @media screen and (max-width: $headerFirstResponse)
-        left: 0
-        transform: translateX(-100%)
-
-      .header__sublist
-        padding: 10px
-        box-shadow: none
-        gap: 0
-        border-radius: 0
-        background: var(--greyBackground)
-
 
   &__burgerMenu
     padding: rem(10)
@@ -221,7 +201,6 @@ html.theme-visually-impaired
       line-height: 1
 
       @media screen and (max-width: $headerSecondResponse)
-        //font-size: em(12, 16)
         display: none
 
     &:hover
@@ -296,14 +275,34 @@ html.theme-visually-impaired
 
   &__burgerList
     position: absolute
-    right: em(-4, 16)
-    top: 110%
+    left: 0
+    top: 100%
+    height: 360px
+    padding: 10px
     z-index: 100
+    @include useShadow()
     transition: $defaultTransitionDuration all
     transform-origin: center center
     transform: scaleY(0)
     background: var(--greyBackground)
     border-radius: rem(5)
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    overflow: auto
+    gap: em(30, 16) em(24, 16)
+
+    .header__sublistWrapper
+      position: static
+      transform: none
+      opacity: 1
+      padding: 0
+      pointer-events: initial
+
+    .header__sublist
+      background: transparent
+      box-shadow: none
+      padding: 0 0 0 1em
 
     &.active
       transform: scaleY(1)
@@ -319,17 +318,36 @@ html.theme-visually-impaired
 #header-container
 
   &.fixed
+    padding: 0
 
-    @media screen and (max-width: $mobile)
-      position: fixed
+    @media screen and (max-width: $maxContentWidth)
+      padding: 0 $contentPaddings
+
+    .header__rest
+      display: none
+
+    .header__content
+      max-width: $maxContentWidth
+      padding-left: $contentPaddings
+      padding-right: $contentPaddings
+      margin: 0 auto
+
+      @media screen and (max-width: $maxContentWidth)
+        padding-left: 0
+        padding-right: 0
+
+    position: fixed
+    top: 0
+    left: 0
+    max-width: 100%
+    width: 100%
+    transition: $defaultTransitionDuration all
+    background: #ffffff
+    z-index: 110
+    border-bottom: 2px solid var(--staticBorderColor)
+
+    &.hide
+      transform: translateY(-100%)
+
+    @media screen and (max-width: $headerFirstResponse)
       padding-bottom: em(15, 16)
-      top: 0
-      left: 0
-      width: 100%
-      transition: $defaultTransitionDuration all
-      background: #ffffff
-      z-index: 110
-      border-bottom: 2px solid var(--staticBorderColor)
-
-      &.hide
-        transform: translateY(-100%)

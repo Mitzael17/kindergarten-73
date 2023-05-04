@@ -7,8 +7,8 @@ export function createBurger() {
     if(!burgerWrapper) return () => {};
 
     const burger = burgerWrapper.querySelector('.header__burgerMenu');
-
     const menu = burgerWrapper.querySelector('.header__burgerList');
+
     const desktopMenu = document.querySelector('.header__menu').querySelector('ul');
 
     const links = [...desktopMenu.children].map( link => {
@@ -62,11 +62,9 @@ export function createBurger() {
                 if(linkId === -1) break;
 
                 links[linkId].inHeader = false;
-                menu.prepend(links[linkId].node);
+                links[linkId].node.style.display = 'none';
 
             }
-
-            burger.style.display = 'flex';
 
             return;
 
@@ -76,11 +74,11 @@ export function createBurger() {
 
         while(linkId !== -1) {
 
-            desktopMenu.append(links[linkId].node);
+            links[linkId].node.style.display = null;
 
-            if(headerContent.offsetWidth - (menu.children.length === 0 ? burgerWrapper.offsetWidth : 0) > header.offsetWidth) {
+            if(headerContent.offsetWidth > header.offsetWidth) {
 
-                menu.prepend(links[linkId].node);
+                links[linkId].node.style.display = 'none';
                 break;
 
             }
@@ -91,7 +89,6 @@ export function createBurger() {
 
         }
 
-        if(linkId === -1) burger.style.display = 'none';
 
 
     }

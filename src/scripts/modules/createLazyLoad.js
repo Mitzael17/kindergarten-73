@@ -10,7 +10,10 @@ export function createLazyLoad() {
 
             image.nextElementSibling.remove();
 
-        })
+        }, {once: true})
+
+        // For load event
+        image.src = image.src;
 
     })
 

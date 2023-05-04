@@ -2,22 +2,23 @@
 @import "../../assets/vars"
 
 .gallery
-  display: grid
-  grid-auto-flow: dense
-  grid-auto-rows: em(170, 16)
-  grid-template-columns: repeat(auto-fit, minmax(em(130, 16), 1fr))
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
   gap: em(24, 16)
 
   @media screen and (max-width: $mobile)
     font-size: vw(16, $mobileNumber)
 
   &__item
-    object-fit: cover
-    height: 170px
-    min-width: 100%
+    height: 180px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex: 0 0 calc(20% - em(24, 16))
 
-    &.wide
-      grid-column: span 2
+    img
+      min-height: 100%
+      object-fit: cover
 
-    &.super-wide
-      grid-column: span 3
+

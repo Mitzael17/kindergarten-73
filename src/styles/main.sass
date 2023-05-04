@@ -11,7 +11,6 @@
 
 //libs
 @import "lib/swiper"
-//@import "bvi"
 
 // main modules
 @import "modules/header"
@@ -111,11 +110,12 @@ main
     margin: rem(14) 0 rem(31)
 
 .container
-  max-width: 1440px
-  padding: 0 25px
+  max-width: $maxContentWidth
+  padding: 0 $contentPaddings
   margin: 0 auto
+
   @media screen and (max-width: $mobileResponse)
-    padding: 0 15px
+    padding: 0 $contentMobilePaddings
 
 
 h1
@@ -426,8 +426,8 @@ section
 
 
 .map
-  max-height: 314px
-  height: em(314, 16)
+  max-height: 628px
+  height: em(628, 16)
 
   iframe
     border: 0

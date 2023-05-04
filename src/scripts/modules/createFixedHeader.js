@@ -59,35 +59,9 @@ export function createFixedHeader() {
 
     })
 
-    let prevWidth = window.innerWidth;
     let prevScrollTop = document.documentElement.scrollTop;
 
-    if(prevWidth <= 480 && document.documentElement.scrollTop > needScrollTopToFixed) {
-
-        headerStates.isFixed = true;
-
-    }
-
-    window.addEventListener('resize', () => {
-
-        if(prevWidth === window.innerWidth) return;
-
-        prevWidth = window.innerWidth;
-
-        if(window.innerWidth > 480 && headerStates.isFixed) {
-
-            headerStates.isFixed = false;
-            return;
-
-        }
-
-        if(window.innerWidth <= 480 && document.documentElement.scrollTop > needScrollTopToFixed && !headerStates.isFixed) headerStates.isFixed = true;
-
-    })
-
     window.addEventListener('scroll', () => {
-
-        if(window.innerWidth > 480) return;
 
         const currentScrollTop = document.documentElement.scrollTop;
 

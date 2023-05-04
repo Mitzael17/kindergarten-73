@@ -22,13 +22,7 @@ $secondAchievementsPageResponse: 550px
     grid-column: span 1
     width: 100%
     height: auto
-    display: none
-    transform: scale(0)
     transition: .5s all
-
-    &.active
-      display: block
-      transform: scale(1)
 
     &.wide
       grid-column: span 2
@@ -51,8 +45,9 @@ $secondAchievementsPageResponse: 550px
     font-size: .7rem
 
   &__year.swiper-slide
+    z-index: 1
 
-    span
+    .yearValue
       padding: em(10, 20)
       display: inline-block
       cursor: pointer
@@ -71,7 +66,7 @@ $secondAchievementsPageResponse: 550px
 
     &:before
       content: ''
-      width: em(130, 16)
+      width: 8.1em
       height: 2px
       position: absolute
       right: 100%

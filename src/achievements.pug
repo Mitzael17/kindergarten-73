@@ -21,47 +21,44 @@ block content
                         .achievementsPath.swiper
                             .swiper-wrapper
                                 each year in ['2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015']
-                                    .swiper-slide.achievementsPath__year
-                                        span= year
+                                    .swiper-slide.achievementsPath__year(class=(year >= 2021 ? 'active' : ''))
+                                        a.yearValue(href="#")= year
                         +slideButtons()
-                    .achievementsItems.swiper.mt-step
-                        .swiper-wrapper
-                            each year in ['2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015']
-                                .swiper-slide.achievementsPageSlider
+                    .achievementsItems.mt-step
+                                .achievementsPageSlider
                                     .achievementsList
                                         - var index = 0;
                                         while (index <= 4)
                                             - index++
-                                            .achievementsItem.wide.active
-                                                img(src=`@img/temporary/achievements-1.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-1.png`)
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-1.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-1.png`)
                                                 .swiper-lazy-preloader
-                                            .achievementsItem.wide.active
-                                                img(src=`@img/temporary/achievements-2.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-2.png`)
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-2.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-2.png`)
                                                 .swiper-lazy-preloader
                                             .achievementsItem.active
-                                                img(src=`@img/temporary/achievements-3.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-3.png`)
+                                                img(src=`@img/temporary/achievements-3.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-3.png`)
                                                 .swiper-lazy-preloader
-                                            .achievementsItem.wide.active
-                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-4.png`)
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-4.png`)
                                                 .swiper-lazy-preloader
-                                            .achievementsItem.wide.active
-                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-4.png`)
+                                            .achievementsItem.wide
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-4.png`)
                                                 .swiper-lazy-preloader
                                         while (index <= 10)
                                             - index++
                                             .achievementsItem.wide
-                                                img(src=`@img/temporary/achievements-1.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-1.png`)
+                                                img(src=`@img/temporary/achievements-1.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-1.png`)
                                                 .swiper-lazy-preloader
                                             .achievementsItem.wide
-                                                img(src=`@img/temporary/achievements-2.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-2.png`)
+                                                img(src=`@img/temporary/achievements-2.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-2.png`)
                                                 .swiper-lazy-preloader
                                             .achievementsItem
-                                                img(src=`@img/temporary/achievements-3.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-3.png`)
+                                                img(src=`@img/temporary/achievements-3.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-3.png`)
                                                 .swiper-lazy-preloader
                                             .achievementsItem.wide
-                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-4.png`)
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-4.png`)
                                                 .swiper-lazy-preloader
                                             .achievementsItem.wide
-                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements-${year}`, data-popup-image=`@img/temporary/achievements-4.png`)
+                                                img(src=`@img/temporary/achievements-4.png`, alt='image', loading='lazy', data-popup-group=`achievements`, data-popup-image=`@img/temporary/achievements-4.png`)
                                                 .swiper-lazy-preloader
-                                    +whiteButton('Загрузить еще', 'arrow-bottom mt-step w-100')
