@@ -15,19 +15,20 @@ import {createFixedHeader} from "./modules/createFixedHeader.js";
 import {createClickableArrowInHeader} from "./modules/createClickableArrowInHeader.js";
 import {createPopupMessage} from "./modules/createPopupMessage.js";
 import {createLazyLoad} from "./modules/createLazyLoad.js";
+import {setRightVh} from "./functions/setRightVh.js";
 
 
 createLazyLoad();
-createFixedHeader();
 createClickableArrowInHeader();
 createSpoilers();
 createFooterSpoilers();
 
 createPasswordFields();
 
-const handlerMenuResize = createBurger();
+const [handlerMenuResize, handlerMenuClick] = createBurger();
 transferContactsInHeader(handlerMenuResize);
 
+createFixedHeader(handlerMenuClick);
 createDataWithContentBlocks();
 
 createDefaultSlider();
@@ -52,3 +53,4 @@ createVideoPlayer();
 createPopUpForImages();
 createPopupMessage();
 
+setRightVh();

@@ -24,7 +24,7 @@ header
                             li
                                 a.link(href="ourGroups.html") Группы
                             li.header__linkWithSublist
-                                a.link.flex.flex.flex-a-c(href="order.html") Родителям
+                                a.link.flex.flex-a-c(href="order.html") Родителям
                                     div.select-list__arrow
                                         svg
                                             use(href='@img/icons/icons.svg#arrow-select')
@@ -42,8 +42,8 @@ header
                                             a.link(href="advices.html") Советы специалистов
                                         li
                                             a.link(href='schools.html') Школы рядом с садиком
-                            li.header__linkWithSublist.flex.flex.flex-a-c
-                                a.link.flex.flex.flex-a-c(href="about.html") О нас
+                            li.header__linkWithSublist.flex.flex-a-c
+                                a.link.flex.flex-a-c(href="about.html") О нас
                                     div.select-list__arrow
                                         svg
                                             use(href='@img/icons/icons.svg#arrow-select')
@@ -66,45 +66,96 @@ header
                                 .header__burger
                                     span
                                 div.link Меню
-                            ul.header__burgerList
-                                li
-                                    a.link(href="/") Главная
-                                li
-                                    a.link(href="news.html") Новости
-                                li
-                                    a.link(href="ourGroups.html") Группы
-                                li.header__linkWithSublist
-                                    a.link.flex.flex.flex-a-c(href="order.html") Родителям
-                                    .header__sublistWrapper
-                                        ul.header__sublist.flex.flex-column.border-radius
+                            .header__burgerList
+                                span.header__burgerAnchor
+                                .header__burgerPanel
+                                    div
+                                        .header__burgerBack
+                                            div.select-list__arrow
+                                                svg
+                                                    use(href='@img/icons/icons.svg#arrow-select')
+                                            span.link
+                                        include ../parts/logo
+                                    .header__burgerClose
+                                        span
+                                .header__burgerContent
+                                    .header__mainContent
+                                        ul
                                             li
-                                                a.link(href="order.html") Порядок приема в детсад
+                                                a.link.font-700(href="/") Главная
                                             li
-                                                a.link(href="compensation.html") Компенсация оплаты за сад
+                                                a.link.font-700(href="news.html") Новости
+                                            li.header__linkWithSublist
+                                                a.flex.flex-a-c.flex-j-sb.link.font-700(href="about.html") О нас
+                                                    div.select-list__arrow
+                                                        svg
+                                                            use(href='@img/icons/icons.svg#arrow-select')
+                                                .header__sublistWrapper
+                                                    ul.header__sublist
+                                                        li
+                                                            a.link(href="collective.html") Наш коллектив
+                                                        li
+                                                            a.link(href="galleries.html") Наши галереи
+                                                        li
+                                                            a.link(href="ourVideos.html") Наши видео
+                                                        li
+                                                            a.link(href="achievements.html") Наши достижения
+                                                        li
+                                                            a.link(href="requisites.html") Наши реквизиты
                                             li
-                                                a.link(href="blanks.html") Бланки заявлений
+                                                a.link.font-700(href="contacts.html") Контакты
+                                        ul
+                                            li.header__linkWithSublist
+                                                a.flex.flex-a-c.flex-j-sb.link.font-700(href="ourGroups.html") Группы
+                                                    div.select-list__arrow
+                                                        svg
+                                                            use(href='@img/icons/icons.svg#arrow-select')
+                                                .header__sublistWrapper
+                                                    ul.header__sublist
+                                                        - var index = 0;
+                                                        while (index++ < 3)
+                                                            li
+                                                                a.link(href="group.html")= 'Группа ' + index
+                                            li.header__linkWithSublist
+                                                a.flex.flex-a-c.flex-j-sb.link.font-700(href="order.html") Родителям
+                                                    div.select-list__arrow
+                                                        svg
+                                                            use(href='@img/icons/icons.svg#arrow-select')
+                                                .header__sublistWrapper
+                                                    ul.header__sublist
+                                                        li
+                                                            a.link(href="order.html") Порядок приема в детсад
+                                                        li
+                                                            a.link(href="compensation.html") Компенсация оплаты за сад
+                                                        li
+                                                            a.link(href="blanks.html") Бланки заявлений
+                                                        li
+                                                            a.link(href="questions.html") Частые вопросы
+                                                        li
+                                                            a.link(href="advices.html") Советы специалистов
+                                                        li
+                                                            a.link(href='schools.html') Школы рядом с садиком
+                                        ul
+                                            li.header__linkWithSublist
+                                                a.flex.flex-a-c.flex-j-sb.link.font-700(href="information.html") Сведения об образовательной организации
+                                                    div.select-list__arrow
+                                                        svg
+                                                            use(href='@img/icons/icons.svg#arrow-select')
+                                                .header__sublistWrapper
+                                                    ul.header__sublist
+                                                        li
+                                                            a.link(href="information.html") Основные сведения
+                                                        li
+                                                            a.link(href="structure.html") Структура и органы управление образовательной организацией
+                                                        li
+                                                            a.link(href="documents.html") Документы
+                                                        li
+                                                            a.link(href="education.html") Образование
+                                                        li
+                                                            a.link(href="requires.html") Образовательные стандарты и требования
+
                                             li
-                                                a.link(href="questions.html") Частые вопросы
-                                            li
-                                                a.link(href="advices.html") Советы специалистов
-                                            li
-                                                a.link(href='schools.html') Школы рядом с садиком
-                                li.header__linkWithSublist
-                                    a.link.flex.flex.flex-a-c(href="about.html") О нас
-                                    .header__sublistWrapper
-                                        ul.header__sublist.flex.flex-column.border-radius
-                                            li
-                                                a.link(href="collective.html") Наш коллектив
-                                            li
-                                                a.link(href="galleries.html") Наши галереи
-                                            li
-                                                a.link(href="ourVideos.html") Наши видео
-                                            li
-                                                a.link(href="achievements.html") Наши достижения
-                                            li
-                                                a.link(href="requisites.html") Наши реквизиты
-                                li
-                                    a.link(href="contacts.html") Контакты
+                                                a.link.font-700(href="feedback.html") Обратная связь
                 .header__contacts
                     .header__telContainer
                         a.header__tel(href='tel:12345678') +7 (3532) 43-20-73

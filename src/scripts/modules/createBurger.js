@@ -8,6 +8,7 @@ export function createBurger() {
 
     const burger = burgerWrapper.querySelector('.header__burgerMenu');
     const menu = burgerWrapper.querySelector('.header__burgerList');
+    const closeButton = burgerWrapper.querySelector('.header__burgerClose');
 
     const desktopMenu = document.querySelector('.header__menu').querySelector('ul');
 
@@ -27,14 +28,17 @@ export function createBurger() {
 
     burgerWrapper.addEventListener('click', event => event.stopPropagation());
     burger.addEventListener('click', handlerClick);
+    closeButton.addEventListener('click', handlerClick);
     outClick(burger, () => isOpen && handlerClick());
 
     window.addEventListener('resize', handlerResize);
     handlerResize();
 
-    return handlerResize;
+    return [handlerResize, handlerClick];
 
-    function handlerClick() {
+    function handlerClick(event = {}, ignoreResolution = false) {
+
+        if(window.innerWidth > 1000 && !ignoreResolution) return;
 
         isOpen = !isOpen;
 
@@ -52,6 +56,8 @@ export function createBurger() {
     }
 
     function handlerResize() {
+
+        if(isOpen && window.innerWidth > 1000) handlerClick({}, true);
 
         if(headerContent.offsetWidth > header.offsetWidth) {
 
@@ -88,8 +94,6 @@ export function createBurger() {
             linkId = links.findLastIndex( link => !link.inHeader);
 
         }
-
-
 
     }
 

@@ -1,5 +1,8 @@
 @import "functions"
 
+@mixin vh100()
+  height: calc(var(--vh, 1vh) * 100)
+
 @mixin useShadow()
   box-shadow: 0 em(8.15707, 16) em(43.5044, 16) rgba(0, 0, 0, 0.07), 0 em(1.82199, 16) em(9.71727, 16) rgba(0, 0, 0, 0.0417275), 0 em(0.542454, 16) em(2.89309, 16) rgba(0, 0, 0, 0.0282725)
 
@@ -52,7 +55,7 @@
   @include useSecondFont(500)
 
 
-@mixin createLineBorder($beforeAfter: 'before')
+@mixin createLineBorder($beforeAfter: 'before', $color: var(--lineBorderColor))
 
   @if ($beforeAfter == 'both')
     &:after, &:before
@@ -60,7 +63,7 @@
       position: absolute
       top: 0
       left: calc( -1 * ((100vw - 100%) / 2))
-      background: var(--lineBorderColor)
+      background: $color
       height: 1px
       width: 100vw
 
@@ -72,7 +75,7 @@
       content: ''
       position: absolute
       left: calc( -1 * ((100vw - 100%) / 2))
-      background: var(--lineBorderColor)
+      background: $color
       height: 1px
       width: 100vw
       top: 100%
@@ -82,7 +85,7 @@
       content: ''
       position: absolute
       left: calc( -1 * ((100vw - 100%) / 2))
-      background: var(--lineBorderColor)
+      background: $color
       height: 1px
       width: 100vw
       top: 0

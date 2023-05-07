@@ -1,9 +1,10 @@
-export function createFixedHeader() {
+export function createFixedHeader(handlerMenuClick) {
 
     const headerContainer = document.querySelector('header');
     const header = document.querySelector('#header-container');
     const needScrollTopToFixed = 400;
-    
+    const burgerList = header.querySelector('.header__burgerList');
+
     if(!header) {
 
         console.log('Не найдена шапка сайта!')
@@ -42,6 +43,8 @@ export function createFixedHeader() {
                 if(state) {
 
                     header.classList.add('hide');
+
+                    if(burgerList.classList.contains('active')) handlerMenuClick();
 
                     return true;
 

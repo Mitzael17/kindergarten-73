@@ -185,6 +185,53 @@ html.theme-visually-impaired
       color: var(--textHoverColor)
 
 
+  &__burgerWrapper
+
+    @media screen and (min-width: $headerFirstResponseNumber + 1 + px)
+
+      .header__burgerList
+        transition: $defaultTransitionDuration transform 0.5s
+
+      &:hover
+
+        .header__burgerList
+          transition: $defaultTransitionDuration all
+          transform: scale(1)
+
+  &__burgerPanel
+    display: none
+
+    @media screen and (max-width: $headerFirstResponse)
+      display: flex
+      justify-content: space-between
+      align-items: center
+      position: relative
+      height: em(70, 16)
+      @include createLineBorder('after', var(--textHoverColor))
+      padding-bottom: em(15, 16)
+
+  &__burgerClose
+    position: relative
+    max-width: 40px
+    max-height: 40px
+    width: em(40, 16)
+    height: em(40, 16)
+
+    &:before,
+    span
+      width: 80%
+      height: 2px
+      background: var(--textColor)
+      @include useAbsolutePosition(50%, 50%)
+
+    &:before
+      content: ''
+      transform: translate(-50%, -50%) rotate(-45deg)
+
+    span
+      transform: translate(-50%, -50%) rotate(45deg)
+
+
   &__burgerMenu
     padding: rem(10)
     display: flex
@@ -231,6 +278,11 @@ html.theme-visually-impaired
         @media screen and (max-width: $headerSecondResponse)
           transform: translate(-50%, -50%) rotate(-45deg)
 
+  &__burgerAnchor
+    @include useAbsolutePosition(0, 0)
+    transform: translateY(-100%)
+    pointer-events: none
+
   &__burger
     margin-right: 8px
     width: em(18, 16)
@@ -273,6 +325,41 @@ html.theme-visually-impaired
         left: 50%
         transform: translate(-50%, -50%)
 
+  &__burgerContent
+    position: relative
+
+    @media screen and (max-width: $headerFirstResponse)
+      margin-top: 10px
+
+      .hide
+        height: 0
+        overflow: hidden
+
+  &__mainContent
+    display: flex
+    justify-content: space-between
+    width: 100%
+    gap: em(30, 16) em(24, 16)
+
+    @media screen and (max-width: $headerFirstResponse)
+      justify-content: flex-start
+      gap: 0
+      flex-direction: column
+      flex: 0 1 100%
+
+  &__burgerBack
+    align-items: center
+    gap: em(5, 20)
+    display: none
+    font-size: em(20, 16)
+    cursor: pointer
+
+    .select-list__arrow
+      margin-top: em(-4, 20)
+      svg
+        transform: rotate(90deg) !important
+
+
   &__burgerList
     position: absolute
     left: 0
@@ -287,10 +374,32 @@ html.theme-visually-impaired
     background: var(--greyBackground)
     border-radius: rem(5)
     width: 100%
-    display: flex
-    flex-wrap: wrap
+
     overflow: auto
-    gap: em(30, 16) em(24, 16)
+
+    .select-list__arrow
+      display: none
+
+    @media screen and (max-width: $headerFirstResponse)
+      max-width: 400px
+      width: 100%
+      overflow-x: hidden
+      @include vh100()
+      position: fixed
+      top: 0
+      left: 0
+      display: flex
+      flex-direction: column
+
+      .select-list__arrow
+        display: block
+        margin-left: 0
+
+        svg
+          transform: rotate(-90deg)
+
+    .header__linkWithSublist
+      position: static
 
     .header__sublistWrapper
       position: static
@@ -298,11 +407,32 @@ html.theme-visually-impaired
       opacity: 1
       padding: 0
       pointer-events: initial
+      min-width: auto
+
+      @media screen and (max-width: $headerFirstResponse)
+        background: var(--greyBackground)
+        position: absolute
+        top: 0
+        left: 0
+        transition: .5s transform
+        transform: translateX(calc(-100% - 15px))
+        background: var(--greyBackground)
+        width: 100%
+        max-width: none
+        height: 100%
+        overflow: hidden
+
+        &.active
+          transform: translateX(0)
+          overflow: initial
 
     .header__sublist
       background: transparent
       box-shadow: none
       padding: 0 0 0 1em
+
+      @media screen and (max-width: $headerFirstResponse)
+        padding: 0
 
     &.active
       transform: scaleY(1)
@@ -312,7 +442,15 @@ html.theme-visually-impaired
       display: flex
       width: 100%
       cursor: pointer
+      font-weight: 600
+      font-size: 1em
 
+      @for $index from 3 through 9
+        &.font-#{$index * 100}
+          font-weight: $index * 100
+
+      @media screen and (max-width: $headerFirstResponse)
+        font-weight: 700
 
 
 #header-container
@@ -348,6 +486,10 @@ html.theme-visually-impaired
 
     &.hide
       transform: translateY(-100%)
+
+      .header__burgerList
+        transition: $defaultTransitionDuration transform
+        transform: scaleY(0)
 
     @media screen and (max-width: $headerFirstResponse)
       padding-bottom: em(15, 16)

@@ -41,17 +41,27 @@
 .mr-auto
   margin-right: auto
 
+
 .ml-auto
   margin-left: auto
+
 
 .h-fit-content
   height: fit-content
 
+
 .overflow-hidden
   overflow: hidden
+
 
 .relative
   position: relative
 
+
 .priority
   z-index: 2
+
+
+@for $index from 3 through 9
+  .font-#{$index * 100}
+    font-weight: $index * 100

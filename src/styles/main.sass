@@ -285,9 +285,15 @@ svg
   transition: $defaultTransitionDuration color
 
   .select-list__arrow
+    min-width: em(12, 16)
+    min-height: em(15, 16)
+    margin-left: .5em
     width: em(12, 16)
     height: em(15, 16)
-    margin-left: .5em
+
+    svg
+      width: 100%
+      height: 100%
 
   &:hover
     color: var(--textHoverColor)
