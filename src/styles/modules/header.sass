@@ -414,13 +414,13 @@ html.theme-visually-impaired
         position: absolute
         top: 0
         left: 0
-        transition: .5s transform
         transform: translateX(calc(-100% - 15px))
         background: var(--greyBackground)
         width: 100%
         max-width: none
         height: 100%
         overflow: hidden
+        transition: .5s transform
 
         &.active
           transform: translateX(0)
@@ -433,6 +433,8 @@ html.theme-visually-impaired
 
       @media screen and (max-width: $headerFirstResponse)
         padding: 0
+        background: var(--greyBackground)
+
 
     &.active
       transform: scaleY(1)

@@ -30,7 +30,20 @@ export function createClickableArrowInHeader() {
 
         wrapper.addEventListener('transitionend', (event) => {
 
-            if(!wrapper.classList.contains('active') || event.propertyName !== 'transform') return;
+            if(!wrapper.classList.contains('active') || event.propertyName !== 'transform') {
+
+                if(event.propertyName === 'transform') {
+
+                    list.style.minHeight = null;
+                    wrapper.style.overflow = null;
+
+                }
+
+                return;
+
+            }
+
+            list.style.minHeight = null;
 
             if(breadcrumbs.length === 1) {
 
@@ -57,6 +70,12 @@ export function createClickableArrowInHeader() {
             backLink.style.display = 'flex';
             logo.style.display = 'none';
 
+            if(breadcrumbs.at(-2) !== undefined) {
+
+                list.style.minHeight = breadcrumbs.at(-2).list.offsetHeight + 'px';
+
+            }
+
             anchor.scrollIntoView({block: 'start', behavior: 'smooth'});
 
         })
@@ -67,6 +86,10 @@ export function createClickableArrowInHeader() {
     function handlerBackClick() {
 
         if(breadcrumbs.length === 0) return;
+
+        const list = breadcrumbs.at(-1).list;
+
+        breadcrumbs.at(-1).wrapper.style.overflow = 'initial';
         breadcrumbs.at(-1).wrapper.classList.remove('active');
 
         breadcrumbs.pop();
@@ -75,6 +98,14 @@ export function createClickableArrowInHeader() {
 
             backLinkSpan.innerHTML = breadcrumbs.at(-1).text;
             breadcrumbs.at(-1).list.classList.remove('hide');
+            breadcrumbs.at(-1).list.style.opacity = 0;
+
+            setTimeout(() => {
+
+                list.style.minHeight = breadcrumbs.at(-1).list.offsetHeight + 'px';
+                breadcrumbs.at(-1).list.style.opacity = null;
+
+            }, 0);
 
             return;
 
