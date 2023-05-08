@@ -1,21 +1,52 @@
 @import "../../assets/mixins"
 @import "../../assets/vars"
 
+$galleryGridFirstResponseNumber: 1000
+$galleryGridFirstResponse: $galleryGridFirstResponseNumber + px
+
+$galleryGridSecondResponseNumber: 800
+$galleryGridSecondResponse: $galleryGridSecondResponseNumber + px
+
+$galleryGridThirdResponseNumber: 500
+$galleryGridThirdResponse: $galleryGridThirdResponseNumber + px
+
 .gallery
   display: flex
   flex-wrap: wrap
   justify-content: center
   gap: em(24, 16)
 
+  @media screen and (max-width: $maxContentWidth)
+    font-size: vw(16, $maxContentWidthNumber)
+
+  @media screen and (max-width: $galleryGridFirstResponse)
+    font-size: vw(16, $galleryGridFirstResponseNumber)
+
+  @media screen and (max-width: $galleryGridSecondResponse)
+    font-size: vw(16, $galleryGridSecondResponseNumber)
+
+  @media screen and (max-width: $galleryGridThirdResponse)
+    font-size: vw(16, $galleryGridThirdResponseNumber)
+
   @media screen and (max-width: $mobile)
     font-size: vw(16, $mobileNumber)
 
   &__item
-    height: 180px
+    max-height: 180px
+    height: em(180, 16)
     display: flex
     justify-content: center
     align-items: center
     flex: 0 0 calc(20% - em(24, 16))
+
+    @media screen and (max-width: $galleryGridFirstResponse)
+      flex: 0 0 calc(25% - em(24, 16))
+
+    @media screen and (max-width: $galleryGridSecondResponse)
+      flex: 0 0 calc(33.333% - em(24, 16))
+
+    @media screen and (max-width: $galleryGridThirdResponse)
+      flex: 0 0 calc(50% - em(24, 16))
 
     img
       min-height: 100%
